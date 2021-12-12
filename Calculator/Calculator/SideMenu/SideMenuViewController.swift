@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SideMenu
 
-class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SideMenuNavigationControllerDelegate {
+class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let calculatorType: [String] = ["일반계산기", "단위변환기", "환율계산기", "단가계산기"]
     
