@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oec-jN-RNh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2yO-Sp-PzZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -9,47 +9,25 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="rfZ-BE-UKZ">
+        <scene sceneID="sBq-1m-kk4">
             <objects>
-                <navigationController id="oec-jN-RNh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8xp-CU-7ht">
+                <navigationController id="2yO-Sp-PzZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Taa-Xe-4ma">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="QeK-Qd-Gtv" kind="relationship" relationship="rootViewController" id="oo6-Hi-MWZ"/>
+                        <segue destination="hJF-uC-YKa" kind="relationship" relationship="rootViewController" id="vZT-7h-Yll"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dhp-JR-p0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZy-aY-SYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1570" y="-2"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="ABX-LD-jjC">
-            <objects>
-                <viewController id="QeK-Qd-Gtv" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qbo-VE-N7d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Fed-wW-QEQ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="WbL-S5-KvB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="mDj-RJ-a6g">
-                            <connections>
-                                <segue destination="XQc-5d-3wy" kind="show" id="fHZ-eK-bHL"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BLN-bH-hzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2410" y="-2"/>
+            <point key="canvasLocation" x="1570" y="-35"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="aJa-KZ-h2a">
             <objects>
-                <navigationController id="XQc-5d-3wy" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SideMenuNavigationController" id="XQc-5d-3wy" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="bp7-ET-uGS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I1j-8I-on9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -79,33 +57,28 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUy-kp-Ruo">
-                                                    <rect key="frame" x="15" y="6" width="384" height="35.5"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="일반계산기">
-                                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
-                                                        <color key="baseForegroundColor" systemColor="labelColor"/>
-                                                    </buttonConfiguration>
-                                                    <connections>
-                                                        <action selector="typeOfCalculator:" destination="HXs-SN-7xw" eventType="touchUpInside" id="Uva-hB-Lgh"/>
-                                                    </connections>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
+                                                    <rect key="frame" x="20" y="11" width="334" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="SUy-kp-Ruo" secondAttribute="bottom" constant="6" id="0hy-xR-mLo"/>
-                                                <constraint firstItem="SUy-kp-Ruo" firstAttribute="top" secondItem="LeA-4Z-qZf" secondAttribute="top" constant="6" id="8jS-ai-GAg"/>
-                                                <constraint firstItem="SUy-kp-Ruo" firstAttribute="leading" secondItem="LeA-4Z-qZf" secondAttribute="leading" constant="15" id="gjW-d3-hCG"/>
-                                                <constraint firstAttribute="trailing" secondItem="SUy-kp-Ruo" secondAttribute="trailing" constant="15" id="xku-9R-yCQ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="U5i-5A-w9o" secondAttribute="bottom" id="CI6-qb-uxS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="U5i-5A-w9o" secondAttribute="trailing" constant="40" id="Nug-Qg-xf1"/>
+                                                <constraint firstItem="U5i-5A-w9o" firstAttribute="leading" secondItem="LeA-4Z-qZf" secondAttribute="leadingMargin" id="bHd-pp-GOE"/>
+                                                <constraint firstItem="U5i-5A-w9o" firstAttribute="top" secondItem="LeA-4Z-qZf" secondAttribute="topMargin" id="cSY-rJ-9nA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="calculatorLabel" destination="SUy-kp-Ruo" id="h4b-Zi-gr9"/>
+                                            <outlet property="TypeOfCalculator" destination="U5i-5A-w9o" id="Y7W-0d-jUp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -124,18 +97,125 @@
                             <constraint firstItem="6tT-PX-xHh" firstAttribute="top" secondItem="aXJ-z4-Ys0" secondAttribute="top" id="saL-U7-R4p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="계산기선택" largeTitleDisplayMode="never" id="GCm-zv-yP0"/>
+                    <navigationItem key="navigationItem" title="계산기선택" largeTitleDisplayMode="never" id="GCm-zv-yP0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="gearshape" catalog="system" id="iLD-uw-YNY">
+                            <connections>
+                                <action selector="settingBtn:" destination="9Be-y4-mlL" id="TzR-Fq-l2b"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTD-lr-39z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2409" y="686"/>
         </scene>
+        <!--Unit Price View Controller-->
+        <scene sceneID="l30-L9-AKw">
+            <objects>
+                <viewController storyboardIdentifier="UnitPriceViewController" id="RJ2-kf-es9" customClass="UnitPriceViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bx2-EE-QOQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="단가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCk-gE-27k">
+                                <rect key="frame" x="170" y="195" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hCf-9x-XnM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yw7-4H-OJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3241" y="686"/>
+        </scene>
+        <!--일반계산기-->
+        <scene sceneID="Qtr-1q-Vdv">
+            <objects>
+                <viewController storyboardIdentifier="CalculatorViewController" id="hJF-uC-YKa" customClass="CalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X3F-Sw-jsv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="일반계산기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV2-nM-M1e">
+                                <rect key="frame" x="186" y="438" width="74" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OQD-6h-7nw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="일반계산기" id="RFc-uQ-6Id">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="5xF-Uh-jv0">
+                            <connections>
+                                <segue destination="XQc-5d-3wy" kind="show" id="GX3-jT-s2n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3aM-Ws-LkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="-35"/>
+        </scene>
+        <!--Unit Conversion View Controller-->
+        <scene sceneID="uXq-fI-V9a">
+            <objects>
+                <viewController storyboardIdentifier="UnitConversionViewController" id="LCi-VX-yGJ" customClass="UnitConversionViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ug-fA-Ees">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="단위변환" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-tg-mnH">
+                                <rect key="frame" x="177" y="405" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JY0-wo-iwp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2JQ-jc-dq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3242" y="-35"/>
+        </scene>
+        <!--Exchange Rate View Controller-->
+        <scene sceneID="6Rv-hX-X1i">
+            <objects>
+                <viewController storyboardIdentifier="ExchangeRateViewController" id="L9S-7W-I2A" customClass="ExchangeRateViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W6I-OX-YSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="환율" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDB-DO-DB3">
+                                <rect key="frame" x="85" y="400" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qzc-y4-chp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fUn-Fs-H8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4086" y="-35"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
