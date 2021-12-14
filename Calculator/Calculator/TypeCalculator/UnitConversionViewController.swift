@@ -7,11 +7,12 @@
 
 import UIKit
 
-class UnitConversionViewController: UIViewController {
+class UnitConversionViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
+        
     }
     
     func setNavigationBar() {

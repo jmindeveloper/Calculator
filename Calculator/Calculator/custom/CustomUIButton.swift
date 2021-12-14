@@ -13,7 +13,7 @@ class CustomUIButton: UIButton {
     @IBInspectable var isRound: Bool = false {
         didSet {
             if isRound {
-                self.layer.cornerRadius = self.frame.size.width / 2
+                self.layer.cornerRadius = 8
             }
         }
     }

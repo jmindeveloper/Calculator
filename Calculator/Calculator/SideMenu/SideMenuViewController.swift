@@ -9,7 +9,7 @@ import UIKit
 
 class SideMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let calculatorType: [String] = ["일반계산기", "단위변환기", "환율계산기", "단가계산기"]
+    let calculatorType: [String] = ["일반계산기", "단위변환기", "환율계산기", "단가계산기", "엔빵계산기"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,9 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         case 3:
             print("단가계산기")
             tapSideMenu("UnitPriceViewController", "unitPriceVC")
+        case 4:
+            print("엔빵계산기")
+            
         default:
             break
         }
