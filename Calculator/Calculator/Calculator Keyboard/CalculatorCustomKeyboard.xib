@@ -35,7 +35,7 @@
                                     <rect key="frame" x="97.5" y="0.0" width="92" height="88"/>
                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="()">
+                                    <buttonConfiguration key="configuration" style="plain" title="( )">
                                         <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="baseForegroundColor" systemColor="labelColor"/>
                                     </buttonConfiguration>
@@ -83,6 +83,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="TOV-wa-OFQ"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-t6-iXa" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="97.5" y="0.0" width="92" height="88"/>
@@ -95,6 +98,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="Ano-LQ-dfc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmr-xf-eed" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="194.5" y="0.0" width="92.5" height="88"/>
@@ -107,6 +113,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="baH-gO-wYc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQ4-s6-Zob" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="292" y="0.0" width="92" height="88"/>
@@ -136,6 +145,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="mON-FI-WQj"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdc-lk-vGk" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="97.5" y="0.0" width="92" height="88"/>
@@ -148,6 +160,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="d9o-ME-lgs"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vm-nu-dvh" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="194.5" y="0.0" width="92.5" height="88"/>
@@ -160,6 +175,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="o3P-8b-hk9"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbl-ME-QIi" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="292" y="0.0" width="92" height="88"/>
@@ -189,6 +207,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="nPS-sw-G8i"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQu-pW-vrn" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="97.5" y="0.0" width="92" height="88"/>
@@ -201,6 +222,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="7h6-ig-Jsl"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hta-Eq-yrD" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="194.5" y="0.0" width="92.5" height="88"/>
@@ -213,6 +237,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="m6b-Pz-ALy"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CA-S1-tpg" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="292" y="0.0" width="92" height="88"/>
@@ -345,7 +372,7 @@
             <size key="intrinsicContentSize" width="38.5" height="51"/>
         </designable>
         <designable name="tLB-RG-jgc">
-            <size key="intrinsicContentSize" width="45" height="51"/>
+            <size key="intrinsicContentSize" width="52" height="51"/>
         </designable>
         <designable name="uaD-JQ-60L">
             <size key="intrinsicContentSize" width="52" height="40.5"/>

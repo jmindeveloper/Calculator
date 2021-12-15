@@ -21,7 +21,6 @@
 		0E97BC0F2765C3A8003F85BE /* UnitPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */; };
 		0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED57E1727677319002BB491 /* extUIViewController.swift */; };
 		0ED7CAED2768BAF1007A0341 /* CalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */; };
-		0EE223B8276A0D3400C45B03 /* asdf.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE223B7276A0D3400C45B03 /* asdf.xib */; };
 		0EEE7DA92765F06F00F7D197 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE7DA82765F06F00F7D197 /* CustomUIButton.swift */; };
 		87FC57A262234358BD4D93F5 /* Pods_Calculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CFB0E476A19E18C30C33A0 /* Pods_Calculator.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +42,6 @@
 		0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPriceViewController.swift; sourceTree = "<group>"; };
 		0ED57E1727677319002BB491 /* extUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUIViewController.swift; sourceTree = "<group>"; };
 		0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorCustomKeyboard.xib; sourceTree = "<group>"; };
-		0EE223B7276A0D3400C45B03 /* asdf.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = asdf.xib; sourceTree = "<group>"; };
 		0EEE7DA82765F06F00F7D197 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
 		5ACF70374E3540A35796F498 /* Pods-Calculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calculator.release.xcconfig"; path = "Target Support Files/Pods-Calculator/Pods-Calculator.release.xcconfig"; sourceTree = "<group>"; };
 		A1CFB0E476A19E18C30C33A0 /* Pods_Calculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +100,6 @@
 			children = (
 				0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */,
 				0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */,
-				0EE223B7276A0D3400C45B03 /* asdf.xib */,
 			);
 			path = "Calculator Keyboard";
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EE223B8276A0D3400C45B03 /* asdf.xib in Resources */,
 				0E19457F2765B081009DF559 /* LaunchScreen.storyboard in Resources */,
 				0E19457C2765B081009DF559 /* Assets.xcassets in Resources */,
 				0E1945772765B080009DF559 /* Main.storyboard in Resources */,

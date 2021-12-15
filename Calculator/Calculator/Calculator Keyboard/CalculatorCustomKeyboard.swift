@@ -7,13 +7,13 @@
 
 import UIKit
 
+protocol CalculatorKeyboardDelegate {
+    func outPutData(_ str: String)
+}
+
 class CalculatorCustomKeyboard: UIView {
     
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        setUpDynamicLayout()
-//
-//    }
+    var delegate: CalculatorKeyboardDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,6 +42,12 @@ class CalculatorCustomKeyboard: UIView {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 340)
             print("iphone se2")
         }
+    }
+    
+    // 숫자키
+    @IBAction func numPad(_ sender: UIButton) {
+        let num = sender.titleLabel?.text
+        delegate?.outPutData(num!)
         
     }
     

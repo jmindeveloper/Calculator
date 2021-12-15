@@ -58,14 +58,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
-                                                    <rect key="frame" x="16" y="11" width="303" height="21"/>
+                                                    <rect key="frame" x="16" y="10.999999999999998" width="303" height="21.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -192,7 +192,7 @@
                                     <constraint firstAttribute="trailing" secondItem="n96-tV-kwQ" secondAttribute="trailing" constant="15" id="CUB-Ug-NyD"/>
                                     <constraint firstAttribute="trailing" secondItem="VdY-XZ-2kB" secondAttribute="trailing" constant="15" id="N6h-hm-G0b"/>
                                     <constraint firstItem="cXT-PX-4xp" firstAttribute="top" secondItem="n96-tV-kwQ" secondAttribute="bottom" constant="15.333333333333314" id="XGt-xf-quA"/>
-                                    <constraint firstAttribute="height" priority="750" constant="250" id="cjI-Zm-LFk"/>
+                                    <constraint firstAttribute="height" constant="250" id="cjI-Zm-LFk"/>
                                     <constraint firstItem="VdY-XZ-2kB" firstAttribute="top" secondItem="1rP-12-ucS" secondAttribute="top" constant="8" id="eze-Nh-yUK"/>
                                     <constraint firstAttribute="bottom" secondItem="cXT-PX-4xp" secondAttribute="bottom" constant="5" id="k6x-G2-S2f"/>
                                     <constraint firstItem="xK9-h8-BcK" firstAttribute="bottom" secondItem="cXT-PX-4xp" secondAttribute="bottom" id="ocy-b0-lj5"/>

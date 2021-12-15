@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
     
     @IBOutlet weak var calculationFormula: UITextView!
     
@@ -29,6 +29,12 @@ class CalculatorViewController: UIViewController {
         guard let calculatorKeyboard = calculatorCustomKeyboard?.first as? CalculatorCustomKeyboard else { return }
         // inputView = calculatorKeyboard
         calculationFormula.inputView = calculatorKeyboard
+        // calculationFormula(UITextView) firstResponder처리해줘 뷰 실행시 키보드 같이 뜸
+        // firstResponder 해제 구현을 안해 키보드가 안내려옴
+        // 키보드를 하나의 뷰처럼 보이게
+        calculationFormula.becomeFirstResponder()
+        
+        calculatorKeyboard.delegate = self
     }
     
     func setNavigationBar() {
@@ -42,6 +48,10 @@ class CalculatorViewController: UIViewController {
     @objc func showSideMenu() {
         guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") else { return }
         self.present(sideMenuVC, animated: true, completion: nil)
+    }
+    
+    func outPutData(_ str: String) {
+        calculationFormula.text += str
     }
 
 //    @IBAction func tapNumBtn(_ sender: UIButton) {
