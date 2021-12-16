@@ -11,14 +11,12 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
     
     @IBOutlet weak var calculationFormula: UITextView!
     
-    var formula = "0"
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
         
-        customKeyPad()
-        calculationFormula.becomeFirstResponder()
+        self.customKeyPad()
+        self.calculationFormula.becomeFirstResponder()
         
     }
     
@@ -51,37 +49,82 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
     }
     
     func outPutData(_ str: String) {
-        calculationFormula.text += str
+        inputNum(str)
     }
-
-//    @IBAction func tapNumBtn(_ sender: UIButton) {
-//        print(sender.titleLabel!.text!)
-//        
-//        let num = sender.titleLabel!.text!
-//        
-//        // formula가 0일때 (초기에 CalculationFormula == 0)
-//        if formula == "0" {
-//            // 버튼클릭시 formula "" 로 초기화
-//            formula = ""
-//            // "00" 이 들어왔을때
-//            if num == "00" {
-//                // formula = 0, return (CalculationFormula이 0으로만 이루어지는 경우 없음)
-//                formula = "0"
-//                return
-//            }
-//        }
-//        
-//        formula += num
-//        calculationFormula.text = formula
-//    }
+    
+    func inputNum(_ str: String) {
+        // 초기상태 calculationFormula == "0" 일때
+        if self.calculationFormula.text == "0" {
+            // 버튼 클릭시 calculationFormula "" 로 초기화
+            self.calculationFormula.text = ""
+            // "00"이 들어왔을때
+            if str == "00" {
+                self.calculationFormula.text = "0"
+                return
+            }
+        }
+        
+        self.calculationFormula.text += str
+    }
+    
+    // textView 커서 위치를 기준으로 앞쪽 뒷쪽 쪼개기
+    func positionOfCusor() -> (String, String, Int) {
+        let formulaString = self.calculationFormula.text!
+        // 커서위치 구하기
+        let textRange = self.calculationFormula.selectedTextRange!
+        // 구한 커서위치 가 몇번째 문자인지 구하기
+        let offset = self.calculationFormula.offset(from: self.calculationFormula.beginningOfDocument, to: textRange.start) - 1
+        print("offset --> \(offset)")
+        
+        // 커서가 문자 맨 앞에 위치할 경우
+        if offset == -1 {
+            return ("no result", "no result", offset)
+        }
+        
+        // 커서 앞 문자
+        let frontCusor = formulaString.index(formulaString.startIndex, offsetBy: offset)
+        let frontCusorString = String(formulaString[...frontCusor])
+        // 커서 뒷 문자
+        let backCusor = formulaString.index(formulaString.startIndex, offsetBy: offset + 1)
+        let backCusorString = String(formulaString[backCusor...])
+        print("frontCusorString --> \(frontCusorString)")
+        print("backCusorString --> \(backCusorString)")
+        return (frontCusorString, backCusorString, offset)
+    }
     
     @IBAction func tapDeleteBtn(_ sender: Any) {
         
-        formula.removeLast()
-        if formula == "" {
-            formula = "0"
+        var frontCusorString = positionOfCusor().0
+        let backCusorString = positionOfCusor().1
+        let offset = positionOfCusor().2
+        
+        // 커서가 문자 맨 앞에 위치할때 return
+        if offset == -1 {
+            return
         }
-        calculationFormula.text = formula
+        
+        // 커서 앞이 비어있지 않을때 커서 앞 문자열의 맨 뒷자리 지우기
+        if frontCusorString != "" {
+            frontCusorString.removeLast()
+        }
+        
+        // 지운 커서 앞 문자열과 커서 뒷 문자열 합쳐서 textview.text에 적용
+        self.calculationFormula.text = frontCusorString + backCusorString
+        // 왠진 모르겠는데 맨 앞에 " "가 하나 생김
+        // 그거 삭제
+        self.calculationFormula.text.removeAll() { $0 == " " }
+        
+        // 만약 textview가 비었을경우 "0"으로 초기화
+        if self.calculationFormula.text == "" {
+            self.calculationFormula.text = "0"
+        }
+        
+        // textview position 구하기 (offset 위치)
+        let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offset)!
+        // 구한 Position으로 커서 이동
+        self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
+        
+        
     }
     
 }
