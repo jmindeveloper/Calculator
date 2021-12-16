@@ -64,7 +64,27 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
             }
         }
         
-        self.calculationFormula.text += str
+        var frontCusorString = positionOfCusor().0
+        let backCusorString = positionOfCusor().1
+        let offset = positionOfCusor().2
+        
+        if offset == -1 {
+            self.calculationFormula.text += str
+            return
+        }
+        
+        frontCusorString += str
+        
+        self.calculationFormula.text = frontCusorString + backCusorString
+        
+        if backCusorString != "" {
+            // textview position 구하기 (offset 위치)
+            let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offset + 2)!
+            // 구한 Position으로 커서 이동
+            self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
+        }
+
+        
     }
     
     // textView 커서 위치를 기준으로 앞쪽 뒷쪽 쪼개기

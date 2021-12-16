@@ -269,6 +269,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="9ft-jY-TKX"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbJ-Yb-5Ub" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="97.5" y="0.0" width="92" height="88"/>
@@ -281,6 +284,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="9vr-S1-QNa"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMF-53-E6J" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="194.5" y="0.0" width="92.5" height="88"/>

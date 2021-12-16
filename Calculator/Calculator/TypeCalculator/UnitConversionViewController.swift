@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UnitConversionViewController: UIViewController, UITextViewDelegate {
+class UnitConversionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
