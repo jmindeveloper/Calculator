@@ -66,6 +66,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="operatorKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="NZf-be-F2g"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -128,6 +131,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="operatorKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="YE5-AT-Gse"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -190,6 +196,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="operatorKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="x2o-iq-AMM"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -252,6 +261,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="operatorKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="v1c-qg-b0m"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -299,6 +311,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="dotKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="s5z-pc-Tpz"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oY-TW-DFE" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="292" y="0.0" width="92" height="88"/>

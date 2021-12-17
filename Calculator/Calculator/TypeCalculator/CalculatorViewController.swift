@@ -7,9 +7,10 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
+class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var calculationFormula: UITextView!
+    var formula = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +19,10 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
         self.customKeyPad()
         self.calculationFormula.becomeFirstResponder()
         
-        let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: 1)!
-        self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
-        
+        moveCusor(1)
     }
     
+    // MARK: customKeyPad
     func customKeyPad() {
         // nib 불러오기
         let calculatorCustomKeyboard = Bundle.main.loadNibNamed("CalculatorCustomKeyboard", owner: nil, options: nil)
@@ -35,7 +35,9 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
         // 키보드를 하나의 뷰처럼 보이게
         calculationFormula.becomeFirstResponder()
         
-        calculatorKeyboard.delegate = self
+        calculatorKeyboard.numPadDelegate = self
+        calculatorKeyboard.dotKeyDelegate = self
+        calculatorKeyboard.operatorKeyDelegate = self
     }
     
     func setNavigationBar() {
@@ -51,7 +53,75 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
         self.present(sideMenuVC, animated: true, completion: nil)
     }
     
-    func outPutData(_ str: String) {
+    // MARK: textView 커서 위치를 기준으로 앞쪽 뒷쪽 쪼개기
+    func positionOfCusor() -> (String, String, Int) {
+        let formulaString = self.calculationFormula.text!
+        // 커서위치 구하기
+        let textRange = self.calculationFormula.selectedTextRange!
+        // 구한 커서위치 가 몇번째 문자인지 구하기
+        let offset = self.calculationFormula.offset(from: self.calculationFormula.beginningOfDocument, to: textRange.start) - 1
+        print("offset --> \(offset)")
+        
+        // 커서가 문자 맨 앞에 위치할 경우
+        if offset == -1 {
+            return ("no result", "no result", offset)
+        }
+    
+        // 커서 앞 문자
+        let frontCusor = formulaString.index(formulaString.startIndex, offsetBy: offset)
+        let frontCusorString = String(formulaString[...frontCusor])
+        // 커서 뒷 문자
+        let backCusor = formulaString.index(formulaString.startIndex, offsetBy: offset + 1)
+        let backCusorString = String(formulaString[backCusor...])
+        print("frontCusorString --> \(frontCusorString)")
+        print("backCusorString --> \(backCusorString)")
+        return (frontCusorString, backCusorString, offset)
+    }
+    
+    // MARK: 커서이동
+    func moveCusor(_ offset: Int) {
+        // textview position 구하기 (offset 위치)
+        let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offset)!
+        // 구한 Position으로 커서 이동
+        self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
+    }
+    
+    // MARK: 지우기버튼
+    @IBAction func tapDeleteBtn(_ sender: Any) {
+        
+        var frontCusorString = positionOfCusor().0
+        let backCusorString = positionOfCusor().1
+        let offset = positionOfCusor().2
+        
+        // 커서가 문자 맨 앞에 위치할때 return
+        if offset == -1 {
+            return
+        }
+        
+        // 커서 앞이 비어있지 않을때 커서 앞 문자열의 맨 뒷자리 지우기
+        if frontCusorString != "" {
+            frontCusorString.removeLast()
+        }
+        
+        // 지운 커서 앞 문자열과 커서 뒷 문자열 합쳐서 textview.text에 적용
+        self.calculationFormula.text = frontCusorString + backCusorString
+        // 왠진 모르겠는데 맨 앞에 " "가 하나 생김
+        // 그거 삭제
+        self.calculationFormula.text.removeAll() { $0 == " " }
+        
+        // 만약 textview가 비었을경우 "0"으로 초기화
+        if self.calculationFormula.text == "" {
+            self.calculationFormula.text = "0"
+        }
+        moveCusor(offset)
+    }
+    
+}
+
+// MARK: 숫자키 눌렀을때
+extension CalculatorViewController: NumPadDelegate {
+    
+    func numData(_ str: String) {
         inputNum(str)
     }
     
@@ -80,8 +150,7 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
             
             self.calculationFormula.text = str + self.calculationFormula.text
             
-            let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: 1)!
-            self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
+            moveCusor(1)
             return
         }
         
@@ -93,73 +162,63 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
             // 중간에 두글자 입력일경우 커서가 한칸 더 밀려야함
             let offSet: Int = str == "00" ? offset + 3: offset + 2
             
-            // textview position 구하기 (offset 위치)
-            let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offSet)!
-            // 구한 Position으로 커서 이동
-            self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
+            moveCusor(offSet)
         }
+    }
+}
 
-        
-    }
+// MARK: dot키 눌렀을때
+extension CalculatorViewController: DotKeyDelegate {
     
-    // textView 커서 위치를 기준으로 앞쪽 뒷쪽 쪼개기
-    func positionOfCusor() -> (String, String, Int) {
-        let formulaString = self.calculationFormula.text!
-        // 커서위치 구하기
-        let textRange = self.calculationFormula.selectedTextRange!
-        // 구한 커서위치 가 몇번째 문자인지 구하기
-        let offset = self.calculationFormula.offset(from: self.calculationFormula.beginningOfDocument, to: textRange.start) - 1
-        print("offset --> \(offset)")
-        
-        // 커서가 문자 맨 앞에 위치할 경우
-        if offset == -1 {
-            return ("no result", "no result", offset)
+    func dotData(_ dot: String) {
+        if self.calculationFormula.text == "0" {
+            self.calculationFormula.text = "0."
         }
-        
-        // 커서 앞 문자
-        let frontCusor = formulaString.index(formulaString.startIndex, offsetBy: offset)
-        let frontCusorString = String(formulaString[...frontCusor])
-        // 커서 뒷 문자
-        let backCusor = formulaString.index(formulaString.startIndex, offsetBy: offset + 1)
-        let backCusorString = String(formulaString[backCusor...])
-        print("frontCusorString --> \(frontCusorString)")
-        print("backCusorString --> \(backCusorString)")
-        return (frontCusorString, backCusorString, offset)
-    }
-    
-    @IBAction func tapDeleteBtn(_ sender: Any) {
-        
-        var frontCusorString = positionOfCusor().0
-        let backCusorString = positionOfCusor().1
-        let offset = positionOfCusor().2
-        
-        // 커서가 문자 맨 앞에 위치할때 return
-        if offset == -1 {
+        if self.calculationFormula.text.contains(".") {
             return
         }
         
-        // 커서 앞이 비어있지 않을때 커서 앞 문자열의 맨 뒷자리 지우기
-        if frontCusorString != "" {
-            frontCusorString.removeLast()
+        var frontCusorString = self.positionOfCusor().0
+        let backCusorString = self.positionOfCusor().1
+        let offset = self.positionOfCusor().2
+        
+        if offset == -1 {
+            self.calculationFormula.text = "0." + self.calculationFormula.text
+            moveCusor(2)
         }
-        
-        // 지운 커서 앞 문자열과 커서 뒷 문자열 합쳐서 textview.text에 적용
-        self.calculationFormula.text = frontCusorString + backCusorString
-        // 왠진 모르겠는데 맨 앞에 " "가 하나 생김
-        // 그거 삭제
-        self.calculationFormula.text.removeAll() { $0 == " " }
-        
-        // 만약 textview가 비었을경우 "0"으로 초기화
-        if self.calculationFormula.text == "" {
-            self.calculationFormula.text = "0"
-        }
-        
-        // textview position 구하기 (offset 위치)
-        let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offset)!
-        // 구한 Position으로 커서 이동
-        self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
-        
-        
+        // MARK: 연산자 키패드 누르기 후 다시 구현
     }
+}
+
+extension CalculatorViewController: OperatorKeyDelegate {
     
+    func operatorData(_ operatorKey: String) {
+        
+        let isOperator = { (s: String) -> Bool in
+            if s == "×" || s == "−" || s == "+" || s == "÷" {
+                return true
+            } else {
+                 return false
+            }
+        }
+        
+        if self.calculationFormula.text == "0" && operatorKey == "−" {
+            self.calculationFormula.text = "−"
+            return
+        }
+        
+        var frontCusorString = self.positionOfCusor().0
+        let backCusorString = self.positionOfCusor().1
+        let offset = self.positionOfCusor().2
+        let frontCusorStringLast = String(frontCusorString.last ?? Character("a"))
+        let backCusorStringFirst = String(backCusorString.first ?? Character("a"))
+        
+        if isOperator(frontCusorStringLast) || isOperator(backCusorStringFirst) {
+            return
+        } else {
+            frontCusorString += operatorKey
+            self.calculationFormula.text = frontCusorString + backCusorString
+            moveCusor(offset + 2)
+        }
+    }
 }

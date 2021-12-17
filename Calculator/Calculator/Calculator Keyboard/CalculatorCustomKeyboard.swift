@@ -7,13 +7,23 @@
 
 import UIKit
 
-protocol CalculatorKeyboardDelegate {
-    func outPutData(_ str: String)
+protocol NumPadDelegate {
+    func numData(_ str: String)
+}
+
+protocol DotKeyDelegate {
+    func dotData(_ dot: String)
+}
+
+protocol OperatorKeyDelegate {
+    func operatorData(_ operatorKey: String)
 }
 
 class CalculatorCustomKeyboard: UIView {
     
-    var delegate: CalculatorKeyboardDelegate?
+    var numPadDelegate: NumPadDelegate?
+    var dotKeyDelegate: DotKeyDelegate?
+    var operatorKeyDelegate: OperatorKeyDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,8 +57,34 @@ class CalculatorCustomKeyboard: UIView {
     // 숫자키
     @IBAction func numPad(_ sender: UIButton) {
         let num = sender.titleLabel?.text
-        delegate?.outPutData(num!)
+        numPadDelegate?.numData(num!)
         
+    }
+    
+    // dot키
+    @IBAction func dotKey(_ sender: UIButton) {
+        dotKeyDelegate?.dotData(".")
+    }
+    
+    //연산자키
+    @IBAction func operatorKey(_ sender: UIButton) {
+        let operatorString: String!
+        
+        switch sender.titleLabel!.text {
+        case nil:
+            operatorString = "÷"
+        case "X":
+            operatorString = "×"
+        case "-":
+            operatorString = "−"
+        case "+":
+            operatorString = "+"
+        default:
+            operatorString = sender.titleLabel!.text!
+        }
+        
+        print(operatorString!)
+        operatorKeyDelegate?.operatorData(operatorString!)
     }
     
 }
