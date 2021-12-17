@@ -18,6 +18,9 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
         self.customKeyPad()
         self.calculationFormula.becomeFirstResponder()
         
+        let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: 1)!
+        self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
+        
     }
     
     func customKeyPad() {
@@ -69,7 +72,16 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
         let offset = positionOfCusor().2
         
         if offset == -1 {
-            self.calculationFormula.text += str
+            
+            // 맨 앞에 00이나 0이 올 수 없음
+            if str == "00" || str == "0" {
+                return
+            }
+            
+            self.calculationFormula.text = str + self.calculationFormula.text
+            
+            let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: 1)!
+            self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
             return
         }
         
@@ -78,8 +90,11 @@ class CalculatorViewController: UIViewController, CalculatorKeyboardDelegate {
         self.calculationFormula.text = frontCusorString + backCusorString
         
         if backCusorString != "" {
+            // 중간에 두글자 입력일경우 커서가 한칸 더 밀려야함
+            let offSet: Int = str == "00" ? offset + 3: offset + 2
+            
             // textview position 구하기 (offset 위치)
-            let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offset + 2)!
+            let position: UITextPosition = self.calculationFormula.position(from: self.calculationFormula.beginningOfDocument, offset: offSet)!
             // 구한 Position으로 커서 이동
             self.calculationFormula.selectedTextRange = self.calculationFormula.textRange(from: position, to: position)
         }
