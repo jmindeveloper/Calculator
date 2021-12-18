@@ -156,6 +156,13 @@ extension CalculatorViewController: NumPadDelegate {
             return
         }
         
+        // 앞에 ) 있으면 곱해주기
+        if String(frontCusorString.last!) == ")" {
+            self.calculationFormula.text = frontCusorString + "×" + str + backCusorString
+            moveCusor(offset + 3)
+            return
+        }
+        
         frontCusorString += str
         
         self.calculationFormula.text = frontCusorString + backCusorString
@@ -292,6 +299,11 @@ extension CalculatorViewController: OperatorKeyDelegate {
         let backCusorStringFirst = String(backCusorString.first ?? Character("a"))
         
         if isOperator(frontCusorStringLast) || isOperator(backCusorStringFirst) {
+            if operatorKey == "−" {
+                self.calculationFormula.text = frontCusorString + "(−" + backCusorString
+                moveCusor(offset + 3)
+            }
+            
             return
         } else {
             frontCusorString += operatorKey
@@ -308,11 +320,9 @@ extension CalculatorViewController: ParenthesisDelegate {
         print("tapped parenthesis")
         let frontCusorString = positionOfCusor().0
         var testFrontCusorString = positionOfCusor().0
-        var backCusorString = positionOfCusor().1
-        var offset = positionOfCusor().2
+        let backCusorString = positionOfCusor().1
+        let offset = positionOfCusor().2
         
-        var isLeftParenthesis = false
-        var isRightParenthesis = false
         var leftParenthesisCount = 0
         var rightParenthesisCount = 0
         
@@ -346,6 +356,7 @@ extension CalculatorViewController: ParenthesisDelegate {
         
         if isOperator(String(frontCusorString.last!)) {
             self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+            return
         }
         
         if leftParenthesisCount == 0 || leftParenthesisCount == rightParenthesisCount {
@@ -355,21 +366,20 @@ extension CalculatorViewController: ParenthesisDelegate {
                 return
             }
             self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+            return
         }
         
         if leftParenthesisCount > rightParenthesisCount {
             if !isOperator(String(frontCusorString.last!)) {
                 self.calculationFormula.text = "\(frontCusorString))\(backCusorString)"
+                return
             }
         }
         
         if String(frontCusorString.last!) == "(" {
             self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+            return
         }
         
     }
 }
-
-/*
- 15 + (13 + (
- */
