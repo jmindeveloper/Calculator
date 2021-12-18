@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class CalculatorViewController: UIViewController {
     
@@ -170,26 +171,103 @@ extension CalculatorViewController: NumPadDelegate {
 // MARK: dot키 눌렀을때
 extension CalculatorViewController: DotKeyDelegate {
     
+    /*
+     while문으로 각각 커서 위치에서 앞뒤로 움직이면서 연산자를 만나기 전에 dot이 있으면 return
+     없으면 dot 추가
+     */
+    
     func dotData(_ dot: String) {
+        print("dotData 실행")
+        
+        let isOperator = { (s: String) -> Bool in
+            if s == "×" || s == "−" || s == "+" || s == "÷" {
+                return true
+            } else {
+                 return false
+            }
+        }
+        
+        let isDot = { (s: String) -> Bool in
+            if s == "." {
+                return true
+            } else {
+                return false
+            }
+        }
+        
         if self.calculationFormula.text == "0" {
             self.calculationFormula.text = "0."
-        }
-        if self.calculationFormula.text.contains(".") {
             return
         }
         
-        var frontCusorString = self.positionOfCusor().0
+        let frontCusorString = self.positionOfCusor().0
         let backCusorString = self.positionOfCusor().1
         let offset = self.positionOfCusor().2
         
-        if offset == -1 {
-            self.calculationFormula.text = "0." + self.calculationFormula.text
-            moveCusor(2)
+        var okDot = false
+        
+        var frontString = ""
+        var backString = ""
+        var frontOperator = false
+        var backOperator = false
+        var count = 0
+        var frontLast = false
+        var backLast = false
+        
+        while !(frontOperator && backOperator) {
+            
+            print(count)
+        
+            if count < frontCusorString.count && frontOperator == false {
+                frontString = String(frontCusorString[frontCusorString.index(frontCusorString.endIndex, offsetBy: -1 - count)])
+                print("frontCharacter --> \(frontString)")
+            }
+            
+            if count < backCusorString.count && backOperator == false  {
+                backLast = true
+                backString = String(backCusorString[backCusorString.index(backCusorString.startIndex, offsetBy: count)])
+                print("backCharacter --> \(backString)")
+            }
+            
+            if count > frontCusorString.count && count > backCusorString.count {
+                frontLast = true
+                frontOperator = true
+                backOperator = true
+                break
+            }
+            
+            if isDot(frontString) || isDot(backString) {
+                okDot = true
+            }
+            
+            if isOperator(frontString) {
+                frontOperator = true
+                print(frontOperator)
+            }
+            
+            if isOperator(backString) {
+                backOperator = true
+                print(backOperator)
+            }
+            
+            count += 1
         }
-        // MARK: 연산자 키패드 누르기 후 다시 구현
+        print("Asd")
+        if okDot {
+            return
+        }
+        
+        if frontOperator || backOperator || (frontOperator && backLast) || (backOperator && frontLast) {
+            self.calculationFormula.text = "\(frontCusorString).\(backCusorString)"
+            
+            moveCusor(offset + 2)
+        }
+        
+        
     }
 }
 
+// MARK: 연산자 키 눌렀을때
 extension CalculatorViewController: OperatorKeyDelegate {
     
     func operatorData(_ operatorKey: String) {
