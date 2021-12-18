@@ -19,11 +19,16 @@ protocol OperatorKeyDelegate {
     func operatorData(_ operatorKey: String)
 }
 
+protocol ParenthesisDelegate {
+    func parenthesis()
+}
+
 class CalculatorCustomKeyboard: UIView {
     
     var numPadDelegate: NumPadDelegate?
     var dotKeyDelegate: DotKeyDelegate?
     var operatorKeyDelegate: OperatorKeyDelegate?
+    var parenthesisDelegate: ParenthesisDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -87,6 +92,9 @@ class CalculatorCustomKeyboard: UIView {
         operatorKeyDelegate?.operatorData(operatorString!)
     }
     
+    @IBAction func parenthesisKey(_ sender: UIButton) {
+        parenthesisDelegate?.parenthesis()
+    }
 }
 
 

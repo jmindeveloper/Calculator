@@ -39,6 +39,7 @@ class CalculatorViewController: UIViewController {
         calculatorKeyboard.numPadDelegate = self
         calculatorKeyboard.dotKeyDelegate = self
         calculatorKeyboard.operatorKeyDelegate = self
+        calculatorKeyboard.parenthesisDelegate = self
     }
     
     func setNavigationBar() {
@@ -171,11 +172,6 @@ extension CalculatorViewController: NumPadDelegate {
 // MARK: dot키 눌렀을때
 extension CalculatorViewController: DotKeyDelegate {
     
-    /*
-     while문으로 각각 커서 위치에서 앞뒤로 움직이면서 연산자를 만나기 전에 dot이 있으면 return
-     없으면 dot 추가
-     */
-    
     func dotData(_ dot: String) {
         print("dotData 실행")
         
@@ -216,7 +212,11 @@ extension CalculatorViewController: DotKeyDelegate {
         
         while !(frontOperator && backOperator) {
             
-            print(count)
+            /*
+             frontCusorString및 backCusorString에서 한글자씩 비교
+             dot이 이미 있으면 dot추가 안하고 return
+             dot이 없이 연산자나 각 문자열의 끝을 만나면 dot 추가
+             */
         
             if count < frontCusorString.count && frontOperator == false {
                 frontString = String(frontCusorString[frontCusorString.index(frontCusorString.endIndex, offsetBy: -1 - count)])
@@ -252,7 +252,7 @@ extension CalculatorViewController: DotKeyDelegate {
             
             count += 1
         }
-        print("Asd")
+        
         if okDot {
             return
         }
@@ -280,8 +280,8 @@ extension CalculatorViewController: OperatorKeyDelegate {
             }
         }
         
-        if self.calculationFormula.text == "0" && operatorKey == "−" {
-            self.calculationFormula.text = "−"
+        if self.calculationFormula.text == "0" && !(operatorKey == "-") {
+            self.calculationFormula.text = "0\(operatorKey)"
             return
         }
         
@@ -300,3 +300,76 @@ extension CalculatorViewController: OperatorKeyDelegate {
         }
     }
 }
+
+// MARK: 괄호키 눌렀을때
+extension CalculatorViewController: ParenthesisDelegate {
+    
+    func parenthesis() {
+        print("tapped parenthesis")
+        let frontCusorString = positionOfCusor().0
+        var testFrontCusorString = positionOfCusor().0
+        var backCusorString = positionOfCusor().1
+        var offset = positionOfCusor().2
+        
+        var isLeftParenthesis = false
+        var isRightParenthesis = false
+        var leftParenthesisCount = 0
+        var rightParenthesisCount = 0
+        
+        for _ in 0..<testFrontCusorString.count {
+            if let stringElement = testFrontCusorString.popLast() {
+                if String(stringElement) == "(" {
+                    leftParenthesisCount += 1
+                } else if String(stringElement) == ")" {
+                    rightParenthesisCount += 1
+                }
+            }
+        }
+        
+        let isOperator = { (s: String) -> Bool in
+            if s == "×" || s == "−" || s == "+" || s == "÷" {
+                return true
+            } else {
+                 return false
+            }
+        }
+        
+        if self.calculationFormula.text == "0" {
+            self.calculationFormula.text = "("
+            return
+        }
+    
+        if offset == -1 {
+            self.calculationFormula.text = "(" + self.calculationFormula.text
+            return
+        }
+        
+        if isOperator(String(frontCusorString.last!)) {
+            self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+        }
+        
+        if leftParenthesisCount == 0 || leftParenthesisCount == rightParenthesisCount {
+            if !isOperator(String(frontCusorString.last!)) {
+                print("asdf")
+                self.calculationFormula.text = "\(frontCusorString)×(\(backCusorString)"
+                return
+            }
+            self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+        }
+        
+        if leftParenthesisCount > rightParenthesisCount {
+            if !isOperator(String(frontCusorString.last!)) {
+                self.calculationFormula.text = "\(frontCusorString))\(backCusorString)"
+            }
+        }
+        
+        if String(frontCusorString.last!) == "(" {
+            self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+        }
+        
+    }
+}
+
+/*
+ 15 + (13 + (
+ */

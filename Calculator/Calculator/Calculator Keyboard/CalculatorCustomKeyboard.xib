@@ -42,6 +42,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="parenthesisKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="HAa-jN-fNx"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyK-Ic-3he" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="194.5" y="0.0" width="92.5" height="88"/>
