@@ -57,6 +57,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="operatorKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="vUh-DV-CBB"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaD-JQ-60L" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="292" y="0.0" width="92" height="88"/>
@@ -329,6 +332,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="equalKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="UzF-1w-bNs"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

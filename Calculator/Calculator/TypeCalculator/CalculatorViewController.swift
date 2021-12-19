@@ -11,7 +11,6 @@ import SideMenu
 class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var calculationFormula: UITextView!
-    var formula = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +35,12 @@ class CalculatorViewController: UIViewController {
         // 키보드를 하나의 뷰처럼 보이게
         calculationFormula.becomeFirstResponder()
         
+        // MARK: calculator Delegate
         calculatorKeyboard.numPadDelegate = self
         calculatorKeyboard.dotKeyDelegate = self
         calculatorKeyboard.operatorKeyDelegate = self
         calculatorKeyboard.parenthesisDelegate = self
+        calculatorKeyboard.equalDelegate = self
     }
     
     func setNavigationBar() {
@@ -183,7 +184,7 @@ extension CalculatorViewController: DotKeyDelegate {
         print("dotData 실행")
         
         let isOperator = { (s: String) -> Bool in
-            if s == "×" || s == "−" || s == "+" || s == "÷" {
+            if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
             } else {
                  return false
@@ -280,7 +281,7 @@ extension CalculatorViewController: OperatorKeyDelegate {
     func operatorData(_ operatorKey: String) {
         
         let isOperator = { (s: String) -> Bool in
-            if s == "×" || s == "−" || s == "+" || s == "÷" {
+            if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
             } else {
                  return false
@@ -288,7 +289,8 @@ extension CalculatorViewController: OperatorKeyDelegate {
         }
         
         if self.calculationFormula.text == "0" && !(operatorKey == "-") {
-            self.calculationFormula.text = "0\(operatorKey)"
+            self.calculationFormula.text = "\(operatorKey)"
+            moveCusor(1)
             return
         }
         
@@ -306,9 +308,18 @@ extension CalculatorViewController: OperatorKeyDelegate {
             
             return
         } else {
-            frontCusorString += operatorKey
-            self.calculationFormula.text = frontCusorString + backCusorString
-            moveCusor(offset + 2)
+            if frontCusorString == "" {
+                if operatorKey == "-" {
+                    self.calculationFormula.text = "-" + backCusorString
+                    return
+                } else {
+                    return
+                }
+            } else {
+                frontCusorString += operatorKey
+                self.calculationFormula.text = frontCusorString + backCusorString
+                moveCusor(offset + 2)
+            }
         }
     }
 }
@@ -317,7 +328,6 @@ extension CalculatorViewController: OperatorKeyDelegate {
 extension CalculatorViewController: ParenthesisDelegate {
     
     func parenthesis() {
-        print("tapped parenthesis")
         let frontCusorString = positionOfCusor().0
         var testFrontCusorString = positionOfCusor().0
         let backCusorString = positionOfCusor().1
@@ -326,6 +336,7 @@ extension CalculatorViewController: ParenthesisDelegate {
         var leftParenthesisCount = 0
         var rightParenthesisCount = 0
         
+        // frontCusorString에 ( 와 ) 이 각각 몇개있는지 센다
         for _ in 0..<testFrontCusorString.count {
             if let stringElement = testFrontCusorString.popLast() {
                 if String(stringElement) == "(" {
@@ -337,49 +348,207 @@ extension CalculatorViewController: ParenthesisDelegate {
         }
         
         let isOperator = { (s: String) -> Bool in
-            if s == "×" || s == "−" || s == "+" || s == "÷" {
+            if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
             } else {
                  return false
             }
         }
         
+        // calculationFormula에 0만 있으면 (
         if self.calculationFormula.text == "0" {
             self.calculationFormula.text = "("
+            moveCusor(1)
             return
         }
-    
+        
+        // 커서가 맨 앞이면 (
         if offset == -1 {
             self.calculationFormula.text = "(" + self.calculationFormula.text
+            moveCusor(offset + 2)
             return
         }
         
+        // 연산자 앞이면 (
         if isOperator(String(frontCusorString.last!)) {
             self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+            moveCusor(offset + 2)
             return
         }
         
+        // ( 가 없거나 ( 및 ) 의 개수가 같을때
         if leftParenthesisCount == 0 || leftParenthesisCount == rightParenthesisCount {
+            // frontCusurString의 맨 뒷글자가 숫자라면 x(
             if !isOperator(String(frontCusorString.last!)) {
-                print("asdf")
                 self.calculationFormula.text = "\(frontCusorString)×(\(backCusorString)"
+                moveCusor(offset + 3)
                 return
             }
+            // 아니라면 (
             self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+            moveCusor(offset + 2)
             return
         }
         
+        // ( 가 ) 보다 많을때
         if leftParenthesisCount > rightParenthesisCount {
+            // frontCusorString의 뒷글자가 숫자라면 )
             if !isOperator(String(frontCusorString.last!)) {
                 self.calculationFormula.text = "\(frontCusorString))\(backCusorString)"
+                moveCusor(offset + 2)
                 return
             }
         }
         
+        // frontCusorString의 뒷글자가 ( 라면 (
         if String(frontCusorString.last!) == "(" {
             self.calculationFormula.text = "\(frontCusorString)(\(backCusorString)"
+            moveCusor(offset + 2)
             return
         }
         
     }
 }
+
+// MARK: equal Key
+extension CalculatorViewController: EqualDelegate {
+    
+    func equalKey() {
+        print("equal")
+        
+        let formula = self.calculationFormula.text!
+        let formulaArray = changeArray(formula)
+        
+        print("formulaArray --> \(formulaArray)")
+        
+        let postFix = changePostfix(formulaArray)
+        print("postFix --> \(postFix)")
+        let result = calculation(postFix)
+        print(result)
+    }
+    
+    // string을 숫자와 연산자로 쪼개기
+    func changeArray(_ str: String) -> [String] {
+        
+        var formulaArray = [String]()
+        var number = ""
+        
+        for i in str {
+            // 글자 하나하나 때와서 그 글자가 숫자이거나 . 이면
+            if i.isNumber || String(i) == "." {
+                // number에 추가
+                number.append(contentsOf: String(i))
+            } else {
+                // array에 number랑 연산자 append
+                formulaArray.append(number)
+                formulaArray.append(String(i))
+                number = ""
+            }
+        }
+        formulaArray.append(number)
+        // 혹시 빈 문자열 잇으면 제거
+        formulaArray.removeAll { $0 == "" }
+
+        return formulaArray
+    }
+    
+    // MARK: 후위표기법
+    func changePostfix(_ formula: [String]) -> [String] {
+        print(formula)
+
+        var numStack = [String]()
+        var operatorStack = [String]()
+        
+        for element in formula {
+
+            if element == "(" {
+                operatorStack.append("(")
+            } else if element == ")" {
+                while let opr = operatorStack.popLast() {
+                    guard opr != "(" else { break }
+                    numStack.append(opr)
+                }
+            } else if element == "×" || element == "÷" || element == "^" {
+                guard !operatorStack.isEmpty else { operatorStack.append(element); continue }
+                
+                while let opr = operatorStack.last, (opr == "×" || opr == "÷" || opr == "^") {
+                    numStack.append(operatorStack.popLast()!)
+                }
+                operatorStack.append(element)
+            } else if element == "+" || element == "−" {
+                guard !operatorStack.isEmpty else { operatorStack.append(element); continue }
+                while let opr = operatorStack.popLast() {
+                    guard opr != "("  && opr != "+" && opr != "−" else {
+                        if opr == "(" {
+                            operatorStack.append(opr)
+                            break
+                        } else {
+                            numStack.append(opr)
+                            break
+                        }
+                    }
+                    numStack.append(opr)
+                }
+                
+                operatorStack.append(element)
+            } else {
+                numStack.append(element)
+            }
+        }
+        
+        for _ in 0..<operatorStack.count {
+            numStack.append(operatorStack.removeLast())
+        }
+
+        return numStack
+    }
+    
+    // MARK: 계산
+    func calculation(_ formula: [String]) -> Double {
+        
+        var resultStack = [Double]()
+        print("formula --> \(formula)")
+        
+        for i in formula {
+            print(resultStack)
+            guard let element = Double(i) else {
+                let a: Double = resultStack.removeLast()
+                var b: Double = 0
+                
+                if let c: Double = resultStack.popLast() {
+                    b = c
+                } else {
+                    b = 0
+                }
+                
+                var result: Double = 1
+                
+                switch i {
+                case "+":
+                    result = b + a
+                case "−":
+                    result = b - a
+                case "×":
+                    result = b * a
+                case "÷":
+                    result = b / a
+                case "^":
+                    result = b
+                    for _ in 1..<Int(a) {
+                        result *= b
+                    }
+                default:
+                    break
+                }
+                resultStack.append(result)
+                continue
+            }
+            resultStack.append(element)
+        }
+        
+        return resultStack[0]
+    }
+    
+}
+
+

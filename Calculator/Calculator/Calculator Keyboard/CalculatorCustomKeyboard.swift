@@ -23,12 +23,17 @@ protocol ParenthesisDelegate {
     func parenthesis()
 }
 
+protocol EqualDelegate {
+    func equalKey()
+}
+
 class CalculatorCustomKeyboard: UIView {
     
     var numPadDelegate: NumPadDelegate?
     var dotKeyDelegate: DotKeyDelegate?
     var operatorKeyDelegate: OperatorKeyDelegate?
     var parenthesisDelegate: ParenthesisDelegate?
+    var equalDelegate: EqualDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -94,6 +99,10 @@ class CalculatorCustomKeyboard: UIView {
     
     @IBAction func parenthesisKey(_ sender: UIButton) {
         parenthesisDelegate?.parenthesis()
+    }
+    
+    @IBAction func equalKey(_ sender: UIButton) {
+        equalDelegate?.equalKey()
     }
 }
 
