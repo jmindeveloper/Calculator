@@ -58,14 +58,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="20.666666666666671"/>
+                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -166,14 +166,6 @@
                                             <action selector="tapDeleteBtn:" destination="hJF-uC-YKa" eventType="touchUpInside" id="ozQ-uB-Mmm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xK9-h8-BcK">
-                                        <rect key="frame" x="195.66666666666666" y="207.33333333333331" width="51.333333333333343" height="37.666666666666657"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="percent" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
-                                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                                        </buttonConfiguration>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="0" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="VdY-XZ-2kB">
                                         <rect key="frame" x="10" y="8" width="320" height="146"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -184,7 +176,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstItem="cXT-PX-4xp" firstAttribute="leading" secondItem="xK9-h8-BcK" secondAttribute="trailing" constant="30" id="2Dr-4j-paB"/>
                                     <constraint firstItem="n96-tV-kwQ" firstAttribute="leading" secondItem="1rP-12-ucS" secondAttribute="leading" constant="10" id="551-8K-UEX"/>
                                     <constraint firstItem="VdY-XZ-2kB" firstAttribute="leading" secondItem="1rP-12-ucS" secondAttribute="leading" constant="10" id="5x9-WX-cv5"/>
                                     <constraint firstItem="n96-tV-kwQ" firstAttribute="top" secondItem="VdY-XZ-2kB" secondAttribute="bottom" constant="8" symbolic="YES" id="6TX-wG-z9q"/>
@@ -195,7 +186,6 @@
                                     <constraint firstAttribute="height" constant="250" id="cjI-Zm-LFk"/>
                                     <constraint firstItem="VdY-XZ-2kB" firstAttribute="top" secondItem="1rP-12-ucS" secondAttribute="top" constant="8" id="eze-Nh-yUK"/>
                                     <constraint firstAttribute="bottom" secondItem="cXT-PX-4xp" secondAttribute="bottom" constant="5" id="k6x-G2-S2f"/>
-                                    <constraint firstItem="xK9-h8-BcK" firstAttribute="bottom" secondItem="cXT-PX-4xp" secondAttribute="bottom" id="ocy-b0-lj5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -216,6 +206,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calculationFormula" destination="VdY-XZ-2kB" id="jdu-aG-el9"/>
+                        <outlet property="resultLabel" destination="n96-tV-kwQ" id="d6V-H9-KqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aM-Ws-LkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -283,7 +274,6 @@
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <image name="percent" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

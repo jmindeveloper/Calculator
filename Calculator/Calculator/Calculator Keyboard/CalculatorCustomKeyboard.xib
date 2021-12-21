@@ -30,6 +30,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="clearKey:" destination="Rd5-4W-THQ" eventType="touchUpInside" id="Dtb-GD-oEf"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLB-RG-jgc" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="97.5" y="0.0" width="92" height="88"/>

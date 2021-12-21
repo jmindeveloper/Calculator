@@ -27,6 +27,10 @@ protocol EqualDelegate {
     func equalKey()
 }
 
+protocol ClearDelegata {
+    func clearKey()
+}
+
 class CalculatorCustomKeyboard: UIView {
     
     var numPadDelegate: NumPadDelegate?
@@ -34,6 +38,7 @@ class CalculatorCustomKeyboard: UIView {
     var operatorKeyDelegate: OperatorKeyDelegate?
     var parenthesisDelegate: ParenthesisDelegate?
     var equalDelegate: EqualDelegate?
+    var clearDelegate: ClearDelegata?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -103,6 +108,10 @@ class CalculatorCustomKeyboard: UIView {
     
     @IBAction func equalKey(_ sender: UIButton) {
         equalDelegate?.equalKey()
+    }
+    
+    @IBAction func clearKey(_ sender: Any) {
+        clearDelegate?.clearKey()
     }
 }
 

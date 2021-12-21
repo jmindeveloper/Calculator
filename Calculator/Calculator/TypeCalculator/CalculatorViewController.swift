@@ -11,6 +11,8 @@ import SideMenu
 class CalculatorViewController: UIViewController {
     
     @IBOutlet weak var calculationFormula: UITextView!
+    @IBOutlet weak var resultLabel: UILabel!
+    var isDone = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,7 @@ class CalculatorViewController: UIViewController {
         calculatorKeyboard.operatorKeyDelegate = self
         calculatorKeyboard.parenthesisDelegate = self
         calculatorKeyboard.equalDelegate = self
+        calculatorKeyboard.clearDelegate = self
     }
     
     func setNavigationBar() {
@@ -69,7 +72,7 @@ class CalculatorViewController: UIViewController {
         if offset == -1 {
             return ("no result", "no result", offset)
         }
-    
+        
         // 커서 앞 문자
         let frontCusor = formulaString.index(formulaString.startIndex, offsetBy: offset)
         let frontCusorString = String(formulaString[...frontCusor])
@@ -125,6 +128,13 @@ class CalculatorViewController: UIViewController {
 extension CalculatorViewController: NumPadDelegate {
     
     func numData(_ str: String) {
+        
+        if isDone {
+            self.calculationFormula.text = "0"
+            self.resultLabel.text = "0"
+            isDone = false
+        }
+        
         inputNum(str)
     }
     
@@ -183,11 +193,22 @@ extension CalculatorViewController: DotKeyDelegate {
     func dotData(_ dot: String) {
         print("dotData 실행")
         
+        if isDone {
+            
+            if resultLabel.text?.contains(".") == false {
+                calculationFormula.text = resultLabel.text ?? "0" + "."
+                resultLabel.text = "0"
+                isDone = false
+                return
+            }
+            return
+        }
+        
         let isOperator = { (s: String) -> Bool in
             if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
             } else {
-                 return false
+                return false
             }
         }
         
@@ -225,7 +246,7 @@ extension CalculatorViewController: DotKeyDelegate {
              dot이 이미 있으면 dot추가 안하고 return
              dot이 없이 연산자나 각 문자열의 끝을 만나면 dot 추가
              */
-        
+            
             if count < frontCusorString.count && frontOperator == false {
                 frontString = String(frontCusorString[frontCusorString.index(frontCusorString.endIndex, offsetBy: -1 - count)])
                 print("frontCharacter --> \(frontString)")
@@ -280,6 +301,15 @@ extension CalculatorViewController: OperatorKeyDelegate {
     
     func operatorData(_ operatorKey: String) {
         
+        if isDone {
+            
+            calculationFormula.text = resultLabel.text! + operatorKey
+            resultLabel.text = "0"
+            isDone = false
+            return
+        }
+        
+        
         let isOperator = { (s: String) -> Bool in
             if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
@@ -328,6 +358,15 @@ extension CalculatorViewController: OperatorKeyDelegate {
 extension CalculatorViewController: ParenthesisDelegate {
     
     func parenthesis() {
+        
+        if isDone {
+            calculationFormula.text = resultLabel.text! + "×("
+            resultLabel.text = "0"
+            isDone = false
+            return
+            
+        }
+        
         let frontCusorString = positionOfCusor().0
         var testFrontCusorString = positionOfCusor().0
         let backCusorString = positionOfCusor().1
@@ -425,6 +464,12 @@ extension CalculatorViewController: EqualDelegate {
         print("postFix --> \(postFix)")
         let result = calculation(postFix)
         print(result)
+        
+        if result.truncatingRemainder(dividingBy: 1) == 0 {
+            resultLabel.text = String(Int(result))
+        } else {
+            resultLabel.text = String(result)
+        }
     }
     
     // string을 숫자와 연산자로 쪼개기
@@ -556,10 +601,21 @@ extension CalculatorViewController: EqualDelegate {
         
         for i in formula {
             print(resultStack)
-
+            
             guard let element = Double(i) else {
-                let a: Double = resultStack.removeLast()
-                let b: Double = resultStack.removeLast()
+                guard let a: Double = resultStack.popLast() else {
+                    
+                    let alert = UIAlertController(title: nil, message: "수식이 잘못됐습니다", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                    return 0 }
+                guard let b: Double = resultStack.popLast() else {
+                    let alert = UIAlertController(title: nil, message: "수식이 잘못됐습니다", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                    return 0 }
                 
                 var result: Double = 1
                 
@@ -586,9 +642,17 @@ extension CalculatorViewController: EqualDelegate {
             resultStack.append(element)
         }
         
-        return resultStack[0]
+        let result = resultStack[0]
+        
+        return result
     }
     
 }
 
-
+extension CalculatorViewController: ClearDelegata {
+    func clearKey() {
+        isDone = false
+        calculationFormula.text = "0"
+        resultLabel.text = "0"
+    }
+}
