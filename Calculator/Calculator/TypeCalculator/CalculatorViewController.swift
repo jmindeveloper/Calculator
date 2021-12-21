@@ -284,7 +284,7 @@ extension CalculatorViewController: OperatorKeyDelegate {
             if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
             } else {
-                 return false
+                return false
             }
         }
         
@@ -351,7 +351,7 @@ extension CalculatorViewController: ParenthesisDelegate {
             if s == "×" || s == "−" || s == "+" || s == "÷" || s == "^" {
                 return true
             } else {
-                 return false
+                return false
             }
         }
         
@@ -432,74 +432,119 @@ extension CalculatorViewController: EqualDelegate {
         
         var formulaArray = [String]()
         var number = ""
+        var beforeStr = ""
         
         for i in str {
+            print("beforeStr --> \(beforeStr)")
             // 글자 하나하나 때와서 그 글자가 숫자이거나 . 이면
             if i.isNumber || String(i) == "." {
                 // number에 추가
                 number.append(contentsOf: String(i))
+                beforeStr = String(i)
             } else {
-                // array에 number랑 연산자 append
-                formulaArray.append(number)
-                formulaArray.append(String(i))
-                number = ""
+                if beforeStr == "(" || beforeStr == "" {
+                    // 음수일경우
+                    if i == "−" {
+                        number.append(contentsOf: String("-")); continue
+                    }
+                } else {
+                    // array에 number랑 연산자 append
+                    formulaArray.append(number)
+                    formulaArray.append(String(i))
+                    number = ""
+                    beforeStr = String(i)
+                }
             }
         }
         formulaArray.append(number)
         // 혹시 빈 문자열 잇으면 제거
         formulaArray.removeAll { $0 == "" }
-
+        
         return formulaArray
     }
     
     // MARK: 후위표기법
     func changePostfix(_ formula: [String]) -> [String] {
-        print(formula)
-
+        // 연산자 우선순위 가져오는 함수
+        func getPriority(_ operators: String) -> Int {
+            switch operators {
+            case "×":
+                return 3
+            case "−":
+                return 2
+            case "+":
+                return 2
+            case "÷":
+                return 3
+            case "^":
+                return 4
+            case "(":
+                return 1
+            case ")":
+                return -1
+            default:
+                return 0
+            }
+        }
+        
         var numStack = [String]()
         var operatorStack = [String]()
         
         for element in formula {
-
+            print("--------")
+            print("element --> \(element)")
+            print("numStack --> \(numStack)")
+            print("operatorStack --> \(operatorStack)")
+            
+            // 연산자 우선순위
+            let elementPriority = getPriority(element)
+            
+            // 연산자 우선순위가 0일때, 즉 숫자일때 numStack에 푸시
+            if elementPriority == 0 {
+                numStack.append(element); continue
+            }
+            
+            // ( 일때는 연산자 순위 상관없이 operatorStack에 푸시
             if element == "(" {
-                operatorStack.append("(")
+                operatorStack.append(element)
+                // ) 일때는 operatorStack의 최상단 데이터가 (가 될때까지 pop 해서 numStack에 push
             } else if element == ")" {
                 while let opr = operatorStack.popLast() {
                     guard opr != "(" else { break }
                     numStack.append(opr)
                 }
-            } else if element == "×" || element == "÷" || element == "^" {
-                guard !operatorStack.isEmpty else { operatorStack.append(element); continue }
-                
-                while let opr = operatorStack.last, (opr == "×" || opr == "÷" || opr == "^") {
-                    numStack.append(operatorStack.popLast()!)
-                }
-                operatorStack.append(element)
-            } else if element == "+" || element == "−" {
-                guard !operatorStack.isEmpty else { operatorStack.append(element); continue }
-                while let opr = operatorStack.popLast() {
-                    guard opr != "("  && opr != "+" && opr != "−" else {
-                        if opr == "(" {
-                            operatorStack.append(opr)
-                            break
-                        } else {
-                            numStack.append(opr)
-                            break
-                        }
-                    }
-                    numStack.append(opr)
-                }
-                
-                operatorStack.append(element)
             } else {
-                numStack.append(element)
+                // element가 연산자일때 operatorStack이 비었으면 operatorStack에 push
+                guard !operatorStack.isEmpty else { operatorStack.append(element); continue}
+                
+                // operatorStack이 비어있지 않으면 반복
+                // opr에 operatorStack pop 해서 집어넘
+                while let opr = operatorStack.popLast() {
+                    print("elementPriority --> \(elementPriority)")
+                    // opr의 연산자 우선순위 구하기
+                    let operatorPriority = getPriority(opr)
+                    print("operatorPriority --> \(operatorPriority)")
+                    // opr 우선순위가 연산자 우선순위보다 낮아질때까지
+                    // operatorStack에서 pop 후 numStack에 push
+                    // opr 우선순위가 연산자 우선순위보다 낮아지면
+                    // operatorStack에 element push
+                    guard elementPriority > operatorPriority else { numStack.append(opr); continue }
+                    operatorStack.append(opr)
+                    operatorStack.append(element)
+                    break
+                }
+                if operatorStack.isEmpty {
+                    operatorStack.append(element)
+                    continue
+                }
             }
         }
         
+        // operatorStack에 남은 데이터들 차례대로 pop해서 numStack에 push
         for _ in 0..<operatorStack.count {
             numStack.append(operatorStack.removeLast())
         }
-
+        
         return numStack
     }
     
@@ -511,15 +556,10 @@ extension CalculatorViewController: EqualDelegate {
         
         for i in formula {
             print(resultStack)
+
             guard let element = Double(i) else {
                 let a: Double = resultStack.removeLast()
-                var b: Double = 0
-                
-                if let c: Double = resultStack.popLast() {
-                    b = c
-                } else {
-                    b = 0
-                }
+                let b: Double = resultStack.removeLast()
                 
                 var result: Double = 1
                 
