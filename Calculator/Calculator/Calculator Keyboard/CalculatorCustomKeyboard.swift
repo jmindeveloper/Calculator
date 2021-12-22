@@ -43,7 +43,7 @@ class CalculatorCustomKeyboard: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpDynamicLayout()
-    }
+    } 
     
     private func setUpDynamicLayout() {
 //        self.translatesAutoresizingMaskIntoConstraints = false

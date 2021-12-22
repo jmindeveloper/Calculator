@@ -58,14 +58,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="21.666666666666671"/>
+                                                    <rect key="frame" x="16" y="11" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -134,6 +134,54 @@
             </objects>
             <point key="canvasLocation" x="3241" y="686"/>
         </scene>
+        <!--Calculator View Controller-->
+        <scene sceneID="nb0-KH-hrV">
+            <objects>
+                <viewController storyboardIdentifier="BMICalculatorViewController" id="15s-kU-pr7" customClass="BMICalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tgg-Vo-7XE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bmi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6B-Nd-VCQ">
+                                <rect key="frame" x="189" y="214" width="29" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nCr-F8-6QE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AL-lK-w1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4086" y="686"/>
+        </scene>
+        <!--Dutch Calculator View Controller-->
+        <scene sceneID="RQJ-gg-KrV">
+            <objects>
+                <viewController storyboardIdentifier="DutchCalculatorViewController" id="O9P-Id-RQK" customClass="DutchCalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6rf-BD-xTF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="엔빵" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5g-sI-wmt">
+                                <rect key="frame" x="173" y="230" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ct6-IT-QS9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cby-3f-2On" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4926" y="686"/>
+        </scene>
         <!--일반계산기-->
         <scene sceneID="Qtr-1q-Vdv">
             <objects>
@@ -198,7 +246,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="일반계산기" id="RFc-uQ-6Id">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="5xF-Uh-jv0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.3.horizontal" catalog="system" id="5xF-Uh-jv0">
                             <connections>
                                 <segue destination="XQc-5d-3wy" kind="show" id="GX3-jT-s2n"/>
                             </connections>
@@ -269,11 +317,108 @@
             </objects>
             <point key="canvasLocation" x="4086" y="-35"/>
         </scene>
+        <!--Grade Calculator View Controller-->
+        <scene sceneID="n0h-l5-IFr">
+            <objects>
+                <viewController storyboardIdentifier="GradeCalculatorViewController" id="uRa-GS-lFJ" customClass="GradeCalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wSe-Wp-Mk9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZYF-L7-lxP">
+                                <rect key="frame" x="15" y="54" width="345" height="250"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="pdz-gd-WcH"/>
+                                </constraints>
+                                <color key="separatorColor" systemColor="labelColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ZT0-SD-4l6">
+                                    <rect key="frame" x="0.0" y="117.33333206176758" width="345" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-Dy-Ozk">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="44"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBE-oP-86J">
+                                                    <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="44"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="계산하기"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wup-gQ-Gys">
+                                                    <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="44"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="초기화"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="oQd-Dy-Ozk" secondAttribute="bottom" id="8rf-fx-Qym"/>
+                                        <constraint firstItem="oQd-Dy-Ozk" firstAttribute="top" secondItem="ZT0-SD-4l6" secondAttribute="top" id="CJ5-UX-c2d"/>
+                                        <constraint firstAttribute="trailing" secondItem="oQd-Dy-Ozk" secondAttribute="trailing" id="ndX-Ki-Omb"/>
+                                        <constraint firstItem="oQd-Dy-Ozk" firstAttribute="leading" secondItem="ZT0-SD-4l6" secondAttribute="leading" id="ucP-cx-vHS"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GradeCalculatorTableViewCell" rowHeight="50" id="X5p-Ne-vU3" customClass="GradeCalculatorTableViewCell" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="345" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X5p-Ne-vU3" id="suI-HD-lCd">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMW-L9-3Pg">
+                                                    <rect key="frame" x="0.0" y="49" width="345" height="1"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="gij-Ec-4xX"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                            <constraints>
+                                                <constraint firstItem="AMW-L9-3Pg" firstAttribute="leading" secondItem="suI-HD-lCd" secondAttribute="leading" id="TMM-kG-rKW"/>
+                                                <constraint firstAttribute="trailing" secondItem="AMW-L9-3Pg" secondAttribute="trailing" id="aGR-ZA-LdE"/>
+                                                <constraint firstAttribute="bottom" secondItem="AMW-L9-3Pg" secondAttribute="bottom" id="qJW-sl-QR8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uRa-GS-lFJ" id="Arw-px-0jl"/>
+                                    <outlet property="delegate" destination="uRa-GS-lFJ" id="EiA-Gk-JNo"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vo3-lg-ixi">
+                                <rect key="frame" x="139" y="552" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WiU-QL-YDl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WiU-QL-YDl" firstAttribute="trailing" secondItem="ZYF-L7-lxP" secondAttribute="trailing" constant="15" id="bSr-TS-hp0"/>
+                            <constraint firstItem="ZYF-L7-lxP" firstAttribute="leading" secondItem="WiU-QL-YDl" secondAttribute="leading" constant="15" id="gFN-IY-g1o"/>
+                            <constraint firstItem="ZYF-L7-lxP" firstAttribute="top" secondItem="WiU-QL-YDl" secondAttribute="top" constant="10" id="k2c-RH-haK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="Vo3-lg-ixi" id="EuY-1C-l8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1V-WW-lMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4927" y="-35"/>
+        </scene>
     </scenes>
     <resources>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

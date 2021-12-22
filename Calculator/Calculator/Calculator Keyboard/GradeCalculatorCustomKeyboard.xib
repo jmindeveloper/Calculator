@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GradeCalculatorCustomKeyboard" customModule="Calculator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mez-H4-UFz">
+                    <rect key="frame" x="15" y="54" width="384" height="778"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-Ty-rDZ">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="778"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="FWB-2M-7NL">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="188.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbn-nH-8mW" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="1">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHm-6y-FMs" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="102" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="2">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7o2-Z2-DZI" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="204" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="3">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2OU-FB-Qn9">
+                                    <rect key="frame" x="0.0" y="196.5" width="300" height="188.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-1w-PQR" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="4">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSe-gX-uwt" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="102" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="5">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f5-TJ-aop" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="204" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="6">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-Uv-cgs">
+                                    <rect key="frame" x="0.0" y="393" width="300" height="188.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyh-34-oWN" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="7">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lvi-uV-uqp" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="102" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="8">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7B-oq-V3z" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="204" y="0.0" width="96" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="9">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="thy-YG-Mel">
+                                    <rect key="frame" x="0.0" y="589.5" width="300" height="188.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-BX-Uda" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="147" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="0">
+                                                <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwW-oT-AC6" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                            <rect key="frame" x="153" y="0.0" width="147" height="188.5"/>
+                                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title="">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="21"/>
+                                                <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="zwW-oT-AC6" firstAttribute="trailing" secondItem="c7B-oq-V3z" secondAttribute="trailing" id="4fT-yd-TbU"/>
+                                <constraint firstAttribute="trailing" secondItem="FWB-2M-7NL" secondAttribute="trailing" id="4ke-v8-Vvs"/>
+                                <constraint firstAttribute="trailing" secondItem="Vbb-Uv-cgs" secondAttribute="trailing" id="HPc-mo-wok"/>
+                                <constraint firstAttribute="width" constant="300" id="a9h-cP-Mew"/>
+                                <constraint firstAttribute="trailing" secondItem="thy-YG-Mel" secondAttribute="trailing" id="p1Q-Gk-c2k"/>
+                                <constraint firstAttribute="trailing" secondItem="2OU-FB-Qn9" secondAttribute="trailing" id="xxN-6b-qkF"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QFR-nT-gXi">
+                            <rect key="frame" x="308" y="0.0" width="76" height="778"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6Y-HI-IsX" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="76" height="151"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="A">
+                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-Ja-e9k" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="157" width="76" height="150.5"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="B">
+                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSf-Jo-XY6" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="313.5" width="76" height="151"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="C">
+                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMf-rE-k1D" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="470.5" width="76" height="150.5"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="D">
+                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLe-0B-XbP" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="627" width="76" height="151"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="F">
+                                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    </buttonConfiguration>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="tVu-Ty-rDZ" firstAttribute="top" secondItem="mez-H4-UFz" secondAttribute="top" id="YJ1-Ql-npl"/>
+                        <constraint firstAttribute="bottom" secondItem="QFR-nT-gXi" secondAttribute="bottom" id="Zha-BR-OAH"/>
+                        <constraint firstItem="QFR-nT-gXi" firstAttribute="top" secondItem="mez-H4-UFz" secondAttribute="top" id="Zrd-kl-9hq"/>
+                        <constraint firstAttribute="bottom" secondItem="tVu-Ty-rDZ" secondAttribute="bottom" id="vdG-Km-feg"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="mez-H4-UFz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="2xf-Bx-KhM"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mez-H4-UFz" secondAttribute="bottom" constant="30" id="4tS-8p-bV0"/>
+                <constraint firstItem="mez-H4-UFz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="I8w-r5-DfQ"/>
+                <constraint firstAttribute="trailing" secondItem="mez-H4-UFz" secondAttribute="trailing" constant="15" id="uSS-zo-tn1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="139" y="127"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="0f5-TJ-aop">
+            <size key="intrinsicContentSize" width="44" height="51"/>
+        </designable>
+        <designable name="1AG-1w-PQR">
+            <size key="intrinsicContentSize" width="43.5" height="51"/>
+        </designable>
+        <designable name="7o2-Z2-DZI">
+            <size key="intrinsicContentSize" width="43" height="51"/>
+        </designable>
+        <designable name="Lvi-uV-uqp">
+            <size key="intrinsicContentSize" width="43" height="51"/>
+        </designable>
+        <designable name="Nss-BX-Uda">
+            <size key="intrinsicContentSize" width="43.5" height="51"/>
+        </designable>
+        <designable name="RSe-gX-uwt">
+            <size key="intrinsicContentSize" width="43" height="51"/>
+        </designable>
+        <designable name="ZHm-6y-FMs">
+            <size key="intrinsicContentSize" width="42" height="51"/>
+        </designable>
+        <designable name="c7B-oq-V3z">
+            <size key="intrinsicContentSize" width="44" height="51"/>
+        </designable>
+        <designable name="lbn-nH-8mW">
+            <size key="intrinsicContentSize" width="38.5" height="51"/>
+        </designable>
+        <designable name="pyh-34-oWN">
+            <size key="intrinsicContentSize" width="41.5" height="51"/>
+        </designable>
+        <designable name="zwW-oT-AC6">
+            <size key="intrinsicContentSize" width="57" height="39"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="delete.backward" catalog="system" width="128" height="104"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
