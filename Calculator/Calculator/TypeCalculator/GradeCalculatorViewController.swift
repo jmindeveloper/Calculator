@@ -9,6 +9,7 @@ import UIKit
 
 class GradeCalculatorViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     
     var subjectCount = 1
@@ -28,6 +29,9 @@ class GradeCalculatorViewController: UIViewController {
         // 키보드를 하나의 뷰처럼 보이게
 //        calculationFormula.becomeFirstResponder()
         textField.becomeFirstResponder()
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
     }
     
     func setNavigationBar() {

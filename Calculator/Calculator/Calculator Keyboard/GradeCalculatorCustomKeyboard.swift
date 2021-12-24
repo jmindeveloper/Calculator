@@ -11,29 +11,30 @@ class GradeCalculatorCustomKeyboard: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         setUpDynamicLayout()
+        
     }
     
     private func setUpDynamicLayout() {
-//        self.translatesAutoresizingMaskIntoConstraints = true
         let screenHeight = Int(UIScreen.main.bounds.size.height)
         let screenWidth = Int(UIScreen.main.bounds.size.width)
         print("screenHeight --> \(screenHeight)")
         
         if screenHeight >= 926 {
-            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  370)
+            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  570)
             print("iphone 13 proMax")
         } else if screenHeight < 926 && screenHeight >= 844 {
-            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  370)
+            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  570)
             print("iphone 12")
         } else if screenHeight < 844 && screenHeight >= 736 {
-            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  340)
+            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  540)
             print("iphone 8 plus")
         } else if screenHeight < 736 && screenHeight >= 667 {
-            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 340)
+            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 540)
             print("iphone 8")
         } else {
-            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 340)
+            self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 540)
             print("iphone se2")
         }
     }
