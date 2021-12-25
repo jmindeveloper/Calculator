@@ -12,7 +12,8 @@ class GradeCalculatorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
     
-    var subjectCount = 1
+    // cell 개수
+    var subjectCount = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,22 +21,15 @@ class GradeCalculatorViewController: UIViewController {
         setNavigationBar()
         
         let gradeCalculatorCustomKeyboard = Bundle.main.loadNibNamed("GradeCalculatorCustomKeyboard", owner: nil, options: nil)
-        // CalculatorCustomKeyboard로 다운캐스팅
         guard let gradeCalculatorKeyboard = gradeCalculatorCustomKeyboard?.first as? GradeCalculatorCustomKeyboard else { return }
-        // inputView = calculatorKeyboard
         textField.inputView = gradeCalculatorKeyboard
-        // calculationFormula(UITextView) firstResponder처리해줘 뷰 실행시 키보드 같이 뜸
-        // firstResponder 해제 구현을 안해 키보드가 안내려옴
-        // 키보드를 하나의 뷰처럼 보이게
-//        calculationFormula.becomeFirstResponder()
         textField.becomeFirstResponder()
-        
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         
     }
     
+    // MARK: set navigation bar item
     func setNavigationBar() {
-        self.navigationItem.title = "일반계산기"
+        self.navigationItem.title = "학점계산기"
         
         let icon = UIImage(systemName: "line.horizontal.3")
         let leftItem = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(showSideMenu))
@@ -46,17 +40,34 @@ class GradeCalculatorViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
+    // MARK: sideMenu
     @objc func showSideMenu() {
         guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") else { return }
         self.present(sideMenuVC, animated: true, completion: nil)
     }
     
+    // MARK: ootionManu
     @objc func optionManu() {
         
     }
     
+    // MARK: cell 추가
+    @IBAction func addCellBtn(_ sender: Any) {
+        subjectCount += 1
+        tableView.reloadData()
+        let indexPath = IndexPath(row: subjectCount - 1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+        textField.becomeFirstResponder()
+    }
     
+    // MARK: 초기화
+    @IBAction func clearCellBtn(_ sender: Any) {
+    }
     
+    // MARK: 계산하기
+    @IBAction func calculatorBtn(_ sender: Any) {
+        
+    }
 }
 
 extension GradeCalculatorViewController: UITableViewDataSource {
@@ -68,12 +79,33 @@ extension GradeCalculatorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GradeCalculatorTableViewCell", for: indexPath) as? GradeCalculatorTableViewCell else { return UITableViewCell() }
         
+        let gradeCalculatorCustomKeyboard = Bundle.main.loadNibNamed("GradeCalculatorCustomKeyboard", owner: nil, options: nil)
+        let gradeCalculatorKeyboard = gradeCalculatorCustomKeyboard?.first as! GradeCalculatorCustomKeyboard
+        
+        
+        
+        cell.gradeTextField.inputView = gradeCalculatorKeyboard
+        gradeCalculatorKeyboard.gradeClosure = {
+            if cell.gradeTextField.isFirstResponder {
+                cell.gradeTextField.text = $0
+            }
+        }
+        cell.scoreTextField.inputView = gradeCalculatorKeyboard
+        
+        
         return cell
     }
-    
+}
+
+extension GradeCalculatorViewController {
     
 }
 
 class GradeCalculatorTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var gradeTextField: UITextField!
+    @IBOutlet weak var scoreTextField: UITextField!
+    @IBOutlet weak var isMasorBtn: NSLayoutConstraint!
+    
     
 }

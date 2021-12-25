@@ -7,7 +7,14 @@
 
 import UIKit
 
+//protocol GradeBtnDelegate {
+//    func gradeData(_ str: String)
+//}
+
 class GradeCalculatorCustomKeyboard: UIView {
+    
+//    var gradeBtnDelegate: GradeBtnDelegate?
+    var gradeClosure: ((String) -> (Void))?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,5 +45,13 @@ class GradeCalculatorCustomKeyboard: UIView {
             print("iphone se2")
         }
     }
+//
+    @IBAction func gradeBtn(_ sender: UIButton) {
+        let num = sender.titleLabel?.text
+//        gradeBtnDelegate?.gradeData(num!)
+        gradeClosure?(num!)
+        
+    }
+    
     
 }
