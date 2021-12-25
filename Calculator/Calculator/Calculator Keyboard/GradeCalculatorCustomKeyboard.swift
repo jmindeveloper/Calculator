@@ -27,7 +27,7 @@ class GradeCalculatorCustomKeyboard: UIView {
     private func setUpDynamicLayout() {
         let screenHeight = Int(UIScreen.main.bounds.size.height)
         let screenWidth = Int(UIScreen.main.bounds.size.width)
-        print("screenHeight --> \(screenHeight)")
+//        print("screenHeight --> \(screenHeight)")
         
         if screenHeight >= 926 {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  570)

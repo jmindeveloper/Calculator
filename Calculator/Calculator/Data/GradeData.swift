@@ -8,9 +8,9 @@
 import Foundation
 
 struct Grade {
-    var grade: String?
-    var score: String?
-    var isMasor: Bool?
+    var grade: String
+    var score: String
+    var isMasor: Bool
     
     init(grade: String, score: String, isMasor: Bool) {
         self.score = score
