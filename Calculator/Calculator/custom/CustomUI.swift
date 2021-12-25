@@ -1,5 +1,5 @@
 //
-//  CustomUIButton.swift
+//  CustomUI.swift
 //  Calculator
 //
 //  Created by J_Min on 2021/12/12.
@@ -17,5 +17,14 @@ class CustomUIButton: UIButton {
             }
         }
     }
-    
+}
+
+class CustomView: UIView {
+    @IBInspectable var borderWidth: Bool = false {
+        didSet {
+            if borderWidth {
+                self.layer.borderWidth = 0.3
+            }
+        }
+    }
 }

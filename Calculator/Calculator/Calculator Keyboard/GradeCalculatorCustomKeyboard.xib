@@ -228,6 +228,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="uRR-W1-niT"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ai-nY-Fao" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="64.5" y="0.0" width="59" height="87"/>
@@ -240,6 +243,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="OId-fI-zbF"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rug-gm-frE" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="129.5" y="0.0" width="58.5" height="87"/>
@@ -252,6 +258,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="B5W-pT-OqL"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -269,6 +278,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="VNh-gQ-uUu"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6f-qJ-Dsi" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="64.5" y="0.0" width="59" height="87.5"/>
@@ -281,6 +293,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="pLQ-A7-CUd"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARK-Xz-Dnt" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="129.5" y="0.0" width="58.5" height="87.5"/>
@@ -293,6 +308,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="iEk-GO-nC1"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -310,6 +328,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="37u-5n-wH1"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1Z-Rr-uLb" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="64.5" y="0.0" width="59" height="87"/>
@@ -322,6 +343,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="KNY-Lu-k4B"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNU-5k-JAS" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="129.5" y="0.0" width="58.5" height="87"/>
@@ -334,6 +358,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="dk5-5p-i6Y"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -351,6 +378,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="2yk-EE-1mP"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10B-iw-cC6" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="64.5" y="0.0" width="59" height="87.5"/>
@@ -363,6 +393,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="rdu-Ny-gyV"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXE-Rq-0u9" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                             <rect key="frame" x="129.5" y="0.0" width="58.5" height="87.5"/>
@@ -375,6 +408,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="pBM-Tg-nUK"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -392,6 +428,9 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="scoreBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="uRW-iT-Z0f"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </stackView>

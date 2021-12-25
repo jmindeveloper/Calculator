@@ -14,6 +14,13 @@ class GradeCalculatorViewController: UIViewController {
     
     // cell 개수
     var subjectCount = 5
+    var gradeArr: [Grade] = [
+        Grade(grade: "", score: "", isMasor: false),
+        Grade(grade: "", score: "", isMasor: false),
+        Grade(grade: "", score: "", isMasor: false),
+        Grade(grade: "", score: "", isMasor: false),
+        Grade(grade: "", score: "", isMasor: false)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +65,22 @@ class GradeCalculatorViewController: UIViewController {
         let indexPath = IndexPath(row: subjectCount - 1, section: 0)
         tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
         textField.becomeFirstResponder()
+        gradeArr.append(Grade(grade: "", score: "", isMasor: false))
     }
     
     // MARK: 초기화
     @IBAction func clearCellBtn(_ sender: Any) {
+        
+        subjectCount = 5
+        gradeArr = [
+            Grade(grade: "", score: "", isMasor: false),
+            Grade(grade: "", score: "", isMasor: false),
+            Grade(grade: "", score: "", isMasor: false),
+            Grade(grade: "", score: "", isMasor: false),
+            Grade(grade: "", score: "", isMasor: false)
+        ]
+        tableView.reloadData()
+        
     }
     
     // MARK: 계산하기
@@ -82,30 +101,71 @@ extension GradeCalculatorViewController: UITableViewDataSource {
         let gradeCalculatorCustomKeyboard = Bundle.main.loadNibNamed("GradeCalculatorCustomKeyboard", owner: nil, options: nil)
         let gradeCalculatorKeyboard = gradeCalculatorCustomKeyboard?.first as! GradeCalculatorCustomKeyboard
         
-        
+        cell.gradeTextField.text = gradeArr[indexPath.row].grade
+        cell.scoreTextField.text = gradeArr[indexPath.row].score
         
         cell.gradeTextField.inputView = gradeCalculatorKeyboard
-        gradeCalculatorKeyboard.gradeClosure = {
+        gradeCalculatorKeyboard.gradeClosure = { [weak self] in
+            guard let self = self else { return }
             if cell.gradeTextField.isFirstResponder {
                 cell.gradeTextField.text = $0
+                self.gradeArr[indexPath.row].grade = $0
             }
         }
+        
         cell.scoreTextField.inputView = gradeCalculatorKeyboard
+        gradeCalculatorKeyboard.scoreClosure = { [weak self] in
+            guard let self = self else { return }
+            if cell.scoreTextField.isFirstResponder {
+                cell.scoreTextField.text = $0
+                self.gradeArr[indexPath.row].score = $0
+            }
+        }
         
+        let image = UIImage(systemName: "checkmark")?.withRenderingMode(.alwaysTemplate)
+        cell.isMasorBtn.setImage(image, for: .normal)
         
+        cell.isMasorBtn.addTarget(self, action: #selector(tappedIsMasorBtn(_:)), for: .touchUpInside)
+        
+        if gradeArr[indexPath.row].isMasor! {
+            cell.isMasorBtn.tintColor = .systemBlue
+        } else {
+            cell.isMasorBtn.tintColor = .placeholderText
+        }
+        
+        cell.deleteBtn.addTarget(self, action: #selector(tappedDeleteBtn(_:)), for: .touchUpInside)
         return cell
     }
-}
-
-extension GradeCalculatorViewController {
     
+    // MARK: isMasorBtn tapped
+    @objc func tappedIsMasorBtn(_ sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+        
+        gradeArr[indexPath.row].isMasor = !gradeArr[indexPath.row].isMasor!
+        print(gradeArr[indexPath.row].isMasor!)
+        tableView.reloadData()
+        textField.becomeFirstResponder()
+    }
+    
+    // MARK: deleteBtn tapped
+    @objc func tappedDeleteBtn(_ sender: UIButton) {
+        let point = sender.convert(CGPoint.zero, to: tableView)
+        guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+        
+        gradeArr.remove(at: indexPath.row)
+        subjectCount -= 1
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+//        tableView.reloadData()
+        textField.becomeFirstResponder()
+    }
 }
 
 class GradeCalculatorTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gradeTextField: UITextField!
     @IBOutlet weak var scoreTextField: UITextField!
-    @IBOutlet weak var isMasorBtn: NSLayoutConstraint!
-    
+    @IBOutlet weak var isMasorBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
     
 }

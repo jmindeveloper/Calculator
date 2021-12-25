@@ -15,6 +15,7 @@ class GradeCalculatorCustomKeyboard: UIView {
     
 //    var gradeBtnDelegate: GradeBtnDelegate?
     var gradeClosure: ((String) -> (Void))?
+    var scoreClosure: ((String) -> (Void))?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,19 +31,19 @@ class GradeCalculatorCustomKeyboard: UIView {
         
         if screenHeight >= 926 {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  570)
-            print("iphone 13 proMax")
+//            print("iphone 13 proMax")
         } else if screenHeight < 926 && screenHeight >= 844 {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  570)
-            print("iphone 12")
+//            print("iphone 12")
         } else if screenHeight < 844 && screenHeight >= 736 {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight -  540)
-            print("iphone 8 plus")
+//            print("iphone 8 plus")
         } else if screenHeight < 736 && screenHeight >= 667 {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 540)
-            print("iphone 8")
+//            print("iphone 8")
         } else {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 540)
-            print("iphone se2")
+//            print("iphone se2")
         }
     }
 //
@@ -53,5 +54,9 @@ class GradeCalculatorCustomKeyboard: UIView {
         
     }
     
+    @IBAction func scoreBtn(_ sender: UIButton) {
+        let score = sender.titleLabel?.text
+        scoreClosure?(score!)
+    }
     
 }

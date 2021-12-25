@@ -14,6 +14,7 @@
 		0E19457C2765B081009DF559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E19457B2765B081009DF559 /* Assets.xcassets */; };
 		0E19457F2765B081009DF559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E19457D2765B081009DF559 /* LaunchScreen.storyboard */; };
 		0E480CC42768AFB900396D81 /* CalculatorCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */; };
+		0E541C002776FD410098510C /* GradeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E541BFF2776FD410098510C /* GradeData.swift */; };
 		0E97BC052765BA2F003F85BE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC042765BA2F003F85BE /* SideMenuViewController.swift */; };
 		0E97BC092765C346003F85BE /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC082765C346003F85BE /* CalculatorViewController.swift */; };
 		0E97BC0B2765C384003F85BE /* UnitConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */; };
@@ -21,7 +22,7 @@
 		0E97BC0F2765C3A8003F85BE /* UnitPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */; };
 		0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED57E1727677319002BB491 /* extUIViewController.swift */; };
 		0ED7CAED2768BAF1007A0341 /* CalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */; };
-		0EEE7DA92765F06F00F7D197 /* CustomUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE7DA82765F06F00F7D197 /* CustomUIButton.swift */; };
+		0EEE7DA92765F06F00F7D197 /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE7DA82765F06F00F7D197 /* CustomUI.swift */; };
 		0EF8786527734276009E884C /* BMICalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF8786427734276009E884C /* BMICalculatorViewController.swift */; };
 		0EF87867277342A9009E884C /* GradeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF87866277342A9009E884C /* GradeCalculatorViewController.swift */; };
 		0EF87869277343B4009E884C /* DutchCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF87868277343B4009E884C /* DutchCalculatorViewController.swift */; };
@@ -40,6 +41,7 @@
 		0E19457E2765B081009DF559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E1945802765B081009DF559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCustomKeyboard.swift; sourceTree = "<group>"; };
+		0E541BFF2776FD410098510C /* GradeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeData.swift; sourceTree = "<group>"; };
 		0E97BC042765BA2F003F85BE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		0E97BC082765C346003F85BE /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +49,7 @@
 		0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPriceViewController.swift; sourceTree = "<group>"; };
 		0ED57E1727677319002BB491 /* extUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUIViewController.swift; sourceTree = "<group>"; };
 		0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorCustomKeyboard.xib; sourceTree = "<group>"; };
-		0EEE7DA82765F06F00F7D197 /* CustomUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIButton.swift; sourceTree = "<group>"; };
+		0EEE7DA82765F06F00F7D197 /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
 		0EF8786427734276009E884C /* BMICalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorViewController.swift; sourceTree = "<group>"; };
 		0EF87866277342A9009E884C /* GradeCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCalculatorViewController.swift; sourceTree = "<group>"; };
 		0EF87868277343B4009E884C /* DutchCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DutchCalculatorViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		0E19456E2765B080009DF559 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				0E541BFE2776FD320098510C /* Data */,
 				0E480CC02768AF8400396D81 /* Calculator Keyboard */,
 				0EEE7DA72765F06000F7D197 /* custom */,
 				0E97BC072765C28F003F85BE /* TypeCalculator */,
@@ -114,6 +117,14 @@
 				0EF8786E27734C20009E884C /* GradeCalculatorCustomKeyboard.swift */,
 			);
 			path = "Calculator Keyboard";
+			sourceTree = "<group>";
+		};
+		0E541BFE2776FD320098510C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0E541BFF2776FD410098510C /* GradeData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		0E97BC032765BA16003F85BE /* SideMenu */ = {
@@ -150,7 +161,7 @@
 		0EEE7DA72765F06000F7D197 /* custom */ = {
 			isa = PBXGroup;
 			children = (
-				0EEE7DA82765F06F00F7D197 /* CustomUIButton.swift */,
+				0EEE7DA82765F06F00F7D197 /* CustomUI.swift */,
 				0ED57E1727677319002BB491 /* extUIViewController.swift */,
 			);
 			path = custom;
@@ -294,9 +305,10 @@
 				0E97BC0D2765C397003F85BE /* ExchangeRateViewController.swift in Sources */,
 				0E97BC0B2765C384003F85BE /* UnitConversionViewController.swift in Sources */,
 				0EF8786527734276009E884C /* BMICalculatorViewController.swift in Sources */,
-				0EEE7DA92765F06F00F7D197 /* CustomUIButton.swift in Sources */,
+				0EEE7DA92765F06F00F7D197 /* CustomUI.swift in Sources */,
 				0E97BC0F2765C3A8003F85BE /* UnitPriceViewController.swift in Sources */,
 				0E97BC092765C346003F85BE /* CalculatorViewController.swift in Sources */,
+				0E541C002776FD410098510C /* GradeData.swift in Sources */,
 				0EF87869277343B4009E884C /* DutchCalculatorViewController.swift in Sources */,
 				0E97BC052765BA2F003F85BE /* SideMenuViewController.swift in Sources */,
 				0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */,

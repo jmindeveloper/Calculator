@@ -407,20 +407,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전공: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAd-NH-6gp">
-                                                    <rect key="frame" x="184.33333333333334" y="14.999999999999998" width="38.666666666666657" height="20.333333333333329"/>
+                                                    <rect key="frame" x="194.33333333333334" y="14.999999999999998" width="38.666666666666657" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-HE-g5p">
-                                                    <rect key="frame" x="228" y="15" width="20" height="20"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-HE-g5p" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                    <rect key="frame" x="238" y="15" width="20" height="20"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-4q-CEB">
-                                                            <rect key="frame" x="-11" y="-5.3333333333333339" width="42.333333333333336" height="30.666666666666671"/>
+                                                            <rect key="frame" x="2" y="2" width="16" height="16"/>
                                                             <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" image="checkmark" catalog="system">
-                                                                <color key="baseForegroundColor" systemColor="quaternaryLabelColor"/>
-                                                            </buttonConfiguration>
+                                                            <buttonConfiguration key="configuration" style="plain"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -429,12 +427,19 @@
                                                         <constraint firstAttribute="width" secondItem="Ch6-HE-g5p" secondAttribute="height" id="BMi-HJ-fyZ"/>
                                                         <constraint firstItem="Uzr-4q-CEB" firstAttribute="centerX" secondItem="Ch6-HE-g5p" secondAttribute="centerX" id="M5i-xk-sQU"/>
                                                         <constraint firstAttribute="width" constant="20" id="SE7-Ld-JtX"/>
+                                                        <constraint firstItem="Uzr-4q-CEB" firstAttribute="leading" secondItem="Ch6-HE-g5p" secondAttribute="leading" constant="2" id="YhU-g7-vUS"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Uzr-4q-CEB" secondAttribute="bottom" constant="2" id="mCt-3j-Rgd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Uzr-4q-CEB" secondAttribute="trailing" constant="2" id="qbW-sU-68k"/>
+                                                        <constraint firstItem="Uzr-4q-CEB" firstAttribute="top" secondItem="Ch6-HE-g5p" secondAttribute="top" constant="2" id="s71-pU-m3B"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="borderWidth" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fm1-db-3rW">
-                                                    <rect key="frame" x="135" y="8" width="30" height="34"/>
+                                                    <rect key="frame" x="135" y="8" width="40" height="34"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="pgT-3T-bUP"/>
+                                                        <constraint firstAttribute="width" constant="40" id="pgT-3T-bUP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -468,8 +473,9 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="deleteBtn" destination="lvM-4j-mfD" id="IIz-9I-UEO"/>
                                             <outlet property="gradeTextField" destination="vS8-FG-hzK" id="2N0-Fq-fbv"/>
-                                            <outlet property="isMasorBtn" destination="M5i-xk-sQU" id="aVH-cO-gDt"/>
+                                            <outlet property="isMasorBtn" destination="Uzr-4q-CEB" id="kdU-AW-YJ8"/>
                                             <outlet property="scoreTextField" destination="Fm1-db-3rW" id="YnS-HL-3AL"/>
                                         </connections>
                                     </tableViewCell>
@@ -499,16 +505,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="x.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="quaternaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
