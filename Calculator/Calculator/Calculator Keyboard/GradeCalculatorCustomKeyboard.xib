@@ -222,7 +222,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="A+">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -237,7 +237,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="A">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -252,7 +252,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="A-">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -272,7 +272,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="B+">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -287,7 +287,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="B">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -302,7 +302,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="B-">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -322,7 +322,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="C+">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -337,7 +337,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="C">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -352,7 +352,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="C-">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -372,7 +372,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="D+">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -387,7 +387,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="D">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -402,7 +402,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="D-">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -422,7 +422,7 @@
                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="F">
-                                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                             </buttonConfiguration>
                                             <userDefinedRuntimeAttributes>
@@ -437,7 +437,6 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="tVu-Ty-rDZ" firstAttribute="top" secondItem="mez-H4-UFz" secondAttribute="top" id="YJ1-Ql-npl"/>
                         <constraint firstAttribute="bottom" secondItem="QFR-nT-gXi" secondAttribute="bottom" id="Zha-BR-OAH"/>
@@ -462,28 +461,28 @@
             <size key="intrinsicContentSize" width="44" height="51"/>
         </designable>
         <designable name="10B-iw-cC6">
-            <size key="intrinsicContentSize" width="41.5" height="44"/>
+            <size key="intrinsicContentSize" width="38" height="38"/>
         </designable>
         <designable name="1AG-1w-PQR">
             <size key="intrinsicContentSize" width="43.5" height="51"/>
         </designable>
         <designable name="7ai-nY-Fao">
-            <size key="intrinsicContentSize" width="40.5" height="44"/>
+            <size key="intrinsicContentSize" width="37" height="38"/>
         </designable>
         <designable name="7o2-Z2-DZI">
             <size key="intrinsicContentSize" width="43" height="51"/>
         </designable>
         <designable name="ARK-Xz-Dnt">
-            <size key="intrinsicContentSize" width="50.5" height="44"/>
+            <size key="intrinsicContentSize" width="45.5" height="38"/>
         </designable>
         <designable name="AXE-Rq-0u9">
-            <size key="intrinsicContentSize" width="52.5" height="44"/>
+            <size key="intrinsicContentSize" width="47" height="38"/>
         </designable>
         <designable name="E0u-RU-6VQ">
-            <size key="intrinsicContentSize" width="55.5" height="44"/>
+            <size key="intrinsicContentSize" width="49" height="38"/>
         </designable>
         <designable name="I1Z-Rr-uLb">
-            <size key="intrinsicContentSize" width="41.5" height="44"/>
+            <size key="intrinsicContentSize" width="38" height="38"/>
         </designable>
         <designable name="Lvi-uV-uqp">
             <size key="intrinsicContentSize" width="43" height="51"/>
@@ -495,22 +494,22 @@
             <size key="intrinsicContentSize" width="43" height="51"/>
         </designable>
         <designable name="Rug-gm-frE">
-            <size key="intrinsicContentSize" width="51" height="44"/>
+            <size key="intrinsicContentSize" width="45.5" height="38"/>
         </designable>
         <designable name="S7T-Am-CAD">
-            <size key="intrinsicContentSize" width="56.5" height="44"/>
+            <size key="intrinsicContentSize" width="50" height="38"/>
         </designable>
         <designable name="ZHm-6y-FMs">
             <size key="intrinsicContentSize" width="42" height="51"/>
         </designable>
         <designable name="c4t-Mf-NzT">
-            <size key="intrinsicContentSize" width="55" height="44"/>
+            <size key="intrinsicContentSize" width="48.5" height="38"/>
         </designable>
         <designable name="c7B-oq-V3z">
             <size key="intrinsicContentSize" width="44" height="51"/>
         </designable>
         <designable name="j9N-qV-AN8">
-            <size key="intrinsicContentSize" width="57" height="44"/>
+            <size key="intrinsicContentSize" width="50" height="38"/>
         </designable>
         <designable name="lbn-nH-8mW">
             <size key="intrinsicContentSize" width="38.5" height="51"/>
@@ -519,13 +518,13 @@
             <size key="intrinsicContentSize" width="41.5" height="51"/>
         </designable>
         <designable name="sTE-mE-4Uh">
-            <size key="intrinsicContentSize" width="37.5" height="44"/>
+            <size key="intrinsicContentSize" width="35" height="38"/>
         </designable>
         <designable name="tNU-5k-JAS">
-            <size key="intrinsicContentSize" width="52" height="44"/>
+            <size key="intrinsicContentSize" width="46.5" height="38"/>
         </designable>
         <designable name="v6f-qJ-Dsi">
-            <size key="intrinsicContentSize" width="39.5" height="44"/>
+            <size key="intrinsicContentSize" width="36.5" height="38"/>
         </designable>
         <designable name="zwW-oT-AC6">
             <size key="intrinsicContentSize" width="57" height="39"/>
@@ -541,9 +540,6 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

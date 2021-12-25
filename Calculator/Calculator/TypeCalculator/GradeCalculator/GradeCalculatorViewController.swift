@@ -86,15 +86,15 @@ class GradeCalculatorViewController: UIViewController {
     }
     
     // MARK: 학점계산
-    func gradeCalculator(_ grade: [Grade], _ fullMark: Double) -> (Double, Double, Double) {
+    func gradeCalculator(_ grade: [Grade], _ fullMark: Double) -> (Double, Double) {
         print("gradeArr --> \(gradeArr)")
         
-        if grade.contains(where: { i in i.grade == "" || i.score == "" }) {
+        if grade.contains(where: { i in i.grade == "" || i.score == "" }) || gradeArr.isEmpty {
             let alert = UIAlertController(title: nil, message: "정확한 수치를 입력해주세요", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true, completion: nil)
-            return (0, 0, 0)
+            return (0, 0)
         }
         
         var score: Double = 0
@@ -209,10 +209,14 @@ class GradeCalculatorViewController: UIViewController {
         }
         print("totalGrade --> \(totalGrade)")
         print("applyGrade --> \(applyGrade)")
-        let result = totalGrade / applyGrade
+        var result = totalGrade / applyGrade
         print("result --> \(result)")
         
-        return (totalGrade, applyGrade, result)
+        if totalGrade == 0 && totalGrade == 0 {
+            result = 0
+        }
+        
+        return (applyGrade, result)
     }
     
     // MARK: cell 추가
@@ -245,17 +249,24 @@ class GradeCalculatorViewController: UIViewController {
     // MARK: 계산하기
     @IBAction func calculatorBtn(_ sender: Any) {
         
-        
         let calculatedGrade = gradeCalculator(gradeArr, fullMark)
         
         let majorGrade =  gradeArr.filter { $0.isMasor == true }
         
-        if majorGrade.isEmpty {
-            return
-        }
+        let majorCalculatedGrade = gradeCalculator(majorGrade, fullMark)
         
-        let mjorCalculatedGrade = gradeCalculator(majorGrade, fullMark)
-           
+        guard let resultVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultGradeViewController") as? ResultGradeViewController else { return }
+        resultVC.modalPresentationStyle = .overCurrentContext
+        resultVC.modalTransitionStyle = .crossDissolve
+        
+        resultVC.totalGrade = calculatedGrade.1
+        resultVC.applyGrade = calculatedGrade.0
+        resultVC.majorTotalGrade = majorCalculatedGrade.1
+        resultVC.majorApplyTotalGrad = majorCalculatedGrade.0
+        resultVC.fullMark = fullMarkLabel.text!
+        
+        self.present(resultVC, animated: true, completion: nil)
+        
     }
 }
 

@@ -58,14 +58,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="20.666666666666671"/>
+                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="21.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -531,22 +531,92 @@
             </objects>
             <point key="canvasLocation" x="4925.6000000000004" y="-35.467980295566505"/>
         </scene>
-        <!--View Controller-->
+        <!--Result Grade View Controller-->
         <scene sceneID="6Gy-u1-VoC">
             <objects>
-                <viewController id="iKD-fi-E43" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EJe-3a-o6I">
+                <viewController storyboardIdentifier="ResultGradeViewController" id="iKD-fi-E43" customClass="ResultGradeViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.59999999999999998" contentMode="scaleToFill" id="EJe-3a-o6I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVc-VH-30e">
+                                <rect key="frame" x="20" y="337.66666666666669" width="335" height="137"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVN-Tf-vvN" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                        <rect key="frame" x="134" y="100" width="67" height="29"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="닫기">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closePopUp:" destination="iKD-fi-E43" eventType="touchUpInside" id="jCl-FK-se0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해당 결과는 일반적인 변환식을 적용한 결과로 실제 결과와 다를수 있습니다" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-rl-4tr">
+                                        <rect key="frame" x="20.333333333333343" y="80" width="294.66666666666663" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5점 만점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvX-gK-t4Q">
+                                        <rect key="frame" x="131" y="10" width="73" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 평점: 3.6 전공평점: 0 이수학점: 5 전공이수: 0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVo-nx-irt">
+                                        <rect key="frame" x="21" y="45" width="293" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wVo-nx-irt" secondAttribute="trailing" constant="21" id="0LB-gF-WqA"/>
+                                    <constraint firstItem="cvX-gK-t4Q" firstAttribute="top" secondItem="nVc-VH-30e" secondAttribute="top" constant="10" id="2fW-cS-knk"/>
+                                    <constraint firstItem="wVo-nx-irt" firstAttribute="top" secondItem="cvX-gK-t4Q" secondAttribute="bottom" constant="14" id="AZW-Ot-7hA"/>
+                                    <constraint firstItem="SVN-Tf-vvN" firstAttribute="leading" secondItem="nVc-VH-30e" secondAttribute="leading" constant="134" id="DmB-3b-imf"/>
+                                    <constraint firstItem="SVN-Tf-vvN" firstAttribute="top" secondItem="wYI-rl-4tr" secondAttribute="bottom" constant="8" id="W0v-mf-XYA"/>
+                                    <constraint firstAttribute="bottom" secondItem="SVN-Tf-vvN" secondAttribute="bottom" constant="8" id="cgP-Re-P1N"/>
+                                    <constraint firstAttribute="width" secondItem="nVc-VH-30e" secondAttribute="height" multiplier="335:137" id="dn1-YG-JWD"/>
+                                    <constraint firstItem="wVo-nx-irt" firstAttribute="centerX" secondItem="nVc-VH-30e" secondAttribute="centerX" id="hLL-80-W5h"/>
+                                    <constraint firstAttribute="trailing" secondItem="SVN-Tf-vvN" secondAttribute="trailing" constant="134" id="pLB-Kd-kim"/>
+                                    <constraint firstItem="cvX-gK-t4Q" firstAttribute="centerX" secondItem="nVc-VH-30e" secondAttribute="centerX" id="wRh-9e-VlR"/>
+                                    <constraint firstItem="wVo-nx-irt" firstAttribute="leading" secondItem="nVc-VH-30e" secondAttribute="leading" constant="21" id="xMe-5S-Dg0"/>
+                                    <constraint firstItem="wYI-rl-4tr" firstAttribute="centerX" secondItem="nVc-VH-30e" secondAttribute="centerX" id="xvB-f7-ee6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jcn-fg-pHw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jcn-fg-pHw" firstAttribute="trailing" secondItem="nVc-VH-30e" secondAttribute="trailing" constant="20" id="JV4-4V-PmZ"/>
+                            <constraint firstItem="nVc-VH-30e" firstAttribute="centerY" secondItem="EJe-3a-o6I" secondAttribute="centerY" id="Pqr-cw-Q4F"/>
+                            <constraint firstItem="nVc-VH-30e" firstAttribute="leading" secondItem="jcn-fg-pHw" secondAttribute="leading" constant="20" id="klU-Ao-GaK"/>
+                            <constraint firstItem="nVc-VH-30e" firstAttribute="centerX" secondItem="EJe-3a-o6I" secondAttribute="centerX" id="mHx-FQ-Hi8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fullMarkLabel" destination="cvX-gK-t4Q" id="cl1-mE-3yV"/>
+                        <outlet property="resultLabel" destination="wVo-nx-irt" id="Z8H-0P-WPj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaB-cu-ic1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5607" y="-35"/>
+            <point key="canvasLocation" x="5605.6000000000004" y="-35.467980295566505"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="SVN-Tf-vvN">
+            <size key="intrinsicContentSize" width="45" height="28.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
@@ -563,6 +633,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
