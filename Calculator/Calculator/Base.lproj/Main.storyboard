@@ -142,17 +142,173 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bmi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6B-Nd-VCQ">
-                                <rect key="frame" x="189" y="214" width="29" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OML-oF-rTM" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="15" y="54" width="345" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-nl-q0s">
+                                        <rect key="frame" x="15" y="10" width="315" height="180"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-fT-Xn3">
+                                                <rect key="frame" x="0.0" y="0.0" width="315" height="86"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0H-bk-67S" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="86"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C32-ue-8Uh">
+                                                                <rect key="frame" x="8.0000000000000018" y="11.999999999999998" width="29.666666666666671" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="cm" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAO-t1-j6L">
+                                                                <rect key="frame" x="8" y="39.333333333333329" width="90" height="34"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="ho3-Ug-D5M"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="JAO-t1-j6L" firstAttribute="leading" secondItem="j0H-bk-67S" secondAttribute="leading" constant="8" id="9MG-4r-QrN"/>
+                                                            <constraint firstItem="JAO-t1-j6L" firstAttribute="top" secondItem="C32-ue-8Uh" secondAttribute="bottom" constant="7" id="Uk6-km-TPC"/>
+                                                            <constraint firstItem="C32-ue-8Uh" firstAttribute="top" secondItem="j0H-bk-67S" secondAttribute="top" constant="12" id="ddf-gO-Oav"/>
+                                                            <constraint firstItem="C32-ue-8Uh" firstAttribute="leading" secondItem="j0H-bk-67S" secondAttribute="leading" constant="8" id="o8M-l7-yzq"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJ9-1f-1fQ" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="160.66666666666663" y="0.0" width="154.33333333333337" height="86"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-aB-eDF">
+                                                                <rect key="frame" x="8.0000000000000018" y="11.999999999999998" width="29.666666666666671" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="나이" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Vd-Sa-dXX">
+                                                                <rect key="frame" x="8" y="39.333333333333329" width="90" height="34"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="Rd5-Va-DJW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="9Vd-Sa-dXX" firstAttribute="top" secondItem="zxP-aB-eDF" secondAttribute="bottom" constant="7" id="Gbm-kC-p5F"/>
+                                                            <constraint firstItem="zxP-aB-eDF" firstAttribute="top" secondItem="oJ9-1f-1fQ" secondAttribute="top" constant="12" id="X1m-AN-Hob"/>
+                                                            <constraint firstItem="zxP-aB-eDF" firstAttribute="leading" secondItem="oJ9-1f-1fQ" secondAttribute="leading" constant="8" id="rXp-F4-0XH"/>
+                                                            <constraint firstItem="9Vd-Sa-dXX" firstAttribute="leading" secondItem="oJ9-1f-1fQ" secondAttribute="leading" constant="8" id="yJW-wz-ntN"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gEn-L6-aPU">
+                                                <rect key="frame" x="0.0" y="94" width="315" height="86"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-Tu-9JB" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="86"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몸무게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-Is-Xih">
+                                                                <rect key="frame" x="8" y="11.999999999999998" width="44.333333333333336" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="kg" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wao-GA-OQB">
+                                                                <rect key="frame" x="8" y="39.333333333333343" width="90" height="34"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="VcN-BZ-1LU"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="wao-GA-OQB" firstAttribute="top" secondItem="Fbv-Is-Xih" secondAttribute="bottom" constant="7" id="88n-iq-ubM"/>
+                                                            <constraint firstItem="Fbv-Is-Xih" firstAttribute="leading" secondItem="o0b-Tu-9JB" secondAttribute="leading" constant="8" id="9Dd-iz-n1D"/>
+                                                            <constraint firstItem="Fbv-Is-Xih" firstAttribute="top" secondItem="o0b-Tu-9JB" secondAttribute="top" constant="12" id="K7Z-NF-yxX"/>
+                                                            <constraint firstItem="wao-GA-OQB" firstAttribute="leading" secondItem="o0b-Tu-9JB" secondAttribute="leading" constant="8" id="Uav-hQ-w5l"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-SP-2zz" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                        <rect key="frame" x="160.66666666666663" y="0.0" width="154.33333333333337" height="86"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-i5-pTk">
+                                                                <rect key="frame" x="8.0000000000000018" y="11.999999999999998" width="29.666666666666671" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="남/여" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B4R-FB-Xm6">
+                                                                <rect key="frame" x="8" y="39.333333333333343" width="90" height="34"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="90" id="bVU-e7-vpl"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="B4R-FB-Xm6" firstAttribute="leading" secondItem="6Rr-SP-2zz" secondAttribute="leading" constant="8" id="19H-eN-PVU"/>
+                                                            <constraint firstItem="eMZ-i5-pTk" firstAttribute="leading" secondItem="6Rr-SP-2zz" secondAttribute="leading" constant="8" id="I7n-j1-SuH"/>
+                                                            <constraint firstItem="B4R-FB-Xm6" firstAttribute="top" secondItem="eMZ-i5-pTk" secondAttribute="bottom" constant="7" id="Wnt-kN-nqz"/>
+                                                            <constraint firstItem="eMZ-i5-pTk" firstAttribute="top" secondItem="6Rr-SP-2zz" secondAttribute="top" constant="12" id="cqK-U5-Egh"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderWidth" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstItem="Ate-nl-q0s" firstAttribute="top" secondItem="OML-oF-rTM" secondAttribute="top" constant="10" id="InT-FX-Z1u"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ate-nl-q0s" secondAttribute="trailing" constant="15" id="bp2-hx-6Uq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ate-nl-q0s" secondAttribute="bottom" constant="10" id="ceh-sH-He1"/>
+                                    <constraint firstAttribute="height" constant="200" id="jhp-D3-I1e"/>
+                                    <constraint firstItem="Ate-nl-q0s" firstAttribute="leading" secondItem="OML-oF-rTM" secondAttribute="leading" constant="15" id="uhH-fu-Upj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nCr-F8-6QE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OML-oF-rTM" firstAttribute="top" secondItem="nCr-F8-6QE" secondAttribute="top" constant="10" id="54g-Rk-Bwq"/>
+                            <constraint firstItem="OML-oF-rTM" firstAttribute="leading" secondItem="nCr-F8-6QE" secondAttribute="leading" constant="15" id="Hv0-rI-5XK"/>
+                            <constraint firstItem="nCr-F8-6QE" firstAttribute="trailing" secondItem="OML-oF-rTM" secondAttribute="trailing" constant="15" id="QcB-9N-HJg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageTextField" destination="9Vd-Sa-dXX" id="2SY-vp-Zp6"/>
+                        <outlet property="heightTextField" destination="JAO-t1-j6L" id="v6A-QX-OrD"/>
+                        <outlet property="sexTextField" destination="B4R-FB-Xm6" id="m5e-jm-EzK"/>
+                        <outlet property="weightTextField" destination="wao-GA-OQB" id="CiF-kq-oCV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8AL-lK-w1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -613,6 +769,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="OML-oF-rTM">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="SVN-Tf-vvN">
             <size key="intrinsicContentSize" width="45" height="28.333333333333332"/>
         </designable>

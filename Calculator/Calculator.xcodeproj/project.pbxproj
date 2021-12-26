@@ -21,6 +21,8 @@
 		0E97BC0B2765C384003F85BE /* UnitConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */; };
 		0E97BC0D2765C397003F85BE /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0C2765C397003F85BE /* ExchangeRateViewController.swift */; };
 		0E97BC0F2765C3A8003F85BE /* UnitPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */; };
+		0E9D836A27786F7E00D397AB /* BMICalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9D836927786F7E00D397AB /* BMICalculatorCustomKeyboard.xib */; };
+		0E9D836C27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D836B27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift */; };
 		0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED57E1727677319002BB491 /* extUIViewController.swift */; };
 		0ED7CAED2768BAF1007A0341 /* CalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */; };
 		0EEE7DA92765F06F00F7D197 /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE7DA82765F06F00F7D197 /* CustomUI.swift */; };
@@ -49,6 +51,8 @@
 		0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionViewController.swift; sourceTree = "<group>"; };
 		0E97BC0C2765C397003F85BE /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
 		0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPriceViewController.swift; sourceTree = "<group>"; };
+		0E9D836927786F7E00D397AB /* BMICalculatorCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BMICalculatorCustomKeyboard.xib; sourceTree = "<group>"; };
+		0E9D836B27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorCustomKeyboard.swift; sourceTree = "<group>"; };
 		0ED57E1727677319002BB491 /* extUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUIViewController.swift; sourceTree = "<group>"; };
 		0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorCustomKeyboard.xib; sourceTree = "<group>"; };
 		0EEE7DA82765F06F00F7D197 /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
@@ -113,10 +117,9 @@
 		0E480CC02768AF8400396D81 /* Calculator Keyboard */ = {
 			isa = PBXGroup;
 			children = (
-				0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */,
-				0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */,
-				0EF8786C27734C18009E884C /* GradeCalculatorCustomKeyboard.xib */,
-				0EF8786E27734C20009E884C /* GradeCalculatorCustomKeyboard.swift */,
+				0E9D836827786F6C00D397AB /* BMICalculator */,
+				0E9D836727786F4200D397AB /* GradeCalculator */,
+				0E9D836627786F2E00D397AB /* Calculator */,
 			);
 			path = "Calculator Keyboard";
 			sourceTree = "<group>";
@@ -167,6 +170,33 @@
 				0EF87868277343B4009E884C /* DutchCalculatorViewController.swift */,
 			);
 			path = TypeCalculator;
+			sourceTree = "<group>";
+		};
+		0E9D836627786F2E00D397AB /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */,
+				0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		0E9D836727786F4200D397AB /* GradeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				0EF8786E27734C20009E884C /* GradeCalculatorCustomKeyboard.swift */,
+				0EF8786C27734C18009E884C /* GradeCalculatorCustomKeyboard.xib */,
+			);
+			path = GradeCalculator;
+			sourceTree = "<group>";
+		};
+		0E9D836827786F6C00D397AB /* BMICalculator */ = {
+			isa = PBXGroup;
+			children = (
+				0E9D836927786F7E00D397AB /* BMICalculatorCustomKeyboard.xib */,
+				0E9D836B27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift */,
+			);
+			path = BMICalculator;
 			sourceTree = "<group>";
 		};
 		0EEE7DA72765F06000F7D197 /* custom */ = {
@@ -255,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E9D836A27786F7E00D397AB /* BMICalculatorCustomKeyboard.xib in Resources */,
 				0E19457F2765B081009DF559 /* LaunchScreen.storyboard in Resources */,
 				0EF8786D27734C18009E884C /* GradeCalculatorCustomKeyboard.xib in Resources */,
 				0E19457C2765B081009DF559 /* Assets.xcassets in Resources */,
@@ -314,6 +345,7 @@
 			files = (
 				0E480CC42768AFB900396D81 /* CalculatorCustomKeyboard.swift in Sources */,
 				0E541C0827772D860098510C /* ResultGradeViewController.swift in Sources */,
+				0E9D836C27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift in Sources */,
 				0E97BC0D2765C397003F85BE /* ExchangeRateViewController.swift in Sources */,
 				0E97BC0B2765C384003F85BE /* UnitConversionViewController.swift in Sources */,
 				0EF8786527734276009E884C /* BMICalculatorViewController.swift in Sources */,
