@@ -44,6 +44,7 @@ class BMICalculatorViewController: UIViewController {
         self.present(sideMenuVC, animated: true, completion: nil)
     }
     
+    // MARK: 계산
     func bmiCalculator(_ height: Double, _ weight: Double, _ age: Double, _ isMan: Bool) -> (String, Double, Double) {
         var obesity = ""
         var bmr: Double = 0
@@ -74,9 +75,17 @@ class BMICalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatorBtn(_ sender: Any) {
-        let height = Double(heightTextField.text!)!
-        let weight = Double(weightTextField.text!)!
-        let age = Double(ageTextField.text!)!
+        
+        func alert() {
+            let alert = UIAlertController(title: nil, message: "모든 수치를 입력해 주세요", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        guard let height = Double(heightTextField.text!) else { alert(); return }
+        guard let weight = Double(weightTextField.text!) else { alert(); return }
+        guard let age = Double(ageTextField.text!) else { alert(); return }
         let isMan = { () -> Bool in
             if self.sexTextField.text! == "남성" {
                 return true
@@ -90,10 +99,16 @@ class BMICalculatorViewController: UIViewController {
         bmi = round(bmi * 100) / 100
         var bmr = bmiCalculator(height, weight, age, isMan()).2
         bmr = round(bmr * 100) / 100
-        print(obesity)
-        print(bmi)
-        print(bmr)
         
+        guard let resultBMIVC = self.storyboard?.instantiateViewController(withIdentifier: "ResultBMICalculatorViewController") as? ResultBMICalculatorViewController else { return }
+        resultBMIVC.modalPresentationStyle = .overCurrentContext
+        resultBMIVC.modalTransitionStyle = .crossDissolve
+        
+        resultBMIVC.obesity = obesity
+        resultBMIVC.bmi = bmi
+        resultBMIVC.bmr = bmr
+        
+        self.present(resultBMIVC, animated: true, completion: nil)
     }
 }
 

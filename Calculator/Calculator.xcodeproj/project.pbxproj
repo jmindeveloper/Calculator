@@ -23,6 +23,7 @@
 		0E97BC0F2765C3A8003F85BE /* UnitPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */; };
 		0E9D836A27786F7E00D397AB /* BMICalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9D836927786F7E00D397AB /* BMICalculatorCustomKeyboard.xib */; };
 		0E9D836C27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9D836B27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift */; };
+		0EB86235277F1B4B0042C778 /* ResultBMICalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB86234277F1B4B0042C778 /* ResultBMICalculatorViewController.swift */; };
 		0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED57E1727677319002BB491 /* extUIViewController.swift */; };
 		0ED7CAED2768BAF1007A0341 /* CalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */; };
 		0EEE7DA92765F06F00F7D197 /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE7DA82765F06F00F7D197 /* CustomUI.swift */; };
@@ -53,6 +54,7 @@
 		0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPriceViewController.swift; sourceTree = "<group>"; };
 		0E9D836927786F7E00D397AB /* BMICalculatorCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BMICalculatorCustomKeyboard.xib; sourceTree = "<group>"; };
 		0E9D836B27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorCustomKeyboard.swift; sourceTree = "<group>"; };
+		0EB86234277F1B4B0042C778 /* ResultBMICalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBMICalculatorViewController.swift; sourceTree = "<group>"; };
 		0ED57E1727677319002BB491 /* extUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUIViewController.swift; sourceTree = "<group>"; };
 		0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalculatorCustomKeyboard.xib; sourceTree = "<group>"; };
 		0EEE7DA82765F06F00F7D197 /* CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUI.swift; sourceTree = "<group>"; };
@@ -161,12 +163,12 @@
 		0E97BC072765C28F003F85BE /* TypeCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				0EB86233277F1B350042C778 /* BMICalculator */,
 				0E541C0627772D6A0098510C /* GradeCalculator */,
 				0E97BC082765C346003F85BE /* CalculatorViewController.swift */,
 				0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */,
 				0E97BC0C2765C397003F85BE /* ExchangeRateViewController.swift */,
 				0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */,
-				0EF8786427734276009E884C /* BMICalculatorViewController.swift */,
 				0EF87868277343B4009E884C /* DutchCalculatorViewController.swift */,
 			);
 			path = TypeCalculator;
@@ -195,6 +197,15 @@
 			children = (
 				0E9D836927786F7E00D397AB /* BMICalculatorCustomKeyboard.xib */,
 				0E9D836B27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift */,
+			);
+			path = BMICalculator;
+			sourceTree = "<group>";
+		};
+		0EB86233277F1B350042C778 /* BMICalculator */ = {
+			isa = PBXGroup;
+			children = (
+				0EF8786427734276009E884C /* BMICalculatorViewController.swift */,
+				0EB86234277F1B4B0042C778 /* ResultBMICalculatorViewController.swift */,
 			);
 			path = BMICalculator;
 			sourceTree = "<group>";
@@ -360,6 +371,7 @@
 				0E1945702765B080009DF559 /* AppDelegate.swift in Sources */,
 				0EF87867277342A9009E884C /* GradeCalculatorViewController.swift in Sources */,
 				0E1945722765B080009DF559 /* SceneDelegate.swift in Sources */,
+				0EB86235277F1B4B0042C778 /* ResultBMICalculatorViewController.swift in Sources */,
 				0EF8786F27734C20009E884C /* GradeCalculatorCustomKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
