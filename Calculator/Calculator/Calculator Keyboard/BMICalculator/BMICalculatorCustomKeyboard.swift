@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol BMIDelegate {
+    func bmiNumData(_ num: String)
+    func bmiSexData(_ sex: String)
+    func bmiDotData(_ dot: String)
+    func bmiDelete()
+}
+
 class BMICalculatorCustomKeyboard: UIView {
+    
+    var bmiDelegate: BMIDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,5 +45,23 @@ class BMICalculatorCustomKeyboard: UIView {
             self.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight - 340)
             print("iphone se2")
         }
+    }
+    
+    @IBAction func numPad(_ sender: UIButton) {
+        let num = sender.titleLabel?.text
+        bmiDelegate?.bmiNumData(num!)
+    }
+    
+    @IBAction func sexPad(_ sender: UIButton) {
+        let sex  = sender.titleLabel?.text
+        bmiDelegate?.bmiSexData(sex!)
+    }
+    
+    @IBAction func dotPad(_ sender: UIButton) {
+        bmiDelegate?.bmiDotData(".")
+    }
+    
+    @IBAction func deletePad(_ sender: UIButton) {
+        bmiDelegate?.bmiDelete()
     }
 }

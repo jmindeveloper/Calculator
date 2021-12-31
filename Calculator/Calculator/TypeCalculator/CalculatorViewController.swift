@@ -24,7 +24,7 @@ class CalculatorViewController: UIViewController {
         moveCusor(1)
     }
     
-    // MARK: customKeyPad
+    // MARK: customKeyPad 
     func customKeyPad() {
         // nib 불러오기
         let calculatorCustomKeyboard = Bundle.main.loadNibNamed("CalculatorCustomKeyboard", owner: nil, options: nil)
