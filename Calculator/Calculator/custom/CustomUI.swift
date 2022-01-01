@@ -17,6 +17,15 @@ class CustomUIButton: UIButton {
             }
         }
     }
+    
+    @IBInspectable var borderWidth: Bool = false {
+        didSet {
+            if borderWidth {
+                self.layer.borderWidth = 0.3
+                self.layer.borderColor = UIColor.lightGray.cgColor
+            }
+        }
+    }
 }
 
 class CustomView: UIView {
