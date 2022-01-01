@@ -10,6 +10,8 @@ import UIKit
 class SelectCountryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var countryList = [String]()
+    var selectCountry = ""
+    var sendCountry: ((String) -> (Void))?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,9 +19,6 @@ class SelectCountryViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    @IBAction func okBtn(_ sender: Any) {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,9 +32,18 @@ class SelectCountryViewController: UIViewController, UITableViewDataSource, UITa
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectCountry = countryList[indexPath.row]
+        print(selectCountry)
+    }
+    
+    @IBAction func okBtn(_ sender: Any) {
+        sendCountry?(selectCountry)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 class CountryListCell: UITableViewCell {
-    
     @IBOutlet weak var countryLabel: UILabel!
 }

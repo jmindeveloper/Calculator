@@ -30,6 +30,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="IQV-5B-Ybx"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rq6-To-xjQ" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="130.5" y="0.0" width="123" height="84"/>
@@ -42,6 +45,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="GFt-2T-wA7"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoV-yQ-K0l" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="261.5" y="0.0" width="122.5" height="84"/>
@@ -54,6 +60,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="8h4-VV-fby"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -71,6 +80,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="gB4-6W-rdA"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R03-Gr-31F" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="130.5" y="0.0" width="123" height="84"/>
@@ -83,6 +95,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="zqe-en-zQu"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oY6-0B-avf" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="261.5" y="0.0" width="122.5" height="84"/>
@@ -95,6 +110,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="YVW-BL-SrR"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -112,6 +130,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="TSc-nl-V0H"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MST-05-4dB" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="130.5" y="0.0" width="123" height="84"/>
@@ -124,6 +145,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="T54-CQ-gcG"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-S1-s4Q" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="261.5" y="0.0" width="122.5" height="84"/>
@@ -136,6 +160,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="xcM-oI-kpX"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -153,6 +180,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="dotPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="Uqa-yk-iaF"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45P-KE-jXd" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="130.5" y="0.0" width="123" height="84"/>
@@ -165,6 +195,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="numPad:" destination="iN0-l3-epB" eventType="touchUpInside" id="5FP-in-cg6"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQk-b7-TDX" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
                                     <rect key="frame" x="261.5" y="0.0" width="122.5" height="84"/>
@@ -177,6 +210,9 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="deletePad:" destination="iN0-l3-epB" eventType="touchUpInside" id="zCu-WS-0Vb"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>

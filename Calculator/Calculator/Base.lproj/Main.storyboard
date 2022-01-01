@@ -611,8 +611,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-HU-VYT">
-                                <rect key="frame" x="30" y="282" width="90" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AL-HU-VYT">
+                                <rect key="frame" x="30" y="282" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -623,8 +623,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5y-az-M5x">
-                                <rect key="frame" x="30" y="340" width="90" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5y-az-M5x">
+                                <rect key="frame" x="30" y="340" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
@@ -635,10 +635,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-RC-lTv">
-                                <rect key="frame" x="30" y="398" width="90" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-RC-lTv">
+                                <rect key="frame" x="30" y="398" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제공하는 정보는 참고사항이며, 오류가 나거나 지연될 수 있습니다. 본 앱 개발자는 제공된 정보에 의한 투자결과에 법적책임을 지지 않습니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FON-7E-1LD">
+                                <rect key="frame" x="30" y="460" width="315" height="21.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -650,7 +656,9 @@
                             <constraint firstItem="5AL-HU-VYT" firstAttribute="leading" secondItem="JtF-kg-TrO" secondAttribute="leading" id="7rE-ZZ-l8b"/>
                             <constraint firstItem="Qym-RC-lTv" firstAttribute="top" secondItem="lp6-Bi-Q6s" secondAttribute="bottom" constant="8" symbolic="YES" id="Eei-zq-ABZ"/>
                             <constraint firstItem="XdX-MT-mXv" firstAttribute="leading" secondItem="Qzc-y4-chp" secondAttribute="leading" constant="30" id="FU1-bd-f7g"/>
+                            <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="FON-7E-1LD" secondAttribute="trailing" constant="30" id="LTp-fN-AHi"/>
                             <constraint firstItem="TC7-WI-ITK" firstAttribute="leading" secondItem="5AL-HU-VYT" secondAttribute="leading" id="LYa-DP-7ve"/>
+                            <constraint firstItem="FON-7E-1LD" firstAttribute="top" secondItem="Qym-RC-lTv" secondAttribute="bottom" constant="41" id="Nka-ab-wkR"/>
                             <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="dNk-Gq-tG3" secondAttribute="trailing" constant="30" id="Oc9-EV-hSp"/>
                             <constraint firstItem="dNk-Gq-tG3" firstAttribute="leading" secondItem="Qzc-y4-chp" secondAttribute="leading" constant="30" id="RRz-Qu-Vjy"/>
                             <constraint firstItem="XdX-MT-mXv" firstAttribute="top" secondItem="se6-1l-bdd" secondAttribute="bottom" constant="15" id="ToT-Gt-EB2"/>
@@ -662,6 +670,7 @@
                             <constraint firstItem="JtF-kg-TrO" firstAttribute="leading" secondItem="dNk-Gq-tG3" secondAttribute="leading" id="eFF-Bg-2mI"/>
                             <constraint firstItem="dNk-Gq-tG3" firstAttribute="top" secondItem="OoI-wG-TMf" secondAttribute="bottom" constant="10" id="el1-4D-eBJ"/>
                             <constraint firstItem="OoI-wG-TMf" firstAttribute="leading" secondItem="Qzc-y4-chp" secondAttribute="leading" constant="179" id="g54-0h-9xa"/>
+                            <constraint firstItem="FON-7E-1LD" firstAttribute="leading" secondItem="Qym-RC-lTv" secondAttribute="leading" id="hp0-WE-CIU"/>
                             <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="se6-1l-bdd" secondAttribute="trailing" constant="30" id="mIT-zI-Opb"/>
                             <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="XdX-MT-mXv" secondAttribute="trailing" constant="30" id="oVo-VY-UDg"/>
                             <constraint firstItem="lp6-Bi-Q6s" firstAttribute="leading" secondItem="L5y-az-M5x" secondAttribute="leading" id="pFm-sJ-zr3"/>
@@ -673,7 +682,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="afterCountryBtnTxt" destination="dNk-Gq-tG3" id="uKJ-Eo-qQI"/>
                         <outlet property="amountTextField" destination="XdX-MT-mXv" id="5bU-Kr-1S7"/>
+                        <outlet property="beforeCountryBtnTxt" destination="se6-1l-bdd" id="c90-6L-Y1v"/>
+                        <outlet property="dealBaseRateLabel" destination="5AL-HU-VYT" id="tlI-ui-cR6"/>
+                        <outlet property="recieveMoneyLabel" destination="Qym-RC-lTv" id="RD5-uW-xwH"/>
+                        <outlet property="sendMoneyLabel" destination="L5y-az-M5x" id="LY5-Ej-Vn7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUn-Fs-H8h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -702,7 +716,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="okBtn:" destination="15q-fM-1SM" eventType="touchUpInside" id="ZsM-jA-wmw"/>
+                                            <action selector="okBtn:" destination="15q-fM-1SM" eventType="touchUpInside" id="Jez-8X-SsA"/>
                                         </connections>
                                     </button>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vor-CQ-Sbb">
