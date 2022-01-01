@@ -13,6 +13,7 @@
 		0E19457A2765B080009DF559 /* Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E1945782765B080009DF559 /* Calculator.xcdatamodeld */; };
 		0E19457C2765B081009DF559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E19457B2765B081009DF559 /* Assets.xcassets */; };
 		0E19457F2765B081009DF559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E19457D2765B081009DF559 /* LaunchScreen.storyboard */; };
+		0E19C6E627801C07007DE1F6 /* RateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E19C6E527801C07007DE1F6 /* RateInformation.swift */; };
 		0E480CC42768AFB900396D81 /* CalculatorCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */; };
 		0E541C002776FD410098510C /* GradeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E541BFF2776FD410098510C /* GradeData.swift */; };
 		0E541C0827772D860098510C /* ResultGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E541C0727772D860098510C /* ResultGradeViewController.swift */; };
@@ -44,6 +45,7 @@
 		0E19457B2765B081009DF559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E19457E2765B081009DF559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E1945802765B081009DF559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E19C6E527801C07007DE1F6 /* RateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateInformation.swift; sourceTree = "<group>"; };
 		0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCustomKeyboard.swift; sourceTree = "<group>"; };
 		0E541BFF2776FD410098510C /* GradeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeData.swift; sourceTree = "<group>"; };
 		0E541C0727772D860098510C /* ResultGradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGradeViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				0E541BFF2776FD410098510C /* GradeData.swift */,
+				0E19C6E527801C07007DE1F6 /* RateInformation.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 			files = (
 				0E480CC42768AFB900396D81 /* CalculatorCustomKeyboard.swift in Sources */,
 				0E541C0827772D860098510C /* ResultGradeViewController.swift in Sources */,
+				0E19C6E627801C07007DE1F6 /* RateInformation.swift in Sources */,
 				0E9D836C27786F8B00D397AB /* BMICalculatorCustomKeyboard.swift in Sources */,
 				0E97BC0D2765C397003F85BE /* ExchangeRateViewController.swift in Sources */,
 				0E97BC0B2765C384003F85BE /* UnitConversionViewController.swift in Sources */,
