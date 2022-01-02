@@ -58,14 +58,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="21.666666666666671"/>
+                                                    <rect key="frame" x="16" y="11" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -647,6 +647,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021.12.31일 기준 환율입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3I-IZ-6VP">
+                                <rect key="frame" x="30" y="431" width="315" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qzc-y4-chp"/>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
@@ -654,8 +660,10 @@
                             <constraint firstItem="OoI-wG-TMf" firstAttribute="centerX" secondItem="W6I-OX-YSZ" secondAttribute="centerX" id="2W2-mj-VNp"/>
                             <constraint firstItem="lp6-Bi-Q6s" firstAttribute="top" secondItem="L5y-az-M5x" secondAttribute="bottom" constant="8" symbolic="YES" id="7RZ-8C-ebF"/>
                             <constraint firstItem="5AL-HU-VYT" firstAttribute="leading" secondItem="JtF-kg-TrO" secondAttribute="leading" id="7rE-ZZ-l8b"/>
+                            <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="m3I-IZ-6VP" secondAttribute="trailing" constant="30" id="8nV-hu-Q6J"/>
                             <constraint firstItem="Qym-RC-lTv" firstAttribute="top" secondItem="lp6-Bi-Q6s" secondAttribute="bottom" constant="8" symbolic="YES" id="Eei-zq-ABZ"/>
                             <constraint firstItem="XdX-MT-mXv" firstAttribute="leading" secondItem="Qzc-y4-chp" secondAttribute="leading" constant="30" id="FU1-bd-f7g"/>
+                            <constraint firstItem="m3I-IZ-6VP" firstAttribute="top" secondItem="Qym-RC-lTv" secondAttribute="bottom" constant="12" id="HgW-Dt-BOP"/>
                             <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="FON-7E-1LD" secondAttribute="trailing" constant="30" id="LTp-fN-AHi"/>
                             <constraint firstItem="TC7-WI-ITK" firstAttribute="leading" secondItem="5AL-HU-VYT" secondAttribute="leading" id="LYa-DP-7ve"/>
                             <constraint firstItem="FON-7E-1LD" firstAttribute="top" secondItem="Qym-RC-lTv" secondAttribute="bottom" constant="41" id="Nka-ab-wkR"/>
@@ -671,6 +679,7 @@
                             <constraint firstItem="dNk-Gq-tG3" firstAttribute="top" secondItem="OoI-wG-TMf" secondAttribute="bottom" constant="10" id="el1-4D-eBJ"/>
                             <constraint firstItem="OoI-wG-TMf" firstAttribute="leading" secondItem="Qzc-y4-chp" secondAttribute="leading" constant="179" id="g54-0h-9xa"/>
                             <constraint firstItem="FON-7E-1LD" firstAttribute="leading" secondItem="Qym-RC-lTv" secondAttribute="leading" id="hp0-WE-CIU"/>
+                            <constraint firstItem="m3I-IZ-6VP" firstAttribute="leading" secondItem="Qym-RC-lTv" secondAttribute="leading" id="hyL-6m-F8O"/>
                             <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="se6-1l-bdd" secondAttribute="trailing" constant="30" id="mIT-zI-Opb"/>
                             <constraint firstItem="Qzc-y4-chp" firstAttribute="trailing" secondItem="XdX-MT-mXv" secondAttribute="trailing" constant="30" id="oVo-VY-UDg"/>
                             <constraint firstItem="lp6-Bi-Q6s" firstAttribute="leading" secondItem="L5y-az-M5x" secondAttribute="leading" id="pFm-sJ-zr3"/>
@@ -685,6 +694,7 @@
                         <outlet property="afterCountryBtnTxt" destination="dNk-Gq-tG3" id="uKJ-Eo-qQI"/>
                         <outlet property="amountTextField" destination="XdX-MT-mXv" id="5bU-Kr-1S7"/>
                         <outlet property="beforeCountryBtnTxt" destination="se6-1l-bdd" id="c90-6L-Y1v"/>
+                        <outlet property="dateLabel" destination="m3I-IZ-6VP" id="tnh-1o-Nqt"/>
                         <outlet property="dealBaseRateLabel" destination="5AL-HU-VYT" id="tlI-ui-cR6"/>
                         <outlet property="recieveMoneyLabel" destination="Qym-RC-lTv" id="RD5-uW-xwH"/>
                         <outlet property="sendMoneyLabel" destination="L5y-az-M5x" id="LY5-Ej-Vn7"/>

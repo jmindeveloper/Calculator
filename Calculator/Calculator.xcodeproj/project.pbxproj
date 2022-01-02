@@ -128,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				0E19C6E827804209007DE1F6 /* SelectCountryViewController.swift */,
+				0E97BC0C2765C397003F85BE /* ExchangeRateViewController.swift */,
 			);
 			path = ExchangeRateCalculator;
 			sourceTree = "<group>";
@@ -195,7 +196,6 @@
 				0E541C0627772D6A0098510C /* GradeCalculator */,
 				0E97BC082765C346003F85BE /* CalculatorViewController.swift */,
 				0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */,
-				0E97BC0C2765C397003F85BE /* ExchangeRateViewController.swift */,
 				0E97BC0E2765C3A8003F85BE /* UnitPriceViewController.swift */,
 				0EF87868277343B4009E884C /* DutchCalculatorViewController.swift */,
 			);

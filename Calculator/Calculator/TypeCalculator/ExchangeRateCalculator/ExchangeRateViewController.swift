@@ -22,14 +22,11 @@ class ExchangeRateViewController: UIViewController {
     @IBOutlet weak var dealBaseRateLabel: UILabel!
     @IBOutlet weak var sendMoneyLabel: UILabel!
     @IBOutlet weak var recieveMoneyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
-        
-        // MARK: 환율정보 알림
-        
-//        getRate("20211231")
         
         let alert = UIAlertController(title: "환율정보 가져오는중", message: "해당 환율 정보는 한국수출입은행에서 제공합니다.\n비영업일 혹은 영업당일 11시 이전에 조회하실경우\n이전영업일의 환율정보로 조회됩니다.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
@@ -39,11 +36,9 @@ class ExchangeRateViewController: UIViewController {
             var currentDate = ""
             DispatchQueue.global().sync {
                 currentDate = self.dateformat()
+                self.getRate(currentDate)
+                self.dateLabel.text = "\(currentDate) 기준 환율입니다."
             }
-            print("sex")
-            self.getRate(currentDate)
-            
-            //            self.getRate("20211231")
             print(self.rateInformation)
         }
         
@@ -99,7 +94,6 @@ class ExchangeRateViewController: UIViewController {
         let cal = Calendar(identifier: .gregorian)
         let comps = cal.dateComponents([.weekday], from: inputDay)
         let currentDayOfWeek = weekArray[comps.weekday! - 1]
-        
         
         print(currentDayOfWeek)
         
@@ -167,6 +161,9 @@ class ExchangeRateViewController: UIViewController {
             self.afterCountryBtnTxt.setTitle($0, for: .normal)
         }
         
+        SelectCountryVC.modalPresentationStyle = .overCurrentContext
+        SelectCountryVC.modalTransitionStyle = .crossDissolve
+        
         self.present(SelectCountryVC, animated: true, completion: nil)
     }
     
@@ -207,16 +204,22 @@ extension ExchangeRateViewController: ChangeRateDelegate {
     
     func changeRate(_ beforeCountry: Rate, _ afterCountry: Rate, _ amount: Double) {
         // MARK: 매매기준율
+        
         var beforeCountryAmountString = beforeCountry.first!.dealBaseRate
         beforeCountryAmountString.removeAll() { $0 == "," }
+        if beforeCountry.first!.currencyUnit == "IDR(100)" || beforeCountry.first!.currencyUnit == "JPY(100)" {
+            beforeCountryAmountString = String(Double(beforeCountryAmountString)! / 100)
+        }
         var afterCountryAmountString = afterCountry.first!.dealBaseRate
         afterCountryAmountString.removeAll() { $0 == "," }
-        print(afterCountryAmountString)
+        if afterCountry.first!.currencyUnit == "IDR(100)" || afterCountry.first!.currencyUnit == "JPY(100)" {
+            afterCountryAmountString = String(Double(afterCountryAmountString)! / 100)
+        }
         let changeKoreaRate = amount * Double(beforeCountryAmountString)!
         print("changeKoreaRate --> \(changeKoreaRate)")
         let changeAfterCountryRate = changeKoreaRate / Double(afterCountryAmountString)!
         print("changeAfterCountryRate --> \(changeAfterCountryRate)")
-        dealBaseRateLabel.text = String(changeAfterCountryRate)
+        dealBaseRateLabel.text = String(changeAfterCountryRate) + " " + afterCountry.first!.currencyUnit
         
         // MARK: 송금할때
         if afterCountry.first!.currencyName == "한국 원" {
@@ -226,10 +229,16 @@ extension ExchangeRateViewController: ChangeRateDelegate {
             beforeCountrySendMoneyString.removeAll() { $0 == "," }
             var beforeCountryRecieveMoneyString = beforeCountry.first!.recieveMoney
             beforeCountryRecieveMoneyString.removeAll() { $0 == "," }
+            if beforeCountry.first!.currencyUnit == "IDR(100)" || beforeCountry.first!.currencyUnit == "JPY(100)" {
+                beforeCountrySendMoneyString = String(Double(beforeCountrySendMoneyString)! / 100)
+            }
+            if beforeCountry.first!.currencyUnit == "IDR(100)" || beforeCountry.first!.currencyUnit == "JPY(100)" {
+                beforeCountryRecieveMoneyString = String(Double(beforeCountryRecieveMoneyString)! / 100)
+            }
             let sendMoney = amount * Double(beforeCountrySendMoneyString)!
-            sendMoneyLabel.text = String(sendMoney)
+            sendMoneyLabel.text = String(sendMoney) + " KRW"
             let recieveMoney = amount * Double(beforeCountryRecieveMoneyString)!
-            recieveMoneyLabel.text = String(recieveMoney)
+            recieveMoneyLabel.text = String(recieveMoney) + " KRW"
         }
         
         // MARK: 송금받을때
@@ -240,15 +249,21 @@ extension ExchangeRateViewController: ChangeRateDelegate {
             afterCountrySendMoneyString.removeAll() { $0 == "," }
             var afterCountryRecieveMoneyString = afterCountry.first!.recieveMoney
             afterCountryRecieveMoneyString.removeAll() { $0 == "," }
+            if afterCountry.first!.currencyUnit == "IDR(100)" || afterCountry.first!.currencyUnit == "JPY(100)" {
+                afterCountrySendMoneyString = String(Double(afterCountrySendMoneyString)! / 100)
+            }
+            if afterCountry.first!.currencyUnit == "IDR(100)" || afterCountry.first!.currencyUnit == "JPY(100)" {
+                afterCountryRecieveMoneyString = String(Double(afterCountryRecieveMoneyString)! / 100)
+            }
             let sendMoney = changeAfterCountryRate * Double(afterCountrySendMoneyString)!
-            sendMoneyLabel.text = String(sendMoney)
+            sendMoneyLabel.text = String(sendMoney) + " KRW"
             let recieveMoney = changeAfterCountryRate * Double(afterCountryRecieveMoneyString)!
-            recieveMoneyLabel.text = String(recieveMoney)
+            recieveMoneyLabel.text = String(recieveMoney) + " KRW"
         }
         
         if beforeCountry.first!.currencyName != "한국 원" && afterCountry.first!.currencyName != "한국 원" {
             sendMoneyLabel.isHidden = true
-            recieveMoneyLabel.isHighlighted = true
+            recieveMoneyLabel.isHidden = true
         }
         
     }
