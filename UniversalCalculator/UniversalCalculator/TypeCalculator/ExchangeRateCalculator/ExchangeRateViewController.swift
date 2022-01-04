@@ -62,12 +62,15 @@ class ExchangeRateViewController: UIViewController {
         let day = dateFormatter.string(from: Date())
         dateFormatter.dateFormat = "HH"
         let hour = dateFormatter.string(from: Date())
+        dateFormatter.dateFormat = "E"
+        let today = dateFormatter.string(from: Date())
+        print("today --> \(today)")
         
         var currentDayOfWeek = "오류"
         var currentDate = "오류"
         var count = 0
         
-        while currentDayOfWeek == "토" || currentDayOfWeek == "일" || currentDayOfWeek == "오류" || hour < "11" {
+        while currentDayOfWeek == "토" || currentDayOfWeek == "일" || currentDayOfWeek == "오류" || (hour < "11" && currentDayOfWeek == "월") {
             let beforeDay = Int(day)!
             let month = Int(month)!
             let date = String(Int(year + String(format: "%02d", month) + String(format: "%02d", beforeDay))! - count)
@@ -75,8 +78,15 @@ class ExchangeRateViewController: UIViewController {
             currentDate = businessDate(date).1
             count += 1
         }
+        
         print("currentDate --> \(currentDate)")
-        return currentDate
+        
+        if (hour < "11" && currentDayOfWeek != "금" && today != "금") {
+            print("------")
+            return String(Int(currentDate)! - 1)
+        } else {
+            return currentDate
+        }
     }
     
     func businessDate(_ date: String) -> (String, String) {
