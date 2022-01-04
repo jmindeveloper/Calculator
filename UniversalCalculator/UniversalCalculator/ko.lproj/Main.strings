@@ -1,0 +1,183 @@
+
+/* Class = "UILabel"; text = "0"; ObjectID = "5AL-HU-VYT"; */
+"5AL-HU-VYT.text" = "0";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "5xF-Uh-jv0"; */
+"5xF-Uh-jv0.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "나이"; ObjectID = "9Vd-Sa-dXX"; */
+"9Vd-Sa-dXX.placeholder" = "나이";
+
+/* Class = "UITextField"; placeholder = "남/여"; ObjectID = "B4R-FB-Xm6"; */
+"B4R-FB-Xm6.placeholder" = "남/여";
+
+/* Class = "UILabel"; text = "신장"; ObjectID = "C32-ue-8Uh"; */
+"C32-ue-8Uh.text" = "신장";
+
+/* Class = "UIButton"; configuration.title = "추가"; ObjectID = "DJf-Wf-yU5"; */
+"DJf-Wf-yU5.configuration.title" = "추가";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "DJf-Wf-yU5"; */
+"DJf-Wf-yU5.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "1728.74 kcal"; ObjectID = "EjN-dI-sE8"; */
+"EjN-dI-sE8.text" = "1728.74 kcal";
+
+/* Class = "UILabel"; text = "제공하는 정보는 참고사항이며, 오류가 나거나 지연될 수 있습니다. 본 앱 개발자는 제공된 정보에 의한 투자결과에 법적책임을 지지 않습니다."; ObjectID = "FON-7E-1LD"; */
+"FON-7E-1LD.text" = "제공하는 정보는 참고사항이며, 오류가 나거나 지연될 수 있습니다. 본 앱 개발자는 제공된 정보에 의한 투자결과에 법적책임을 지지 않습니다.";
+
+/* Class = "UILabel"; text = "몸무게"; ObjectID = "Fbv-Is-Xih"; */
+"Fbv-Is-Xih.text" = "몸무게";
+
+/* Class = "UITextField"; placeholder = "A"; ObjectID = "Fm1-db-3rW"; */
+"Fm1-db-3rW.placeholder" = "A";
+
+/* Class = "UINavigationItem"; title = "계산기선택"; ObjectID = "GCm-zv-yP0"; */
+"GCm-zv-yP0.title" = "계산기선택";
+
+/* Class = "UILabel"; text = "점수: "; ObjectID = "GEo-8h-OC6"; */
+"GEo-8h-OC6.text" = "점수: ";
+
+/* Class = "UIButton"; configuration.title = "닫기"; ObjectID = "GUc-2k-PMU"; */
+"GUc-2k-PMU.configuration.title" = "닫기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GUc-2k-PMU"; */
+"GUc-2k-PMU.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "BMI (체질량지수)"; ObjectID = "IrS-YD-ZlH"; */
+"IrS-YD-ZlH.text" = "BMI (체질량지수)";
+
+/* Class = "UITextField"; placeholder = "cm"; ObjectID = "JAO-t1-j6L"; */
+"JAO-t1-j6L.placeholder" = "cm";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JHl-QM-2G6"; */
+"JHl-QM-2G6.text" = "Label";
+
+/* Class = "UILabel"; text = "매매 기준율"; ObjectID = "JtF-kg-TrO"; */
+"JtF-kg-TrO.text" = "매매 기준율";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "L5y-az-M5x"; */
+"L5y-az-M5x.text" = "0";
+
+/* Class = "UILabel"; text = "19.03 (표준체중)"; ObjectID = "Me3-l1-EgM"; */
+"Me3-l1-EgM.text" = "19.03 (표준체중)";
+
+/* Class = "UITextView"; text = "abcd"; ObjectID = "N52-ID-UW4"; */
+"N52-ID-UW4.text" = "abcd";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Qym-RC-lTv"; */
+"Qym-RC-lTv.text" = "0";
+
+/* Class = "UINavigationItem"; title = "일반계산기"; ObjectID = "RFc-uQ-6Id"; */
+"RFc-uQ-6Id.title" = "일반계산기";
+
+/* Class = "UIButton"; configuration.title = "닫기"; ObjectID = "SVN-Tf-vvN"; */
+"SVN-Tf-vvN.configuration.title" = "닫기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "SVN-Tf-vvN"; */
+"SVN-Tf-vvN.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "송금 보낼때"; ObjectID = "TC7-WI-ITK"; */
+"TC7-WI-ITK.text" = "송금 보낼때";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "U5i-5A-w9o"; */
+"U5i-5A-w9o.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Uzr-4q-CEB"; */
+"Uzr-4q-CEB.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "계산하기"; ObjectID = "VY6-Ff-CCV"; */
+"VY6-Ff-CCV.configuration.title" = "계산하기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VY6-Ff-CCV"; */
+"VY6-Ff-CCV.normalTitle" = "Button";
+
+/* Class = "UITextView"; text = "0"; ObjectID = "VdY-XZ-2kB"; */
+"VdY-XZ-2kB.text" = "0";
+
+/* Class = "UIButton"; configuration.title = "확인"; ObjectID = "WZc-lL-E4G"; */
+"WZc-lL-E4G.configuration.title" = "확인";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WZc-lL-E4G"; */
+"WZc-lL-E4G.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "금액입력"; ObjectID = "XdX-MT-mXv"; */
+"XdX-MT-mXv.placeholder" = "금액입력";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cXT-PX-4xp"; */
+"cXT-PX-4xp.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "4.5점 만점"; ObjectID = "cvX-gK-t4Q"; */
+"cvX-gK-t4Q.text" = "4.5점 만점";
+
+/* Class = "UIButton"; configuration.title = "국가선택"; ObjectID = "dNk-Gq-tG3"; */
+"dNk-Gq-tG3.configuration.title" = "국가선택";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dNk-Gq-tG3"; */
+"dNk-Gq-tG3.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "계산하기"; ObjectID = "eBE-oP-86J"; */
+"eBE-oP-86J.configuration.title" = "계산하기";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "eBE-oP-86J"; */
+"eBE-oP-86J.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "성별"; ObjectID = "eMZ-i5-pTk"; */
+"eMZ-i5-pTk.text" = "성별";
+
+/* Class = "UILabel"; text = "Comming soon"; ObjectID = "kTo-tg-mnH"; */
+"kTo-tg-mnH.text" = "Comming soon";
+
+/* Class = "UILabel"; text = "송금 받을때"; ObjectID = "lp6-Bi-Q6s"; */
+"lp6-Bi-Q6s.text" = "송금 받을때";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lvM-4j-mfD"; */
+"lvM-4j-mfD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "2021.12.31일 기준 환율입니다"; ObjectID = "m3I-IZ-6VP"; */
+"m3I-IZ-6VP.text" = "2021.12.31일 기준 환율입니다";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "n96-tV-kwQ"; */
+"n96-tV-kwQ.text" = "0";
+
+/* Class = "UILabel"; text = "Comming Soon"; ObjectID = "o5g-sI-wmt"; */
+"o5g-sI-wmt.text" = "Comming Soon";
+
+/* Class = "UILabel"; text = "전공: "; ObjectID = "sAd-NH-6gp"; */
+"sAd-NH-6gp.text" = "전공: ";
+
+/* Class = "UIButton"; configuration.title = "국가선택"; ObjectID = "se6-1l-bdd"; */
+"se6-1l-bdd.configuration.title" = "국가선택";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "se6-1l-bdd"; */
+"se6-1l-bdd.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "학점"; ObjectID = "vS8-FG-hzK"; */
+"vS8-FG-hzK.placeholder" = "학점";
+
+/* Class = "UILabel"; text = "BMR (기초대사량)"; ObjectID = "wNo-1B-SPP"; */
+"wNo-1B-SPP.text" = "BMR (기초대사량)";
+
+/* Class = "UILabel"; text = "총 평점: 3.6 전공평점: 0 이수학점: 5 전공이수: 0"; ObjectID = "wVo-nx-irt"; */
+"wVo-nx-irt.text" = "총 평점: 3.6 전공평점: 0 이수학점: 5 전공이수: 0";
+
+/* Class = "UILabel"; text = "해당 결과는 일반적인 변환식을 적용한 결과로 실제 결과와 다를수 있습니다"; ObjectID = "wYI-rl-4tr"; */
+"wYI-rl-4tr.text" = "해당 결과는 일반적인 변환식을 적용한 결과로 실제 결과와 다를수 있습니다";
+
+/* Class = "UITextField"; placeholder = "kg"; ObjectID = "wao-GA-OQB"; */
+"wao-GA-OQB.placeholder" = "kg";
+
+/* Class = "UIButton"; configuration.title = "초기화"; ObjectID = "wup-gQ-Gys"; */
+"wup-gQ-Gys.configuration.title" = "초기화";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wup-gQ-Gys"; */
+"wup-gQ-Gys.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Comming Soon"; ObjectID = "yCk-gE-27k"; */
+"yCk-gE-27k.text" = "Comming Soon";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ydh-gB-fSI"; */
+"ydh-gB-fSI.text" = "Label";
+
+/* Class = "UILabel"; text = "나이"; ObjectID = "zxP-aB-eDF"; */
+"zxP-aB-eDF.text" = "나이";
