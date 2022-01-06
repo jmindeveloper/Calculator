@@ -20,6 +20,8 @@
 		0E480CC42768AFB900396D81 /* CalculatorCustomKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */; };
 		0E541C002776FD410098510C /* GradeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E541BFF2776FD410098510C /* GradeData.swift */; };
 		0E541C0827772D860098510C /* ResultGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E541C0727772D860098510C /* ResultGradeViewController.swift */; };
+		0E77CA812787027F00558DDB /* UnitConverse.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E77CA802787027F00558DDB /* UnitConverse.json */; };
+		0E77CA83278711BE00558DDB /* UnitConvertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77CA82278711BE00558DDB /* UnitConvertData.swift */; };
 		0E97BC052765BA2F003F85BE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC042765BA2F003F85BE /* SideMenuViewController.swift */; };
 		0E97BC092765C346003F85BE /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC082765C346003F85BE /* CalculatorViewController.swift */; };
 		0E97BC0B2765C384003F85BE /* UnitConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */; };
@@ -56,6 +58,8 @@
 		0E480CC32768AFB900396D81 /* CalculatorCustomKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorCustomKeyboard.swift; sourceTree = "<group>"; };
 		0E541BFF2776FD410098510C /* GradeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeData.swift; sourceTree = "<group>"; };
 		0E541C0727772D860098510C /* ResultGradeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGradeViewController.swift; sourceTree = "<group>"; };
+		0E77CA802787027F00558DDB /* UnitConverse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UnitConverse.json; sourceTree = "<group>"; };
+		0E77CA82278711BE00558DDB /* UnitConvertData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConvertData.swift; sourceTree = "<group>"; };
 		0E97BC042765BA2F003F85BE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		0E97BC082765C346003F85BE /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		0E97BC0A2765C384003F85BE /* UnitConversionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			children = (
 				0E541BFF2776FD410098510C /* GradeData.swift */,
 				0E19C6E527801C07007DE1F6 /* RateInformation.swift */,
+				0E77CA802787027F00558DDB /* UnitConverse.json */,
+				0E77CA82278711BE00558DDB /* UnitConvertData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E77CA812787027F00558DDB /* UnitConverse.json in Resources */,
 				0E9D836A27786F7E00D397AB /* BMICalculatorCustomKeyboard.xib in Resources */,
 				0E19457F2765B081009DF559 /* LaunchScreen.storyboard in Resources */,
 				0EFFA197278196CD00380BD5 /* icon.xib in Resources */,
@@ -411,6 +418,7 @@
 				0EF87869277343B4009E884C /* DutchCalculatorViewController.swift in Sources */,
 				0E97BC052765BA2F003F85BE /* SideMenuViewController.swift in Sources */,
 				0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */,
+				0E77CA83278711BE00558DDB /* UnitConvertData.swift in Sources */,
 				0E19457A2765B080009DF559 /* Calculator.xcdatamodeld in Sources */,
 				0E1945702765B080009DF559 /* AppDelegate.swift in Sources */,
 				0E19C6F0278046F0007DE1F6 /* ChangeRateCustomKeyboard.swift in Sources */,

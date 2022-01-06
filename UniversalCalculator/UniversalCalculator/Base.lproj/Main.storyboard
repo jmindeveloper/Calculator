@@ -48,7 +48,7 @@
         <!--계산기선택-->
         <scene sceneID="b8R-ie-Ycf">
             <objects>
-                <viewController id="9Be-y4-mlL" customClass="SideMenuViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9Be-y4-mlL" customClass="SideMenuViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="akz-7j-Q0Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="Calculator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="UniversalCalculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
@@ -107,7 +107,7 @@
         <!--Unit Price View Controller-->
         <scene sceneID="l30-L9-AKw">
             <objects>
-                <viewController storyboardIdentifier="UnitPriceViewController" id="RJ2-kf-es9" customClass="UnitPriceViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UnitPriceViewController" id="RJ2-kf-es9" customClass="UnitPriceViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bx2-EE-QOQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,12 +134,12 @@
         <!--Calculator View Controller-->
         <scene sceneID="nb0-KH-hrV">
             <objects>
-                <viewController storyboardIdentifier="BMICalculatorViewController" id="15s-kU-pr7" customClass="BMICalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BMICalculatorViewController" id="15s-kU-pr7" customClass="BMICalculatorViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tgg-Vo-7XE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OML-oF-rTM" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OML-oF-rTM" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                 <rect key="frame" x="15" y="54" width="345" height="200"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ate-nl-q0s">
@@ -148,7 +148,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-fT-Xn3">
                                                 <rect key="frame" x="0.0" y="0.0" width="315" height="86"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0H-bk-67S" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0H-bk-67S" customClass="CustomView" customModule="UniversalCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="86"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C32-ue-8Uh">
@@ -178,7 +178,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJ9-1f-1fQ" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJ9-1f-1fQ" customClass="CustomView" customModule="UniversalCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="160.66666666666663" y="0.0" width="154.33333333333337" height="86"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxP-aB-eDF">
@@ -213,7 +213,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="gEn-L6-aPU">
                                                 <rect key="frame" x="0.0" y="94" width="315" height="86"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-Tu-9JB" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0b-Tu-9JB" customClass="CustomView" customModule="UniversalCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="154.66666666666666" height="86"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몸무게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-Is-Xih">
@@ -243,7 +243,7 @@
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isShadow" value="YES"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-SP-2zz" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-SP-2zz" customClass="CustomView" customModule="UniversalCalculator" customModuleProvider="target">
                                                         <rect key="frame" x="160.66666666666663" y="0.0" width="154.33333333333337" height="86"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMZ-i5-pTk">
@@ -291,7 +291,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VY6-Ff-CCV" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VY6-Ff-CCV" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                 <rect key="frame" x="15" y="259" width="345" height="31"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="Button"/>
@@ -331,7 +331,7 @@
         <!--ResultBMI Calculator View Controller-->
         <scene sceneID="HTw-WB-cho">
             <objects>
-                <viewController storyboardIdentifier="ResultBMICalculatorViewController" id="cbs-Hk-UQp" customClass="ResultBMICalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultBMICalculatorViewController" id="cbs-Hk-UQp" customClass="ResultBMICalculatorViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SFa-RN-Ol5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -363,7 +363,7 @@
                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUc-2k-PMU" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUc-2k-PMU" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                         <rect key="frame" x="134" y="164" width="67" height="29"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
@@ -422,7 +422,7 @@
         <!--Dutch Calculator View Controller-->
         <scene sceneID="RQJ-gg-KrV">
             <objects>
-                <viewController storyboardIdentifier="DutchCalculatorViewController" id="O9P-Id-RQK" customClass="DutchCalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DutchCalculatorViewController" id="O9P-Id-RQK" customClass="DutchCalculatorViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6rf-BD-xTF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,7 +449,7 @@
         <!--일반계산기-->
         <scene sceneID="Qtr-1q-Vdv">
             <objects>
-                <viewController storyboardIdentifier="CalculatorViewController" id="hJF-uC-YKa" customClass="CalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorViewController" id="hJF-uC-YKa" customClass="CalculatorViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X3F-Sw-jsv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -528,7 +528,7 @@
         <!--Unit Conversion View Controller-->
         <scene sceneID="uXq-fI-V9a">
             <objects>
-                <viewController storyboardIdentifier="UnitConversionViewController" id="LCi-VX-yGJ" customClass="UnitConversionViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UnitConversionViewController" id="LCi-VX-yGJ" customClass="UnitConversionViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9ug-fA-Ees">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -563,12 +563,12 @@
         <!--Exchange Rate View Controller-->
         <scene sceneID="6Rv-hX-X1i">
             <objects>
-                <viewController storyboardIdentifier="ExchangeRateViewController" id="L9S-7W-I2A" customClass="ExchangeRateViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExchangeRateViewController" id="L9S-7W-I2A" customClass="ExchangeRateViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W6I-OX-YSZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se6-1l-bdd" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="se6-1l-bdd" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                 <rect key="frame" x="30" y="74" width="315" height="31"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button"/>
@@ -593,7 +593,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNk-Gq-tG3" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNk-Gq-tG3" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                 <rect key="frame" x="30" y="194.33333333333334" width="315" height="31"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <state key="normal" title="Button"/>
@@ -710,7 +710,7 @@
         <!--Select Country View Controller-->
         <scene sceneID="bKm-aN-6Fy">
             <objects>
-                <viewController storyboardIdentifier="SelectCountryViewController" modalTransitionStyle="crossDissolve" id="15q-fM-1SM" customClass="SelectCountryViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectCountryViewController" modalTransitionStyle="crossDissolve" id="15q-fM-1SM" customClass="SelectCountryViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ARo-nJ-Au3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -718,7 +718,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ez-Nu-g6F">
                                 <rect key="frame" x="60" y="104" width="255" height="614"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZc-lL-E4G" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZc-lL-E4G" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                         <rect key="frame" x="103" y="575" width="49" height="31"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
@@ -736,7 +736,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="255" height="565"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryListCell" id="4C3-EM-4ka" customClass="CountryListCell" customModule="Calculator" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryListCell" id="4C3-EM-4ka" customClass="CountryListCell" customModule="UniversalCalculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="44.666666030883789" width="255" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4C3-EM-4ka" id="b46-HP-w0e">
@@ -793,7 +793,7 @@
         <!--Grade Calculator View Controller-->
         <scene sceneID="n0h-l5-IFr">
             <objects>
-                <viewController storyboardIdentifier="GradeCalculatorViewController" id="uRa-GS-lFJ" customClass="GradeCalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GradeCalculatorViewController" id="uRa-GS-lFJ" customClass="GradeCalculatorViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wSe-Wp-Mk9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -871,7 +871,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GradeCalculatorTableViewCell" rowHeight="50" id="X5p-Ne-vU3" customClass="GradeCalculatorTableViewCell" customModule="Calculator" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GradeCalculatorTableViewCell" rowHeight="50" id="X5p-Ne-vU3" customClass="GradeCalculatorTableViewCell" customModule="UniversalCalculator" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88.666666030883789" width="345" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X5p-Ne-vU3" id="suI-HD-lCd">
@@ -909,7 +909,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-HE-g5p" customClass="CustomView" customModule="Calculator" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch6-HE-g5p" customClass="CustomView" customModule="UniversalCalculator" customModuleProvider="target">
                                                     <rect key="frame" x="238" y="15" width="20" height="20"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-4q-CEB">
@@ -1007,7 +1007,7 @@
         <!--Result Grade View Controller-->
         <scene sceneID="6Gy-u1-VoC">
             <objects>
-                <viewController storyboardIdentifier="ResultGradeViewController" id="iKD-fi-E43" customClass="ResultGradeViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultGradeViewController" id="iKD-fi-E43" customClass="ResultGradeViewController" customModule="UniversalCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" alpha="0.59999999999999998" contentMode="scaleToFill" id="EJe-3a-o6I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1015,7 +1015,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVc-VH-30e">
                                 <rect key="frame" x="20" y="337.66666666666669" width="335" height="137"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVN-Tf-vvN" customClass="CustomUIButton" customModule="Calculator" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVN-Tf-vvN" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
                                         <rect key="frame" x="134" y="100" width="67" height="29"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <state key="normal" title="Button"/>
