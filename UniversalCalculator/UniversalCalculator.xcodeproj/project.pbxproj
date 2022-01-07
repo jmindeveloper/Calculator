@@ -33,6 +33,9 @@
 		0ED57E1827677319002BB491 /* extUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED57E1727677319002BB491 /* extUIViewController.swift */; };
 		0ED7CAED2768BAF1007A0341 /* CalculatorCustomKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ED7CAEC2768BAF1007A0341 /* CalculatorCustomKeyboard.xib */; };
 		0EEE7DA92765F06F00F7D197 /* CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEE7DA82765F06F00F7D197 /* CustomUI.swift */; };
+		0EF0EB1927885BF100AC6342 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF0EB1827885BF100AC6342 /* Collections */; };
+		0EF0EB1B27885BF100AC6342 /* DequeModule in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF0EB1A27885BF100AC6342 /* DequeModule */; };
+		0EF0EB1D27885BF100AC6342 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 0EF0EB1C27885BF100AC6342 /* OrderedCollections */; };
 		0EF8786527734276009E884C /* BMICalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF8786427734276009E884C /* BMICalculatorViewController.swift */; };
 		0EF87867277342A9009E884C /* GradeCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF87866277342A9009E884C /* GradeCalculatorViewController.swift */; };
 		0EF87869277343B4009E884C /* DutchCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF87868277343B4009E884C /* DutchCalculatorViewController.swift */; };
@@ -92,7 +95,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF0EB1927885BF100AC6342 /* Collections in Frameworks */,
 				C5F6D26639F46DD59F3E6550 /* Pods_UniversalCalculator.framework in Frameworks */,
+				0EF0EB1D27885BF100AC6342 /* OrderedCollections in Frameworks */,
+				0EF0EB1B27885BF100AC6342 /* DequeModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,11 @@
 			dependencies = (
 			);
 			name = UniversalCalculator;
+			packageProductDependencies = (
+				0EF0EB1827885BF100AC6342 /* Collections */,
+				0EF0EB1A27885BF100AC6342 /* DequeModule */,
+				0EF0EB1C27885BF100AC6342 /* OrderedCollections */,
+			);
 			productName = Calculator;
 			productReference = 0E19456C2765B080009DF559 /* UniversalCalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -328,6 +339,9 @@
 				ko,
 			);
 			mainGroup = 0E1945632765B080009DF559;
+			packageReferences = (
+				0EF0EB1727885BF100AC6342 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 0E19456D2765B080009DF559 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -653,6 +667,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0EF0EB1727885BF100AC6342 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0EF0EB1827885BF100AC6342 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EF0EB1727885BF100AC6342 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		0EF0EB1A27885BF100AC6342 /* DequeModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EF0EB1727885BF100AC6342 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = DequeModule;
+		};
+		0EF0EB1C27885BF100AC6342 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0EF0EB1727885BF100AC6342 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0E1945782765B080009DF559 /* Calculator.xcdatamodeld */ = {

@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import DropDown
 
 class UnitConversionViewController: UIViewController {
     
     var unitConvert = [UnitConvertElement]()
+    let dropDown = DropDown()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
-        
         getUnit()
         print("unitConvert --> \(unitConvert)")
     }
@@ -31,8 +32,14 @@ class UnitConversionViewController: UIViewController {
                 print("unit --> \(unit)")
                 unitConvert = unit
             }
-            
         }
+        dropDown.dataSource = unitConvert.map { UnitConvertToKorean(rawValue: $0.unitName)?.description as! String }
+//        for i in 0..<unitConvert.count {
+//            let unitName = unitConvert[i].unitName
+//            guard let unitDescription = UnitConvertToKorean(rawValue: unitName)?.description else { return }
+//            dropDown.dataSource.append(unitDescription)
+//        }
+        print("dropDown.dataSource --> \(dropDown.dataSource)")
     }
     
     func setNavigationBar() {
@@ -47,4 +54,11 @@ class UnitConversionViewController: UIViewController {
         guard let sideMenuVC = self.storyboard?.instantiateViewController(withIdentifier: "SideMenuNavigationController") else { return }
         self.present(sideMenuVC, animated: true, completion: nil)
     }
+    
+    @IBAction func selectUnitBtn(_ sender: Any) {
+        
+        dropDown.show()
+        
+    }
+    
 }

@@ -12,7 +12,7 @@
         }
     },
     {
-        "unitName": "Area",
+        "unitName": "area",
         "type": {
             "㎡": 1,
             "㎢": 0.000001,
