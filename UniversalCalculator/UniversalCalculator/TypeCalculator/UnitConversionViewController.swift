@@ -12,12 +12,26 @@ class UnitConversionViewController: UIViewController {
     
     var unitConvert = [UnitConvertElement]()
     let dropDown = DropDown()
+    var typeArray = [UnitType]()
+    
+    @IBOutlet weak var SelectUnitButton: CustomUIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNavigationBar()
         getUnit()
+        setDropDown()
         print("unitConvert --> \(unitConvert)")
+        
+        tableView.dataSource = self
+        
+        let types = self.unitConvert[0].type.sorted { $0.value < $1.value }
+        for i in 0..<types.count {
+            let type = UnitConvertToKorean(rawValue: types[i].key)!.description
+            self.typeArray.append(UnitType(type: type, figure: types[i].value))
+        }
+        self.tableView.reloadData()
     }
     
     // MARK: json 파싱
@@ -33,13 +47,22 @@ class UnitConversionViewController: UIViewController {
                 unitConvert = unit
             }
         }
-        dropDown.dataSource = unitConvert.map { UnitConvertToKorean(rawValue: $0.unitName)?.description as! String }
+    }
+    
+    // MARK: dropDown setting
+    func setDropDown() {
+        dropDown.dataSource = unitConvert.map { UnitConvertToKorean(rawValue: $0.unitName)!.description }
 //        for i in 0..<unitConvert.count {
 //            let unitName = unitConvert[i].unitName
 //            guard let unitDescription = UnitConvertToKorean(rawValue: unitName)?.description else { return }
 //            dropDown.dataSource.append(unitDescription)
 //        }
         print("dropDown.dataSource --> \(dropDown.dataSource)")
+        dropDown.anchorView = SelectUnitButton
+        dropDown.shadowOffset = CGSize(width: 0, height: 0)
+        dropDown.shadowRadius = 0
+        dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
+        dropDown.selectionBackgroundColor = dropDown.backgroundColor!
     }
     
     func setNavigationBar() {
@@ -55,10 +78,44 @@ class UnitConversionViewController: UIViewController {
         self.present(sideMenuVC, animated: true, completion: nil)
     }
     
+    
+    
     @IBAction func selectUnitBtn(_ sender: Any) {
-        
         dropDown.show()
-        
+        dropDown.selectionAction = { [weak self] in
+            guard let self = self else { return }
+            self.SelectUnitButton.setTitle($1, for: .normal)
+            let types = self.unitConvert[$0].type.sorted { $0.value < $1.value }
+            self.typeArray = []
+            for i in 0..<types.count {
+                let type = UnitConvertToKorean(rawValue: types[i].key)!.description
+                self.typeArray.append(UnitType(type: type, figure: types[i].value))
+            }
+            self.tableView.reloadData()
+        }
     }
+    
+}
+
+extension UnitConversionViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return typeArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UnitConversionTableViewCell", for: indexPath) as? UnitConversionTableViewCell else { return UITableViewCell() }
+        
+        cell.typeLabel.text = typeArray[indexPath.row].type
+        
+        return cell
+    }
+}
+
+class UnitConversionTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var figureTextField: UITextField!
+    
     
 }
