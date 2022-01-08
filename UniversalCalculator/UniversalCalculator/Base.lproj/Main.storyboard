@@ -551,6 +551,11 @@
                                     <action selector="selectUnitBtn:" destination="LCi-VX-yGJ" eventType="touchUpInside" id="rCv-Ru-11y"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLe-gR-BpJ">
+                                <rect key="frame" x="30" y="164" width="315" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cVo-0T-Hnx">
                                 <rect key="frame" x="15" y="99" width="345" height="400"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -578,7 +583,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="320" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PL6-Rh-xzM">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="수치를 입력해주세요" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PL6-Rh-xzM">
                                                     <rect key="frame" x="130" y="5" width="200" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="200" id="VfE-ol-CW4"/>
@@ -611,15 +616,19 @@
                         <constraints>
                             <constraint firstItem="oyv-Ix-PSd" firstAttribute="top" secondItem="JY0-wo-iwp" secondAttribute="top" constant="10" id="9dZ-hT-Vf1"/>
                             <constraint firstItem="cVo-0T-Hnx" firstAttribute="top" secondItem="oyv-Ix-PSd" secondAttribute="bottom" constant="10" id="KgE-jQ-HPs"/>
+                            <constraint firstItem="HLe-gR-BpJ" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="30" id="KuW-jf-nKn"/>
+                            <constraint firstItem="HLe-gR-BpJ" firstAttribute="top" secondItem="JY0-wo-iwp" secondAttribute="top" constant="120" id="OsC-BJ-7G2"/>
                             <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="cVo-0T-Hnx" secondAttribute="trailing" constant="15" id="OyD-4y-VCa"/>
                             <constraint firstItem="cVo-0T-Hnx" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="15" id="gfP-pO-z3f"/>
                             <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="oyv-Ix-PSd" secondAttribute="trailing" constant="70" id="pGt-I0-7F0"/>
                             <constraint firstItem="oyv-Ix-PSd" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="70" id="s5D-Zo-Ncw"/>
+                            <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="HLe-gR-BpJ" secondAttribute="trailing" constant="30" id="vCN-ox-cPP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SelectUnitButton" destination="oyv-Ix-PSd" id="FnB-wV-g5f"/>
                         <outlet property="tableView" destination="cVo-0T-Hnx" id="uYE-Sj-k2w"/>
+                        <outlet property="textField" destination="HLe-gR-BpJ" id="BX6-zY-jQO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JQ-jc-dq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

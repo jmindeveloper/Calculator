@@ -13,7 +13,11 @@ class UnitConversionViewController: UIViewController {
     var unitConvert = [UnitConvertElement]()
     let dropDown = DropDown()
     var typeArray = [UnitType]()
+    var figureTextFieldIndex = 0
+    var figure: Double = 0
+    var defaultType: Double = 0
     
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var SelectUnitButton: CustomUIButton!
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,13 +29,20 @@ class UnitConversionViewController: UIViewController {
         print("unitConvert --> \(unitConvert)")
         
         tableView.dataSource = self
+        tableView.delegate = self
         
+        // MARK: 초기 --> 길이
         let types = self.unitConvert[0].type.sorted { $0.value < $1.value }
         for i in 0..<types.count {
             let type = UnitConvertToKorean(rawValue: types[i].key)!.description
             self.typeArray.append(UnitType(type: type, figure: types[i].value))
         }
         self.tableView.reloadData()
+        
+        let unitConvertCalculatorCustomKeyboard = Bundle.main.loadNibNamed("ChangeRateCustomKeyboard", owner: nil, options: nil)
+        guard let unitConvertCalculatorKeyboard = unitConvertCalculatorCustomKeyboard?.first as? ChangeRateCustomKeyboard else { return }
+        textField.inputView = unitConvertCalculatorKeyboard
+        textField.becomeFirstResponder()
     }
     
     // MARK: json 파싱
@@ -97,7 +108,7 @@ class UnitConversionViewController: UIViewController {
     
 }
 
-extension UnitConversionViewController: UITableViewDataSource {
+extension UnitConversionViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return typeArray.count
@@ -106,9 +117,28 @@ extension UnitConversionViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UnitConversionTableViewCell", for: indexPath) as? UnitConversionTableViewCell else { return UITableViewCell() }
         
-        cell.typeLabel.text = typeArray[indexPath.row].type
+        let unitConvertCalculatorCustomKeyboard = Bundle.main.loadNibNamed("ChangeRateCustomKeyboard", owner: nil, options: nil)
+        guard let unitConvertCalculatorKeyboard = unitConvertCalculatorCustomKeyboard?.first as? ChangeRateCustomKeyboard else { return UITableViewCell() }
         
+        cell.typeLabel.text = typeArray[indexPath.row].type
+        cell.figureTextField.inputView = unitConvertCalculatorKeyboard
+        
+        unitConvertCalculatorKeyboard.numPadClosure = { [weak self] in
+            guard let self = self else { return }
+            if cell.figureTextField.isFirstResponder {
+                let beforeText = cell.figureTextField.text ?? ""
+                cell.figureTextField.text = beforeText + $0
+                let figure = Double(cell.figureTextField.text ?? "") ?? 0
+                self.defaultType = self.changeDefaultType(indexPath.row, figure)
+            }
+            tableView.reloadData()
+        }
+        cell.figureTextField.text = String(self.defaultType * self.typeArray[indexPath.row].figure)
         return cell
+    }
+    
+    func changeDefaultType(_ index: Int, _ figure: Double) -> Double {
+        return figure / typeArray[index].figure
     }
 }
 
@@ -119,3 +149,4 @@ class UnitConversionTableViewCell: UITableViewCell {
     
     
 }
+
