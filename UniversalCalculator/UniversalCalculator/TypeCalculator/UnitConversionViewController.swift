@@ -12,12 +12,14 @@ class UnitConversionViewController: UIViewController {
     
     var unitConvert = [UnitConvertElement]()
     let dropDown = DropDown()
-    let figureDropDown = DropDown()
+    let typeDropDown = DropDown()
     var typeArray = [UnitType]()
     var figureTextFieldIndex = 0
     var figure: Double = 0
     var defaultType: Double = 0
     var isTapped = false
+    var figureDropDownIndex = 0
+    var changeFigures = [Double]()
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var SelectUnitButton: CustomUIButton!
@@ -44,6 +46,7 @@ class UnitConversionViewController: UIViewController {
         
         let unitConvertCalculatorCustomKeyboard = Bundle.main.loadNibNamed("ChangeRateCustomKeyboard", owner: nil, options: nil)
         guard let unitConvertCalculatorKeyboard = unitConvertCalculatorCustomKeyboard?.first as? ChangeRateCustomKeyboard else { return }
+        unitConvertCalculatorKeyboard.changeRateDelegate = self
         textField.inputView = unitConvertCalculatorKeyboard
         textField.becomeFirstResponder()
     }
@@ -74,16 +77,14 @@ class UnitConversionViewController: UIViewController {
         dropDown.selectionBackgroundColor = dropDown.backgroundColor!
     }
     
-    func setFigureDropDown(_ unit: String) {
-//        let unit = unitConvert.filter { $0.unitName == unit }
-        
-        figureDropDown.dataSource = typeArray.map { $0.type }
-        
-        figureDropDown.anchorView = selectTypeButton
-        figureDropDown.shadowOffset = CGSize(width: 0, height: 0)
-        figureDropDown.shadowRadius = 0
-        figureDropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
-        figureDropDown.selectionBackgroundColor = dropDown.backgroundColor!
+    // MARK: typeDropDown setting
+    func setTypeDropDown(_ unit: String) {
+        typeDropDown.dataSource = typeArray.map { $0.type }
+        typeDropDown.anchorView = selectTypeButton
+        typeDropDown.shadowOffset = CGSize(width: 0, height: 0)
+        typeDropDown.shadowRadius = 0
+        typeDropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
+        typeDropDown.selectionBackgroundColor = dropDown.backgroundColor!
     }
     
     func setNavigationBar() {
@@ -99,8 +100,7 @@ class UnitConversionViewController: UIViewController {
         self.present(sideMenuVC, animated: true, completion: nil)
     }
     
-    
-    
+    // MARK: unit선택
     @IBAction func selectUnitBtn(_ sender: Any) {
         dropDown.show()
         dropDown.selectionAction = { [weak self] in
@@ -117,15 +117,18 @@ class UnitConversionViewController: UIViewController {
             self.defaultType = 0
             self.tableView.reloadData()
         }
+        textField.text = ""
     }
     
-    @IBAction func selectFigureBtn(_ sender: Any) {
+    // MARK: type 선택
+    @IBAction func selectTypeBtn(_ sender: Any) {
         
-        setFigureDropDown(self.SelectUnitButton.titleLabel!.text!)
-        figureDropDown.show()
-        figureDropDown.selectionAction = { [weak self] in
+        setTypeDropDown(self.SelectUnitButton.titleLabel!.text!)
+        typeDropDown.show()
+        typeDropDown.selectionAction = { [weak self] in
             guard let self = self else { return }
             self.selectTypeButton.setTitle($1, for: .normal)
+            self.figureDropDownIndex = $0
             // 단위변환 함수 넣기
             self.tableView.reloadData()
         }
@@ -153,6 +156,38 @@ extension UnitConversionViewController: UITableViewDataSource, UITableViewDelega
     func changeDefaultType(_ index: Int, _ figure: Double) -> Double {
         return figure / typeArray[index].figure
     }
+}
+
+extension UnitConversionViewController: ChangeRateDelegate {
+    
+    func numPad(_ num: String) {
+        let textFieldText = textField.text
+        textField.text = textFieldText! + num
+        changeFigure()
+    }
+    
+    // MARK: 단위변환
+    func changeFigure() {
+        let figure = Double(textField.text!) ?? 0
+        if selectTypeButton.titleLabel!.text != "단위선택" {
+            let type = typeArray[figureDropDownIndex].figure
+            let defaultFigure = figure / type
+            changeFigures.removeAll()
+            for i in 0..<typeArray.count {
+                changeFigures.append(defaultFigure * typeArray[i].figure)
+            }
+        }
+        print(changeFigures)
+    }
+    
+    func dotPad(_ dot: String) {
+        
+    }
+    
+    func deletePad() {
+        
+    }
+    
 }
 
 class UnitConversionTableViewCell: UITableViewCell, UITextFieldDelegate {

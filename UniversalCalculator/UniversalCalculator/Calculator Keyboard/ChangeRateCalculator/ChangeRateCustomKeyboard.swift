@@ -21,23 +21,16 @@ class ChangeRateCustomKeyboard: UIView {
         super.awakeFromNib()
     }
     
-    var numPadClosure: ((String) -> (Void))?
-    var dotPadClosure: ((String) -> (Void))?
-    var deletePadClosure: (() -> ())?
-    
     @IBAction func numPad(_ sender: UIButton) {
         let num = sender.titleLabel?.text
         changeRateDelegate?.numPad(num!)
-        numPadClosure?(num!)
     }
     
     @IBAction func dotPad(_ sender: UIButton) {
         changeRateDelegate?.dotPad(".")
-        dotPadClosure?(".")
     }
     
     @IBAction func deletePad(_ sender: UIButton) {
         changeRateDelegate?.deletePad()
-        deletePadClosure?()
     }
 }
