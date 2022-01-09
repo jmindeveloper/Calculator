@@ -120,7 +120,7 @@ enum UnitConvertToKorean: String {
         case .ms: return "m/s"
         case .mh: return "m/h"
         case .kms: return "km/s"
-        case .kmh: return "km.h"
+        case .kmh: return "km/h"
         case .mach: return "마하(mach)"
         case .bit: return "비트(bit)"
         case .byte: return "바이트(B)"

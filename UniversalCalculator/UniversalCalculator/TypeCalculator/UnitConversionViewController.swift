@@ -12,13 +12,16 @@ class UnitConversionViewController: UIViewController {
     
     var unitConvert = [UnitConvertElement]()
     let dropDown = DropDown()
+    let figureDropDown = DropDown()
     var typeArray = [UnitType]()
     var figureTextFieldIndex = 0
     var figure: Double = 0
     var defaultType: Double = 0
+    var isTapped = false
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var SelectUnitButton: CustomUIButton!
+    @IBOutlet weak var selectTypeButton: CustomUIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -63,17 +66,24 @@ class UnitConversionViewController: UIViewController {
     // MARK: dropDown setting
     func setDropDown() {
         dropDown.dataSource = unitConvert.map { UnitConvertToKorean(rawValue: $0.unitName)!.description }
-//        for i in 0..<unitConvert.count {
-//            let unitName = unitConvert[i].unitName
-//            guard let unitDescription = UnitConvertToKorean(rawValue: unitName)?.description else { return }
-//            dropDown.dataSource.append(unitDescription)
-//        }
         print("dropDown.dataSource --> \(dropDown.dataSource)")
         dropDown.anchorView = SelectUnitButton
         dropDown.shadowOffset = CGSize(width: 0, height: 0)
         dropDown.shadowRadius = 0
         dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
         dropDown.selectionBackgroundColor = dropDown.backgroundColor!
+    }
+    
+    func setFigureDropDown(_ unit: String) {
+//        let unit = unitConvert.filter { $0.unitName == unit }
+        
+        figureDropDown.dataSource = typeArray.map { $0.type }
+        
+        figureDropDown.anchorView = selectTypeButton
+        figureDropDown.shadowOffset = CGSize(width: 0, height: 0)
+        figureDropDown.shadowRadius = 0
+        figureDropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height)!)
+        figureDropDown.selectionBackgroundColor = dropDown.backgroundColor!
     }
     
     func setNavigationBar() {
@@ -96,20 +106,37 @@ class UnitConversionViewController: UIViewController {
         dropDown.selectionAction = { [weak self] in
             guard let self = self else { return }
             self.SelectUnitButton.setTitle($1, for: .normal)
+            self.selectTypeButton.setTitle("단위선택", for: .normal)
             let types = self.unitConvert[$0].type.sorted { $0.value < $1.value }
             self.typeArray = []
             for i in 0..<types.count {
                 let type = UnitConvertToKorean(rawValue: types[i].key)!.description
                 self.typeArray.append(UnitType(type: type, figure: types[i].value))
             }
+            self.isTapped = false
+            self.defaultType = 0
             self.tableView.reloadData()
         }
+    }
+    
+    @IBAction func selectFigureBtn(_ sender: Any) {
+        
+        setFigureDropDown(self.SelectUnitButton.titleLabel!.text!)
+        figureDropDown.show()
+        figureDropDown.selectionAction = { [weak self] in
+            guard let self = self else { return }
+            self.selectTypeButton.setTitle($1, for: .normal)
+            // 단위변환 함수 넣기
+            self.tableView.reloadData()
+        }
+        
+        textField.becomeFirstResponder()
     }
     
 }
 
 extension UnitConversionViewController: UITableViewDataSource, UITableViewDelegate {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return typeArray.count
     }
@@ -117,23 +144,9 @@ extension UnitConversionViewController: UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UnitConversionTableViewCell", for: indexPath) as? UnitConversionTableViewCell else { return UITableViewCell() }
         
-        let unitConvertCalculatorCustomKeyboard = Bundle.main.loadNibNamed("ChangeRateCustomKeyboard", owner: nil, options: nil)
-        guard let unitConvertCalculatorKeyboard = unitConvertCalculatorCustomKeyboard?.first as? ChangeRateCustomKeyboard else { return UITableViewCell() }
-        
         cell.typeLabel.text = typeArray[indexPath.row].type
-        cell.figureTextField.inputView = unitConvertCalculatorKeyboard
         
-        unitConvertCalculatorKeyboard.numPadClosure = { [weak self] in
-            guard let self = self else { return }
-            if cell.figureTextField.isFirstResponder {
-                let beforeText = cell.figureTextField.text ?? ""
-                cell.figureTextField.text = beforeText + $0
-                let figure = Double(cell.figureTextField.text ?? "") ?? 0
-                self.defaultType = self.changeDefaultType(indexPath.row, figure)
-            }
-            tableView.reloadData()
-        }
-        cell.figureTextField.text = String(self.defaultType * self.typeArray[indexPath.row].figure)
+        
         return cell
     }
     
@@ -142,10 +155,10 @@ extension UnitConversionViewController: UITableViewDataSource, UITableViewDelega
     }
 }
 
-class UnitConversionTableViewCell: UITableViewCell {
+class UnitConversionTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var figureTextField: UITextField!
+    @IBOutlet weak var figureLabel: UILabel!
     
     
 }

@@ -58,14 +58,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" id="HXs-SN-7xw" customClass="SideMenuCell" customModule="UniversalCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="42.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HXs-SN-7xw" id="LeA-4Z-qZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5i-5A-w9o">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="303" height="20.666666666666671"/>
+                                                    <rect key="frame" x="16" y="11" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -534,9 +534,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oyv-Ix-PSd" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
-                                <rect key="frame" x="70" y="54" width="235" height="35"/>
+                                <rect key="frame" x="30" y="54" width="80" height="35"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="wJe-uR-sJ8"/>
                                     <constraint firstAttribute="height" constant="35" id="yYb-1T-wYZ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -551,16 +552,16 @@
                                     <action selector="selectUnitBtn:" destination="LCi-VX-yGJ" eventType="touchUpInside" id="rCv-Ru-11y"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLe-gR-BpJ">
-                                <rect key="frame" x="30" y="164" width="315" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="수치를 입력해주세요." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLe-gR-BpJ">
+                                <rect key="frame" x="30" y="99" width="315" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cVo-0T-Hnx">
-                                <rect key="frame" x="15" y="99" width="345" height="400"/>
+                                <rect key="frame" x="15" y="143" width="345" height="300"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Skw-dm-jDz"/>
+                                    <constraint firstAttribute="height" constant="300" id="Skw-dm-jDz"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UnitConversionTableViewCell" id="xv7-pg-vja" customClass="UnitConversionTableViewCell" customModule="UniversalCalculator" customModuleProvider="target">
@@ -583,19 +584,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="수치를 입력해주세요" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PL6-Rh-xzM">
-                                                    <rect key="frame" x="130" y="5" width="200" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="VfE-ol-CW4"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7I-dF-Yvq">
+                                                    <rect key="frame" x="287" y="11.666666666666664" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="PL6-Rh-xzM" secondAttribute="trailing" constant="15" id="5gk-iS-2l0"/>
-                                                <constraint firstItem="PL6-Rh-xzM" firstAttribute="centerY" secondItem="ACG-ip-jcn" secondAttribute="centerY" id="G3A-RI-Sd3"/>
+                                                <constraint firstItem="T7I-dF-Yvq" firstAttribute="centerY" secondItem="ACG-ip-jcn" secondAttribute="centerY" id="73F-19-uh1"/>
+                                                <constraint firstItem="T7I-dF-Yvq" firstAttribute="trailing" secondItem="ACG-ip-jcn" secondAttribute="trailingMargin" id="KJg-dC-zWW"/>
                                                 <constraint firstItem="y9T-LU-qVn" firstAttribute="leading" secondItem="ACG-ip-jcn" secondAttribute="leadingMargin" id="Uog-1t-J9f"/>
                                                 <constraint firstItem="9xL-68-jmX" firstAttribute="leading" secondItem="ACG-ip-jcn" secondAttribute="leading" id="WkN-6i-rol"/>
                                                 <constraint firstItem="y9T-LU-qVn" firstAttribute="centerY" secondItem="ACG-ip-jcn" secondAttribute="centerY" id="eP1-mq-VfY"/>
@@ -604,29 +603,48 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="figureTextField" destination="PL6-Rh-xzM" id="uPa-wo-zq7"/>
+                                            <outlet property="figureLabel" destination="T7I-dF-Yvq" id="Mvh-FJ-BBn"/>
                                             <outlet property="typeLabel" destination="y9T-LU-qVn" id="pJz-UE-uf1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afh-58-M0Z" customClass="CustomUIButton" customModule="UniversalCalculator" customModuleProvider="target">
+                                <rect key="frame" x="120" y="54" width="225" height="35"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="단위선택">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle2"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRound" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectFigureBtn:" destination="LCi-VX-yGJ" eventType="touchUpInside" id="7y6-Zi-WXT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JY0-wo-iwp"/>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="HLe-gR-BpJ" firstAttribute="top" secondItem="oyv-Ix-PSd" secondAttribute="bottom" constant="10" id="0uo-S4-0GR"/>
+                            <constraint firstItem="afh-58-M0Z" firstAttribute="top" secondItem="oyv-Ix-PSd" secondAttribute="top" id="6g4-mZ-4ub"/>
+                            <constraint firstItem="cVo-0T-Hnx" firstAttribute="top" secondItem="HLe-gR-BpJ" secondAttribute="bottom" constant="10" id="8Nt-Pc-xxj"/>
                             <constraint firstItem="oyv-Ix-PSd" firstAttribute="top" secondItem="JY0-wo-iwp" secondAttribute="top" constant="10" id="9dZ-hT-Vf1"/>
-                            <constraint firstItem="cVo-0T-Hnx" firstAttribute="top" secondItem="oyv-Ix-PSd" secondAttribute="bottom" constant="10" id="KgE-jQ-HPs"/>
+                            <constraint firstItem="afh-58-M0Z" firstAttribute="leading" secondItem="oyv-Ix-PSd" secondAttribute="trailing" constant="10" id="Efm-dR-yh2"/>
                             <constraint firstItem="HLe-gR-BpJ" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="30" id="KuW-jf-nKn"/>
-                            <constraint firstItem="HLe-gR-BpJ" firstAttribute="top" secondItem="JY0-wo-iwp" secondAttribute="top" constant="120" id="OsC-BJ-7G2"/>
                             <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="cVo-0T-Hnx" secondAttribute="trailing" constant="15" id="OyD-4y-VCa"/>
+                            <constraint firstItem="afh-58-M0Z" firstAttribute="bottom" secondItem="oyv-Ix-PSd" secondAttribute="bottom" id="Z4o-WB-jju"/>
                             <constraint firstItem="cVo-0T-Hnx" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="15" id="gfP-pO-z3f"/>
-                            <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="oyv-Ix-PSd" secondAttribute="trailing" constant="70" id="pGt-I0-7F0"/>
-                            <constraint firstItem="oyv-Ix-PSd" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="70" id="s5D-Zo-Ncw"/>
+                            <constraint firstItem="oyv-Ix-PSd" firstAttribute="leading" secondItem="JY0-wo-iwp" secondAttribute="leading" constant="30" id="s5D-Zo-Ncw"/>
+                            <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="afh-58-M0Z" secondAttribute="trailing" constant="30" id="stz-X6-QhH"/>
                             <constraint firstItem="JY0-wo-iwp" firstAttribute="trailing" secondItem="HLe-gR-BpJ" secondAttribute="trailing" constant="30" id="vCN-ox-cPP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="SelectUnitButton" destination="oyv-Ix-PSd" id="FnB-wV-g5f"/>
+                        <outlet property="selectTypeButton" destination="afh-58-M0Z" id="awu-pX-N68"/>
                         <outlet property="tableView" destination="cVo-0T-Hnx" id="uYE-Sj-k2w"/>
                         <outlet property="textField" destination="HLe-gR-BpJ" id="BX6-zY-jQO"/>
                     </connections>
