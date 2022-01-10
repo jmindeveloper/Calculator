@@ -14,9 +14,6 @@ class UnitConversionViewController: UIViewController {
     let dropDown = DropDown()
     let typeDropDown = DropDown()
     var typeArray = [UnitType]()
-    var figureTextFieldIndex = 0
-    var figure: Double = 0
-    var defaultType: Double = 0
     var isTapped = false
     var figureDropDownIndex = 0
     var changeFigures = [Double]()
@@ -113,11 +110,10 @@ class UnitConversionViewController: UIViewController {
                 let type = UnitConvertToKorean(rawValue: types[i].key)!.description
                 self.typeArray.append(UnitType(type: type, figure: types[i].value))
             }
-            self.isTapped = false
-            self.defaultType = 0
+            self.textField.text = ""
+            self.changeFigures = []
             self.tableView.reloadData()
         }
-        textField.text = ""
     }
     
     // MARK: type 선택
@@ -129,7 +125,7 @@ class UnitConversionViewController: UIViewController {
             guard let self = self else { return }
             self.selectTypeButton.setTitle($1, for: .normal)
             self.figureDropDownIndex = $0
-            // 단위변환 함수 넣기
+            self.changeFigure()
             self.tableView.reloadData()
         }
         
@@ -148,13 +144,15 @@ extension UnitConversionViewController: UITableViewDataSource, UITableViewDelega
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UnitConversionTableViewCell", for: indexPath) as? UnitConversionTableViewCell else { return UITableViewCell() }
         
         cell.typeLabel.text = typeArray[indexPath.row].type
+        if changeFigures.isEmpty {
+            cell.figureLabel.text = "0"
+        } else {
+            cell.figureLabel.text = String(changeFigures[indexPath.row])
+        }
+        
         
         
         return cell
-    }
-    
-    func changeDefaultType(_ index: Int, _ figure: Double) -> Double {
-        return figure / typeArray[index].figure
     }
 }
 
@@ -174,18 +172,28 @@ extension UnitConversionViewController: ChangeRateDelegate {
             let defaultFigure = figure / type
             changeFigures.removeAll()
             for i in 0..<typeArray.count {
-                changeFigures.append(defaultFigure * typeArray[i].figure)
+                let changeFigure = round(defaultFigure * typeArray[i].figure * 1000) / 1000
+                changeFigures.append(changeFigure)
             }
+            tableView.reloadData()
         }
-        print(changeFigures)
     }
     
     func dotPad(_ dot: String) {
-        
+        let figureText = textField.text ?? ""
+        if !figureText.contains(".") && !figureText.isEmpty {
+            textField.text = figureText + "."
+        }
     }
     
     func deletePad() {
-        
+        var figureText = textField.text ?? ""
+        if !figureText.isEmpty {
+            figureText.removeLast()
+            textField.text = figureText
+            changeFigure()
+            tableView.reloadData()
+        }
     }
     
 }
@@ -194,7 +202,6 @@ class UnitConversionTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var figureLabel: UILabel!
-    
     
 }
 
